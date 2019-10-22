@@ -1,0 +1,4663 @@
+﻿<!doctype html>
+<!-- saved from url=(0030)http://home.ustc.edu.cn/~zsxqq -->
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="utf-8" />
+	<title>三国杀卡牌</title>
+	<link rel="shortcut icon" href="../pic/favicon.ico" />
+	<style>
+		.biaozhun,
+		.jiexiantupo,
+		.wujiangtupo	{background: #3ea;}
+		.xianxia,.quan	{background: #8f0;}
+		.xinghuo	{background: #8f0;}
+		.feng		{background: #ff9;}
+		.huo		{background: salmon;}
+		.lin		{background: #90ee90;}
+		.shan		{background: #ac6fff;}
+		.jiang		{background: #ff8c00;}
+		.zhuo		{background: #40e0d0;}
+		.tian		{background: #63b8ff;}
+		.v1 		{background: #0c3;}
+		.zhan		{background: purple;}
+		.zhongdan	{background: #fc0;}
+		.guozhan 	{background: #f5f;}
+		.zhen		{background: #f08080;}
+		.shi 		{background: #f00;}
+		.bian 		{background: yellow;}
+		
+		.yin		{background: #9ab;}
+		.lei		{background: #ba7;}
+		
+		.ex			{background: hsl( 30,90%,60%);}
+		.junzheng	{background: hsl( 40,90%,60%);}
+		.online		{background: hsl(340,90%,60%);}
+		.shibei		{background: hsl(280,90%,60%);}
+		
+		.wei,
+		.shu,
+		.wu,
+		.qun,
+		.shen		{color:white;}
+		.wei		{background: cornflowerblue;}
+		.shu		{background: crimson;}
+		.wu			{background: seagreen;}
+		.qun		{background: lightslategray;}
+		.shen		{background: goldenrod}
+		.zhugong	{color:yellow;}
+		.getskill{
+			font-style:italic
+		}
+		table{
+			font-size: 90%;
+		}
+		#generaltable td{
+			text-align: center;
+		}
+		#generaltable td.jineng{
+			text-align: left;
+			font-size: 90%;
+		}
+		th sub{
+			font-weight: normal;
+		}
+		@media screen and (min-width:900px){body{width:900px;}}
+		@media screen and (max-width:900px){body{width:100%;}}
+		@media screen and (min-width:1200px){body.fullpage{width:1200px;}}
+		@media screen and (max-width:1200px){body.fullpage{width:100%;}}
+		body{
+			background-attachment:fixed;
+			background-position:left top;
+			background-repeat:repeat-x;
+			background-image:url('pic/background.png');
+			background-color:#3a430e;
+			margin:20px auto;
+		}
+		body > header, body > section{
+			margin:10px auto;
+		}
+		header{
+			padding:1px 2em;
+			color:#fff;
+		}
+		section header{
+			background-color:hsl(21,76%,46%);
+		}
+		section > div{
+			background-color: #eee;
+			padding: 1px 2em;
+		}
+		body.indent p, p.indent{
+			text-indent:2em;
+		}
+		p.noindent{
+			text-indent:0 !important;
+		}
+		h1, h2, h3{
+			font-family: Gabriela, "Marko One", "Noto Sans", SimSun—Local, "Andale Mono", cursive, Arial, STKaiti, Georgia, NSimSun, serif;
+			margin: 0.5em 0px;
+			color: white;
+		}
+		body{
+			font-family: Verdana, Georgia, Lato, 微软雅黑, Lustria, "PT Serif", Times, serif;
+			font-size:18px;
+		}
+		h1{
+			font-size:160%;
+			line-height:1em;
+		}
+		h2{
+			font-size:120%;
+		}
+		.red{
+			color:red;
+		}
+		a{
+			text-decoration:none;
+			cursor:pointer;
+		}
+		section > div a:hover{
+			text-decoration:underline;
+		}
+		section div a{
+			color:hsl(188,63%,36%);
+		}
+		section div a:hover, section div a:hover::before{
+			color:hsl(21,76%,46%);
+			text-decoration:underline;
+			-webkit-transition: all 0.1s ease-in-out;
+			-moz-transition: all 0.1s ease-in-out;
+			-o-transition: all 0.1s ease-in-out;
+			transition: all 0.1s ease-in-out;
+			text-shadow: 1px 0px 0px hsl(21,76%,46%);
+		}
+		footer{
+			margin:20px auto;
+		}
+		footer p{
+			text-align:center;
+			font-size:80%;
+		}
+		footer p, footer a{
+			color:hsl(188,63%,66%);
+		}
+		footer a:hover{
+			color:hsl(21,76%,66%);
+			text-decoration:underline;
+			-webkit-transition: all 0.1s ease-in-out;
+			-moz-transition: all 0.1s ease-in-out;
+			-o-transition: all 0.1s ease-in-out;
+			transition: all 0.1s ease-in-out;
+			text-shadow: 1px 0px 0px hsl(21,76%,66%);
+		}
+		footer img{height:80px;}
+		table{
+			border-collapse:collapse;
+			margin:20px auto;
+		}
+		thead th{
+			background: #505050;
+			color: white;
+		}
+		table img{
+			border-width:0;
+		}
+		th, td{
+			border: 1px #aaa solid;
+			vertical-align: middle;
+		}
+		th{
+			text-align:center;
+		}
+	</style>
+</head>
+
+<body class='fullpage indent'>
+<header><h2>三国杀卡牌一览</h2></header>
+
+<section id="card"><header><h2>特殊牌和游戏牌</h2></header>
+<div>
+<p>身份局游戏牌共104+4(EX)+52(军争)+1(界限突破)+32(逐鹿天下)张。</p>
+<p>国战游戏牌共108+1(阵)+1(势)＋52(势备)张，特殊牌包括4张野心家牌。</p>
+<p>游戏牌分为<span class="red">红桃</span>、黑桃、<span class="red">方块</span>、梅花四种花色，基本牌、锦囊牌、装备牌三种类别。</p>
+<table id="cardtable">
+
+<thead>
+<tr><th width="120px">名称</th><th>分布</th><th width="100px">发行</th></tr>
+<tr><th colspan="3">描述</th></tr>
+</thead>
+
+<tbody>
+<tr style="background-color:hsl(80,70%,50%)"><th colspan="3">基本牌</th></tr>
+
+<tr>
+<th rowspan="4">杀</th>
+	<td>黑桃7/8/8/9/9/10/10，梅花2/3/4/5/6/7/8/8/9/9/10/10/J/J，<span class="red">红桃10/10/J，方块6/7/8/9/10/K</span></td><th class="biaozhun">标准</th></tr>
+<tr><td>黑桃5/7/8/8/9/10/J，梅花2/3/4/5/8/9/10/J/J，<span class="red">红桃10/Q，方块10/J/Q</span></td><th class="guozhan">国战</th></tr>
+<tr><td>黑桃4/7/8，梅花4/6/7/8，<span class="red">红桃10/J</span></td><th class="shibei">势备</th></tr>
+<tr><td>4黑<span class="red">2红</span></td><th class="online">逐鹿天下</th></tr>
+<tr><th rowspan="4">火杀</th>
+	<td><span class="red">红桃4/7/10，方块4/5</span></td><th class="junzheng">军争</th></tr>
+<tr><td><span class="red">红桃4，方块4/5</span></td><th class="guozhan">国战</th></tr>
+<tr><td><span class="red">方块8/9</span></td><th class="shibei">势备</th></tr>
+<tr><td><span class="red">1红</span></td><th class="online">逐鹿天下</th></tr>
+<tr><th rowspan="5">雷杀</th>
+	<td>黑桃4/5/6/7/8，梅花5/6/7/8</td><th class="junzheng">军争</th></tr>
+<tr><td>黑桃6/7，梅花6/7/8</td><th class="guozhan">国战</th></tr>
+<tr><td>黑桃9/10/J(连)，梅花5(连)</td><th class="shibei">势备</th></tr>
+<tr><td>2黑</td><th class="online">逐鹿天下</th></tr>
+<tr><td colspan="2">出牌阶段限一次，对你攻击范围内的一名角色使用，你对目标角色造成1点伤害/火焰伤害/雷电伤害。</td></tr>
+
+<tr><th rowspan="6">闪</th>
+	<td><span class="red">红桃2/2/K，方块2/2/3/4/5/6/7/8/9/10/J/J</span></td><th class="biaozhun">标准</th></tr>
+	<td><span class="red">红桃8/9/J/Q，方块6/7/8/10/J</span></td><th class="junzheng">军争</th></tr>
+<tr><td><span class="red">红桃2/J/K，方块2/3/6/7/7/8/8/9/10/J/K</span></td><th class="guozhan">国战</th></tr>
+<tr><td><span class="red">红桃4/5/6/7，方块6/7/K</span></td><th class="shibei">势备</th></tr>
+<tr><td><span class="red">4红</span></td><th class="online">逐鹿天下</th></tr>
+<tr><td colspan="2">以你为目标的【杀】生效前，对其使用，抵消此【杀】。</td></tr>
+
+<tr><th rowspan="4">桃</th>
+	<td><span class="red">红桃3/4/5/6/6/7/8/9/Q，方块2/3/Q</span></td><th class="biaozhun">标准</th></tr>	
+<tr><td><span class="red">红桃4/6/7/8/9/10/Q，方块2</span></td><th class="guozhan">国战</th></tr>
+<tr><td><span class="red">红桃8/9，方块2/3(连)</span></td><th class="shibei">势备</th></tr>
+<tr><td><span class="red">1红</span></td><th class="online">逐鹿天下</th></tr>
+<tr><td colspan="2">1. 出牌阶段，对包括你在内的一名已受伤的角色使用，目标角色回复1点体力。<br />2. 当一名角色处于濒死状态时，对其使用，目标角色回复1点体力。</td></tr>
+
+<tr><th rowspan="4">酒</th>
+	<td>黑桃3/9，梅花3/9，<span class="red">方块9</span></td><th class="junzheng">军争</th></tr>
+<tr><td>黑桃9，梅花9，<span class="red">方块9</span></td><th class="guozhan">国战</th></tr>
+<tr><td>黑桃6(连)，梅花9</td><th class="shibei">势备</th></tr>
+<tr><td>2黑</td><th class="online">逐鹿天下</th></tr>
+<tr><td colspan="2">1. 出牌阶段，每回合限一次，对包括你在内的一名角色使用，目标角色于此回合内使用的下一张【杀】的伤害值基数+1.<br />2. 当你处于濒死状态时，对你使用，你回复1点体力。</td></tr>
+
+<tr style="background-color:hsl(80,70%,50%)"><th colspan="3">锦囊牌</th></tr>
+
+<tr><th rowspan="4">闪电</th>
+	<td rowspan="2">黑桃A</td><th class="biaozhun">标准</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+	<td><span class="red">红桃Q</span></td><th class="ex">EX</th></tr>
+<tr><td colspan="2">⌛ 出牌阶段，对你使用，目标角色判定，若结果为黑桃2~9：其受到3点无来源的雷电伤害，将此【闪电】置入弃牌堆。</td></tr>
+
+<tr><th rowspan="3">乐不思蜀</th>
+	<td>黑桃6，梅花6，<span class="red">红桃6</span></td><th class="biaozhun">标准</th></tr>
+	<td>梅花6，<span class="red">红桃6</span></td><th class="guozhan">国战</th></tr>
+<tr><td colspan="2">⌛ 出牌阶段，对一名其他角色使用，目标角色判定，若结果不为红桃，其跳过出牌阶段。</td></tr>
+
+<tr><th rowspan="3">兵粮寸断</th>
+	<td>黑桃10，梅花4</td><th class="junzheng">军争</th></tr>
+<tr><td>黑桃10，梅花10</td><th class="guozhan">国战</th></tr>
+<tr><td colspan="2">⌛ 出牌阶段，对距离为1的一名其他角色使用，目标角色判定，若结果不为梅花，其跳过摸牌阶段。</td></tr>
+
+<tr><th rowspan="5">过河拆桥</th>
+	<td>黑桃3/4/Q，梅花3/4，<span class="red">红桃Q</span></td><th class="biaozhun">标准</th></tr>
+<tr><td>黑桃3/4，<span class="red">红桃Q</span></td><th class="guozhan">国战</th></tr>
+<tr><td rowspan="2">出牌阶段，对一名区域里有牌的其他角色使用，你弃置目标角色的区域里的一张牌。</td>
+	<th class='biaozhun'>标准</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+<tr><td>出牌阶段，对区域里有牌的对手使用，你选择一项：弃置目标角色的装备区里的一张牌；观看目标角色的手牌并弃置其中一张牌。</td><th class='v1'>1V1</th></tr>
+
+<tr><th rowspan="3">顺手牵羊</th>
+	<td>黑桃3/4/J，<span class="red">方块3/4</span></td><th class="biaozhun">标准</th></tr>
+<tr><td>黑桃3/4，<span class="red">方块3</span></td><th class="guozhan">国战</th></tr>
+<tr><td colspan="2">出牌阶段，对距离为1的一名区域里有牌的其他角色使用，你获得目标角色的区域里的一张牌。</td></tr>
+
+<tr><th rowspan="3">决斗</th>
+	<td>黑桃A，梅花A，<span class="red">方块A</span></td><th class="biaozhun">标准</th></tr>
+<tr><td>黑桃A，梅花A</td><th class="guozhan">国战</th></tr>
+<tr><td colspan="2">出牌阶段，对一名其他角色使用，由目标角色开始，其与你轮流打出【杀】，直到其中的一名角色未打出【杀】。然后未打出【杀】的角色受到另一名角色造成的1点伤害。</td></tr>
+
+<tr><th rowspan="3">借刀杀人</th>
+	<td>梅Q/K</td><th class="biaozhun">标准</th></tr>
+<tr><td>梅花Q</td><th class="guozhan">国战</th></tr>
+<tr><td colspan="2">出牌阶段，对一名装备区里有武器牌且攻击范围内有其使用【杀】的合法目标的其他角色使用，你选择其攻击范围内的一个其【杀】的合法目标，目标角色选择一项：对其使用【杀】；将其装备区里的武器牌交给你。</td></tr>
+
+<tr><th rowspan="3">无中生有</th>
+	<td><span class="red">红桃7/8/9/J</span></td><th class="biaozhun">标准</th></tr>
+<tr><td><span class="red">红桃7/8</span></td><th class="guozhan">国战</th></tr>
+<tr><td colspan="2">出牌阶段，对包括你在内的一名角色使用，目标角色摸两张牌。</td></tr>
+
+<tr><th rowspan="6">无懈可击</th>
+	<td>黑桃J，梅花Q/K</td><th class="biaozhun">标准</th></tr>
+	<td><span class="red">方块Q</span></td><th class="ex">EX</th></tr>
+	<td>黑桃K，<span class="red">红桃A/K</span></td><th class="junzheng">军争</th></tr>
+<tr><td>黑桃J</td><th class="guozhan">国战</th></tr>
+<tr><td>黑桃K</td><th class="shibei">势备</th></tr>
+<tr><td colspan="2">一张锦囊牌对一个目标生效前，对该锦囊牌使用，抵消此锦囊牌。</td></tr>
+
+<tr><th rowspan="3">无懈可击•国</th>
+	<td>梅花K，<span class="red">方块Q</span></td><th class="guozhan">国战</th></tr>
+<tr><td>梅花K，<span class="red">方块J</span></td><th class="shibei">势备</th></tr>
+<tr><td colspan="2">一张锦囊牌对一个目标生效前，对该锦囊牌使用，抵消此锦囊牌；一张锦囊牌对一个目标生效前，对锦囊牌使用，抵消此牌，然后所有除其他与其势力相同的角色在该牌对其生效前，抵消之。</td></tr>
+
+<tr><th rowspan="2">万箭齐发</th>
+	<td rowspan="2"><span class="red">红桃A</span><br />
+	出牌阶段，对所有其他角色使用，目标角色选择：打出【闪】；受到你造成的1点伤害。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+
+<tr><th rowspan="3">南蛮入侵</th>
+	<td>黑桃7/K，梅花7</td><th class="biaozhun">标准</th></tr>
+<tr><td>黑桃K，梅花7</td><th class="guozhan">国战</th></tr>
+<tr><td colspan="2">出牌阶段，对所有其他角色使用，目标角色选择：打出【杀】；受到你造成的1点伤害。</td></tr>
+
+<tr><th rowspan="2">桃园结义</th>
+	<td rowspan="2"><span class="red">红桃A</span><br />
+	出牌阶段，对所有角色使用，目标角色回复1点体力。</td><th class="biaozhun">标准</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+
+<tr><th rowspan="3">五谷丰登</th>
+	<td><span class="red">红桃3/4</span></td><th class="biaozhun">标准</th></tr>
+	<td><span class="red">红桃3</span></td><th class="guozhan">国战</th></tr>
+<tr><td colspan="2">出牌阶段，对所有角色使用，你亮出牌堆顶的X张牌（X为目标数），目标角色获得这些牌中（剩余）的一张牌。</td></tr>
+
+<tr><th rowspan="3">铁索连环</th>
+	<td>黑桃J/Q，梅花10/J/Q/K</td><th class="junzheng">军争</th></tr>
+	<td>黑桃Q，梅花Q/K</td><th class="guozhan">国战</th></tr>
+<tr><td colspan="2">1. 出牌阶段，对一至两名角色使用，目标角色横置或重置。<br />2. 重铸。</td></tr>
+
+<tr><th rowspan="3">火攻</th>
+	<td><span class="red">红桃2/3，方块Q</span></td><th class="junzheng">军争</th></tr>
+	<td><span class="red">红桃2/3</span></td><th class="guozhan">国战</th></tr>
+<tr><td colspan="2">出牌阶段，对一名有手牌的角色使用，目标角色展示一张手牌，然后你可以弃置与之花色相同的一张手牌，若如此做，其受到你造成的1点火焰伤害。</td></tr>
+
+<tr><th>水淹七军</th>
+	<td>梅花Q，<span class="red">红桃J</span><br/>
+	出牌阶段，对一名装备区里有牌的其他角色使用。该角色选择一项：弃置装备区里的所有牌；或受到你对其造成的1点雷电伤害。</td>
+	<th class="shibei">势备</th></tr>
+
+<tr><th>以逸待劳</th>
+	<td><span class="red">红桃J，方块4</span><br />
+	出牌阶段，对你和与你势力相同的所有其他角色使用，目标角色摸两张牌，若如此做，当此【以逸待劳】对所有目标的使用结算结束时，该角色弃置两张牌。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr><th>知己知彼</th>
+	<td>梅花3/4<br />
+	1. 出牌阶段，对一名其他角色使用，你观看目标角色的：手牌；一张暗置的武将牌。<br />
+	2. 重铸。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr><th>远交近攻</th>
+	<td><span class="red">红桃9</span><br />
+	出牌阶段，对与你势力不同的一名角色使用，目标角色摸一张牌，然后你摸三张牌。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr><th rowspan="2">挟天子以令诸侯</th>
+	<td>黑桃A(连)，<span class="red">方块A(连)/4(连)</span><br />
+	出牌阶段，若你是大势力角色，对你使用，结束你的出牌阶段，然后若你于回合结束时弃置一张牌，则于此回合结束后，你进行一个额外的回合。</td>
+	<th class="shibei">势备</th></tr>
+<tr><td>黑桃A(连)，<span class="red">方块A(连)/4(连)</span><br />
+	出牌阶段，若你是大势力角色，对你使用，结束你的出牌阶段，然后若你于回合结束时弃置一张手牌，则于此回合结束后，你进行一个额外的回合。</td>
+	<th class="junlintianxia">君临天下</th></tr>
+
+<tr><th>火烧连营</th>
+	<td>黑桃4(连)，梅花J(连)，<span class="red">红桃Q(连)</span><br />
+	出牌阶段，对你的下家和与其处于同一队列的所有角色使用，每名角色受到你造成的1点火焰伤害。</td>
+	<th class="shibei">势备</th></tr>
+
+<tr><th>戮力同心</th>
+	<td>黑桃Q、梅花J<br />
+	1. 出牌阶段，对所有大势力角色或所有小势力角色使用，目标角色：横置；摸一张牌。<br />
+	2. 重铸。</td>
+	<th class="shibei">势备</th></tr>
+
+<tr><th rowspan="2">联军盛宴</th>
+	<td><span class="red">红桃A</span><br />
+	出牌阶段，对你和你选择的一个其他势力的所有角色使用，你摸X张牌（X为该势力存活角色数），然后其他目标角色选择一项：回复1点体力；摸一张牌，然后重置。</td>
+	<th class="shibei">势备</th></tr>
+<tr><td><span class="red">红桃A</span><br />
+	出牌阶段，选择一个其他势力，对你和该势力的所有角色使用。该势力的每名角色各摸一张牌且重置武将牌，然后你可以选择回复体力或摸牌，总数为X（X为该势力存活角色数）。</td>
+	<th class="junlintianxia">君临天下</th></tr>
+
+<tr><th rowspan="2">调虎离山</th>
+	<td><span class="red">红桃2，方块10(连)</span><br />
+	出牌阶段，对一至两名其他角色使用，本回合目标角色不计入距离和座次的计算，不能使用牌且不能成为任何牌的目标，你摸一张牌。</td>
+	<th class="shibei">势备</th></tr>
+<tr><td><span class="red">红桃2，方块10(连)</span><br />
+	出牌阶段，对一至两名其他角色使用，目标角色于此回合内体力值不会改变，不计入距离和座次的计算，不能使用牌且不是牌的合法目标。</td>
+	<th class="junlintianxia">君临天下</th></tr>
+
+<tr><th>敕令</th>
+	<td>梅花3<br />
+	出牌阶段，对所有没有势力的角色使用。每名目标角色各选择一项：明置一张武将牌，然后摸一张牌；弃置一张装备牌；失去1点体力。</td><th class="shibei">势备</th></tr>
+
+<tr><th>解甲归田</th>
+	<td>2张。出牌阶段，对一名装备区里有牌的角色使用。该角色获得其装备区里的所有牌。</td><th class="online">逐鹿天下</th>
+</tr>
+
+<tr><th>树上开花</th>
+	<td>3张。出牌阶段，对你使用。你弃置至多两张牌，然后摸等量的牌。若你以此法弃置了装备牌，则多摸一张牌。</td><th class="online">逐鹿天下</th>
+</tr>
+
+<tr><th>逐鹿天下</th>
+	<td>1张。出牌阶段，对所有角色使用。从牌堆和弃牌堆中亮出等同于目标角色数的装备牌，从你开始每名目标角色选择其中一张并置于自己的装备区里。</td><th class="online">逐鹿天下</th>
+</tr>
+
+<tr><th>草船借箭</th>
+	<td>2张。当一张【杀】或伤害类锦囊牌对你生效前，对此牌使用。抵消此牌对你的效果，然后在此牌结算结束后，获得之。</td><th class="online">逐鹿天下</th>
+</tr>
+	
+<tr style="background-color:hsl(80,70%,50%)"><th colspan="3">装备牌</th></tr>
+
+<tr><th rowspan="3">诸葛连弩</th>
+	<td>梅花A，<span class="red">方块A</span></td>
+	<th class="biaozhun">标准</th></tr>
+<tr><td><span class="red">方块A</span></td>
+	<th class="guozhan">国战</th></tr>
+<tr><td colspan="2">攻击范围：1<br />你使用【杀】无次数限制。</td></tr>
+
+<tr><th rowspan="2">青釭剑</th>
+	<td rowspan="2">黑桃6<br />
+	攻击范围：2<br />锁定技，每当你使用【杀】指定一个目标后，你无视其防具。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+
+<tr><th rowspan="2">雌雄双股剑</th>
+	<td rowspan="2">黑桃2<br />
+	攻击范围：2<br />每当你使用【杀】指定与你性别不同的一个目标后，你可以令其选择一项：1.弃置一张手牌；2.令你摸一张牌。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+
+<tr><th rowspan="3">寒冰剑</th>
+	<td rowspan="2">黑桃2</td><th class="ex">EX</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+<tr><td colspan="2">攻击范围：2<br />每当你使用【杀】对目标角色造成伤害时，若其有牌，你可以防止此伤害，依次弃置其两张牌。</td></tr>
+
+<tr><th>古锭刀</th>
+	<td>黑桃A<br />
+	攻击范围：2<br />
+	锁定技，每当你使用【杀】对目标角色造成伤害时，若其没有手牌，你令伤害值+1。.弃置一张手牌；2.令你摸一张牌。</td>
+	<th class="junzheng">军</th></tr>
+
+<tr><th>吴六剑</th>
+	<td><span class="red">方块6</span><br />
+	攻击范围：2<br />
+	锁定技，与你势力相同的其他角色的攻击范围+1。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr><th>三尖两刃刀</th>
+	<td><span class="red">方块Q</span><br />
+	攻击范围：3<br />
+	每当你使用【杀】对目标角色造成伤害后，你可以弃置一张手牌并选择目标角色距离为1的一名其他角色，对其造成1点伤害。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr><th rowspan="2">飞龙夺凤</th>
+	<td>黑桃2<br />
+	攻击范围：2<br />
+	每当你使用【杀】指定一个目标后，你可以令其弃置一张牌；每当被你使用【杀】杀死的角色死亡后，若你的势力是角色最少的势力，你可以令扮演其的玩家选择是否从未使用的武将牌中选择与你势力相同的一张武将牌重新加入游戏。</td>
+	<th class="zhen">阵</th></tr>
+<tr><td>黑桃2<br />
+	攻击范围：2<br />
+	每当你使用【杀】指定一个目标后，你可以令其弃置一张牌；你的【杀】令目标角色进入濒死状态时，你获得其一张手牌。</td>
+	<th class="junlintianxia">君临天下</th></tr>
+
+<tr><th rowspan="2">贯石斧</th>
+	<td rowspan="2"><span class="red">方块5</span><br />
+	攻击范围：3<br />
+	每当你使用的【杀】被目标角色使用的【闪】抵消时，你可以弃置两张牌，令此【杀】依然对其生效。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+
+<tr><th rowspan="2">青龙偃月刀</th>
+	<td>黑桃5<br />
+	攻击范围：3<br />
+	每当你使用的【杀】被目标角色使用的【闪】抵消时，你可以对其使用【杀】（无距离限制）。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr><td>黑桃5<br />
+	攻击范围：3<br />
+	锁定技，当你使用【杀】时，目标角色不能明置武将牌直到此【杀】结算完毕。
+	<th class="shibei">势备</th></tr>
+
+<tr><th rowspan="2">丈八蛇矛</th>
+	<td rowspan="2">黑桃Q<br />
+	攻击范围：3<br />
+	你可以将两张手牌当【杀】使用或打出。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+
+<tr><th>银月枪</th>
+	<td><span class="red">方块Q</span><br />
+	攻击范围：3<br />
+	每当你于回合外使用或打出黑色手牌时，你可以令你攻击范围内的一名角色选择是否打出【闪】，若其选择否，你对其造成1点伤害。</td>
+	<th class="zhuo">桌<sub>SP010</sub></th></tr>
+
+<tr><th rowspan="2">方天画戟</th>
+	<td><span class="red">方块Q</span><br />
+	攻击范围：4<br />
+	若你使用的【杀】是最后的手牌，你使用此【杀】的额外目标数上限+2。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr><td><span class="red">方块Q</span><br />
+	攻击范围：4<br />你使用的【杀】可以指定任意名势力各不相同的角色及未确定势力的角色为目标。当此【杀】被一名目标角色使用【闪】抵消时，此【杀】对其他目标角色无效。</td><th class="shibei">势备</th></tr>
+
+<tr><th rowspan="2">朱雀羽扇</th>
+	<td rowspan="2"><span class="red">方块A</span><br />
+	攻击范围：4<br />
+	你可以将一张普通【杀】当火【杀】使用；你可以将视为使用【杀】改为视为使用火【杀】。</td>
+	<th class="junzheng">军</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+
+<tr><th rowspan="2">麒麟弓</th>
+	<td rowspan="2"><span class="red">红桃5</span><br />
+	攻击范围：5<br />
+	每当你使用【杀】对目标角色造成伤害时，你可以弃置其装备区里的一张坐骑牌。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+
+<tr><th>折戟</th>
+	<td>攻击范围：0<br />
+		赠物。这是一把坏掉的武器…… </td>
+	<th class="online">逐鹿天下</th>
+</tr>
+
+<tr><th>无锋剑</th>
+	<td>攻击范围：1<br />
+		赠物。锁定技，当你使用【杀】时，你弃置一张牌。 </td>
+	<th class="online">逐鹿天下</th>
+</tr>
+
+<tr><th>涯角枪</th>
+	<td>攻击范围：3<br />
+		赠物。当你于回合外使用黑色牌时，若此牌是你本回合第一次使用黑色牌，则当此牌结算结束后，你可以获得之。 </td>
+	<th class="online">逐鹿天下</th>
+</tr>
+
+<tr><th rowspan="2">八卦阵</th>
+	<td>黑桃2，梅花2<br />
+	防具<br />
+	每当你需要使用/打出【闪】时，你可以判定，若结果为红色，你视为使用/打出一张【闪】。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr><td>黑桃2<br />
+	防具<br />
+	每当你需要使用/打出【闪】时，你可以判定，若结果为红色，你视为使用/打出一张【闪】。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr><th rowspan="2">仁王盾</th>
+	<td rowspan="2">梅花2<br />
+	防具<br />
+	锁定技，黑色【杀】对你无效。</td>
+	<th class="ex">EX</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+
+<tr><th rowspan="2">白银狮子</th>
+	<td rowspan="2">梅花A<br />
+	防具<br />
+	锁定技，每当你受到大于1点的伤害时，你将伤害值改为1点；锁定技，每当你失去装备区里的【白银狮子】后，你回复1点体力。</td>
+	<th class="junzheng">军</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+
+<tr><th rowspan="2">藤甲</th>
+	<td>黑桃2，梅花2<br />
+	防具<br />
+	锁定技，【南蛮入侵】、【万箭齐发】和普通【杀】对你无效；锁定技，每当你受到火焰伤害时，你令伤害值+1。</td>
+	<th class="junzheng">军</th></tr>
+<tr><td>黑桃2<br />
+	防具<br />
+	锁定技，【南蛮入侵】、【万箭齐发】和普通【杀】对你无效；锁定技，每当你受到火焰伤害时，你令伤害值+1。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr><th rowspan="2">太平要术</th>
+	<td><span class="red">红桃3</span><br />
+	防具<br />锁定技，每当你受到属性伤害时，你防止此伤害；锁定技，与你势力相同的角色的手牌上限+X（X为与你势力相同的角色数）；锁定技，每当你失去装备区里的【太平要术】后，你失去1点体力，然后摸两张牌。</td>
+	<th class="shi">势</th></tr>
+<tr><td><span class="red">红桃3</span><br />
+	防具<br />锁定技，每当你受到属性伤害时，你防止此伤害；你的手牌上限+X（X为与你势力相同的角色数）；每当你失去装备区里的【太平要术】后，摸两张牌，然后若你的体力值大于1，失去1点体力。</td>
+	<th class="junlintianxia">君临天下</th></tr>
+
+<tr><th>明光铠</th>
+	<td>黑桃2<br />
+	防具<br />
+	锁定技，当你成为【火烧连营】、【火攻】或火【杀】的目标时，取消之；若你是小势力角色，你的武将牌不能被横置。</td>
+	<th class="shibei">势备</th></tr>
+
+<tr><th>护心镜</th>
+	<td>梅花2(连)<br />
+	防具<br />
+	当你受到伤害时，若伤害值大于或等于你的体力值，你可以将此牌从装备区置入弃牌堆，然后防止此伤害。</td>
+	<th class="shibei">势备</th></tr>
+
+<tr><th>夜行衣</th>
+	<td>防具<br />
+		赠物。锁定技，你不能成为黑色锦囊牌的目标。</td>
+	<th class="online">逐鹿天下</th>
+</tr>
+
+<tr><th>女装</th>
+	<td>防具<br />
+		赠物。锁定技，当【女装】进入或离开你的装备区时，若你是男性，则你弃置一张其他牌。</td>
+	<th class="online">逐鹿天下</th>
+</tr>
+
+<tr><th>引蜂甲</th>
+	<td>防具<br />
+		赠物。锁定技，当你受到锦囊牌的伤害时，此伤害+1。 </td>
+	<th class="online">逐鹿天下</th>
+</tr>
+
+<tr><th rowspan="2">绝影</th>
+	<td rowspan="2">黑桃5<br />
+	+1坐骑</td>
+	<th class="biaozhun">标准</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+
+<tr><th rowspan="2">爪黄飞电</th>
+	<td rowspan="2"><span class="red">红桃K</span><br />
+	+1坐骑</td>
+	<th class="biaozhun">标准</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+
+<tr><th rowspan="2">的卢</th>
+	<td rowspan="2">梅花5<br />
+	+1坐骑</td>
+	<th class="biaozhun">标准</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+
+<tr><th>骅骝</th>
+	<td><span class="red">方块K</span><br />
+	+1坐骑</td>
+	<th class="junzheng">军</th></tr>
+
+<tr><th rowspan="2">大宛</th>
+	<td rowspan="2">黑桃K<br />
+	-1坐骑</td>
+	<th class="biaozhun">标准</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+
+<tr><th rowspan="2">赤兔</th>
+	<td rowspan="2"><span class="red">红桃5</span><br />
+	-1坐骑</td>
+	<th class="biaozhun">标准</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+
+<tr><th rowspan="2">紫骍</th>
+	<td rowspan="2"><span class="red">方块K</span><br />
+	-1坐骑</td>
+	<th class="biaozhun">标准</th></tr>
+<tr><th class="guozhan">国战</th></tr>
+
+<tr><th>惊帆</th>
+	<td><span class="red">红桃3(连)</span><br />
+	-1坐骑</td>
+	<th class="shibei">势备</th></tr>
+
+<tr><th>驽马</th>
+	<td><span class="red">红桃3(连)</span><br />
+	-1坐骑<br/>赠物。锁定技，当【驽马】进入你的装备区后，你弃置装备区里的其他牌。 </td>
+	<th class="online">逐鹿天下</th></tr>
+	
+<tr><th rowspan="2">六龙骖驾</th>
+	<td><span class="red">红桃K</span><br />
+	坐骑<br/>
+	锁定技，当你计算与与你势力不同的角色的距离时，始终-1。当与你势力不同的角色计算与你的距离时，始终+1。<br/>
+	锁定技，当此牌进入你的装备区后，弃置你装备区里其他坐骑牌。只要此牌在你的装备区里，你的装备区便不能置入其他坐骑牌。</td>
+	<th class="quan">权</th></tr>
+	<td><span class="red">红桃K</span><br />
+	+1-1坐骑<br/>
+	锁定技，当此牌进入你的装备区后，弃置的装备区里其他的坐骑牌。只要此牌在你的装备区里，你的装备区便不能置入其他坐骑牌。</td>
+	<th class="junlintianxia">君临天下</th></tr>
+
+<tr><th rowspan="2">木牛流马</th>
+	<td rowspan="2"><span class="red">方块5</span><br />
+	宝物<br />
+	出牌阶段限一次，你可以将一张手牌扣置于你装备区里的【木牛流马】下，至多五张。若如此做，你可以将此装备移动到一名其他角色的装备区里；你可以将此装备下的牌如手牌般使用或打出。</td>
+	<th class="jiexiantupo">界限突破</th></tr>
+<tr><th class="shibei">势备</th></tr>
+
+<tr><th>玉玺</th>
+	<td>梅花A宝物<br />
+	锁定技，若你有明置的武将牌，则：你所属的的势力成为唯一的大势力；摸牌阶段开始时，你额外摸一张牌；出牌阶段开始时，你视为使用一张【知己知彼】。</td>
+	<th class="shibei">势备</th></tr>
+
+<tr><th>定澜夜明珠</th>
+	<td><span class="red">方块 K</span><br />
+	宝物<br />
+	锁定技，你视为拥有技能“制衡”。若你已拥有“制衡”，则改为取消弃置牌数的限制。</td>
+	<th class="bian">变</th></tr>
+
+<tr><th>锦盒</th>
+	<td>宝物<br />
+		赠物。使用【锦盒】时，观看牌堆顶的两张牌并扣置其中一张在【锦盒】下，称为“礼”。
+出牌阶段，你可以将“礼”置入弃牌堆。若如此做，你同时弃置所有与此“礼”花色相同的手牌以及【锦盒】；当【锦盒】以除此以外的方式进入弃牌堆时，你弃置所有手牌。 </td>
+	<th class="online">逐鹿天下</th>
+</tr>
+
+</tbody></table>
+</div></section>
+
+<section id="general"><header><h2>武将牌</h2></header>
+<div>
+<p>本表仅记录了身份场和国战武将。技能和发行仅供参考。</p>
+<table id="generaltable">
+<thead>
+<tr><th style='width:6em'>编号</th><th style='width:2em'>势力</th><th style='width:5em'>武将</th><th style='width:6em'>称号</th><th style='width:2.5em'>体力上限</th><th>技能</th><th style="width:5em">发行</th></tr>
+</thead>
+
+<tbody>
+<tr>
+	<td rowspan='3'>WEI 001</td>
+	<th class='wei zhugong' rowspan='3'>魏</th>
+	<th rowspan='3'>曹　操</th>
+	<td rowspan='3'>魏武帝</td>
+	<td rowspan='3'>4</td>
+	<td class='jineng'>
+		<strong>奸雄</strong>——当你受到伤害时，你可以获得造成此伤害的牌。<br />
+		<strong>护驾</strong>——主公技，其他魏势力角色可以在你需要时代替你使用或打出【闪】</td>
+	<th class="biaozhun">标准版</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>奸雄</strong>——当你受到伤害时，你可以摸一张牌，并且获得造成此伤害的牌。<br />
+		<strong>护驾</strong>——主公技，其他魏势力角色可以在你需要时代替你使用或打出【闪】。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td class="jineng">
+			珠联璧合：许褚、典韦、卞夫人<br />
+		<strong>奸雄</strong>——当你受到伤害时，你可以获得造成此伤害的牌。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="3">WEI 002</td>
+	<td rowspan="3" class="wei">魏</td>
+	<th rowspan="3">司马懿</th>
+	<td rowspan="3">狼顾之鬼</td>
+	<td rowspan="3">3</td>
+	<td class="jineng">
+		<strong>反馈</strong>——当你受到伤害后，你可以获得伤害来源的一张牌。<br />
+		<strong>鬼才</strong>——当一名角色的判定牌生效前，你可以打出一张手牌代替之。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>反馈</strong>——当你受到1点伤害后，你可以获得伤害来源的一张牌。<br />
+		<strong>鬼才</strong>——当一名角色的判定牌生效前，你可以打出一张牌代替之。</td>
+	<th class="jiexiantupo">界限突破</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>反馈</strong>——当你受到伤害后，你可以获得伤害来源的一张牌。<br />
+		<strong>鬼才</strong>——当一名角色的判定牌生效前，你可以打出一张牌代替之。</td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="3">WEI 003</td>
+	<td rowspan="3" class="wei">魏</td>
+	<th rowspan="3">夏侯惇</th>
+	<td rowspan="3">独眼的罗刹</td>
+	<td rowspan="3">4</td>
+	<td class="jineng">
+		<strong>刚烈</strong>——当你受到伤害后，你可以进行判定，若结果为不为红桃，伤害来源弃置两张手牌或受到1点伤害。<br />
+		<strong>清俭</strong>——当你于摸牌阶段外获得牌后，你可将其中任意张牌扣置于武将牌上；一名角色的回合结束后，你将这些牌交给其他角色。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>刚烈</strong>——当你受到1点伤害后，你可以进行判定，若结果为：红色，你对伤害来源造成1点伤害；黑色，你弃置其一张牌。<br />
+		<strong>清俭</strong>——每回合限一次，当你在摸牌阶段外获得牌后，你可以展示任意张牌并交给一名其他角色，你给出的牌每有一种类别，当前回合角色本回合手牌上限+1。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td class="jineng">
+			珠联璧合：夏侯渊、于禁<br />
+		<strong>刚烈</strong>——当你受到1点伤害后，你可以进行判定，若结果为：红色，你对伤害来源造成1点伤害；黑色，你弃置其一张牌。</td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="3">WEI 004</td>
+	<td rowspan="3" class="wei">魏</td>
+	<th rowspan="3">张　辽</th>
+	<td rowspan="3">前将军</td>
+	<td rowspan="3">4</td>
+	<td class="jineng">
+		<strong>突袭</strong>——摸牌阶段，你可以改为获得最多两名角色的各一张手牌。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>突袭</strong>——摸牌阶段，你可以少摸任意张牌并获得等量的其他角色各一张手牌。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td class="jineng">
+			珠联璧合：臧霸<br />
+		<strong>突袭</strong>——摸牌阶段，你可以少摸任意张牌并获得等量的其他角色各一张手牌。</td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="3">WEI 005</td>
+	<td rowspan="3" class="wei">魏</td>
+	<th rowspan="3">许　褚</th>
+	<td rowspan="3">虎痴</td>
+	<td rowspan="3">4</td>
+	<td class="jineng">
+		<strong>裸衣</strong>——摸牌阶段，你可以少摸一张牌，然后本回合你使用【杀】或【决斗】造成的伤害+1。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>裸衣</strong>——摸牌阶段开始时，你亮出牌堆顶三张牌，然后你可以获得其中的基本牌、武器牌或【决斗】。若如此做，你放弃摸牌，且你为伤害来源的【杀】或【决斗】造成的伤害+1直到你的下回合开始。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td class="jineng">
+			珠联璧合：曹操<br />
+		<strong>裸衣</strong>——摸牌阶段，你可以少摸一张牌，然后本回合你使用【杀】或【决斗】造成伤害时，此伤害+1。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="3">WEI 006</td>
+	<td rowspan="3" class="wei">魏</td>
+	<th rowspan="3">郭　嘉</th>
+	<td rowspan="3">早终的先知</td>
+	<td rowspan="3">3</td>
+	<td class="jineng">
+		<strong>天妒</strong>——当你的判定牌生效后，你可以获得此牌。<br />
+		<strong>遗计</strong>——当你受到1点伤害后，你可以观看牌堆顶的两张牌，然后将这些牌交给任意角色。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>天妒</strong>——当你的判定牌生效后，你可以获得此牌。<br />
+		<strong>遗计</strong>——当你受到1点伤害后，你可以摸两张牌，然后你可以将至多两张手牌交给一至两名其他角色。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>天妒</strong>——当你的判定牌生效后，你可以获得此牌。<br />
+		<strong>遗计</strong>——当你受到伤害后，你可以观看牌堆顶的两张牌，然后将这些牌交给任意角色。</td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="3">WEI 007</td>
+	<td rowspan="3" class="wei">魏</td>
+	<th rowspan="3">甄　姬</th>
+	<td rowspan="3">薄幸的美人</td>
+	<td rowspan="3">3</td>
+	<td class="jineng">
+		<strong>倾国</strong>——你可以将一张黑色手牌当【闪】使用或打出。<br />
+		<strong>洛神</strong>——准备阶段，你可以进行判定，若结果为黑色，你获得此牌，然后你可以重复此流程。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>倾国</strong>——你可以将一张黑色手牌当【闪】使用或打出。<br />
+		<strong>洛神</strong>——准备阶段，你可以进行判定，若结果为黑色，你获得此牌，然后你可以重复此流程。以此法获得的牌本回合不计入手牌上限。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td class="jineng">
+			珠联璧合：曹丕<br />
+		<strong>倾国</strong>——你可以将一张黑色手牌当【闪】使用或打出。<br />
+		<strong>洛神</strong>——准备阶段，你可以进行判定，若结果为黑色，你可以重复此流程。然后你获得所有的黑色判定牌。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">WEI 008</td>
+	<td rowspan="2" class="wei">魏</td>
+	<th rowspan="2">夏侯渊</th>
+	<td rowspan="2">疾行的猎豹</td>
+	<td rowspan="2">3</td>
+	<td class="jineng">
+		<strong>神速</strong>——你可以选择至多三项：1.跳过判定阶段和摸牌阶段；2.跳过出牌阶段并弃置一张装备牌；3.跳过弃牌阶段并翻面。你每选择一项，视为你使用一张无距离限制的【杀】。</td>
+	<th class="xianxia">线下<sub>2017</sub></th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：夏侯惇<br />
+		<strong>神速</strong>——你可以做出如下选择：1.跳过判定阶段和摸牌阶段。2.跳过出牌阶段并弃置一张装备牌。你每选择一项，便视为你使用一张无距离限制的【杀】。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">WEI 009</td>
+	<td rowspan="2" class="wei">魏</td>
+	<th rowspan="2">张　郃</th>
+	<td rowspan="2">料敌机先</td>
+	<td rowspan="2">4</td>
+	<td class="jineng" rowspan="2">
+		<strong>巧变</strong>——你可以弃置一张手牌并跳过一个阶段：若跳过摸牌阶段，你可以获得至多两名角色的各一张手牌；若跳过出牌阶段，你可以移动场上的一张牌。</td>
+	<th class="shan">山</th></tr>
+<tr>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">WEI 010</td>
+	<td rowspan="2" class="wei">魏</td>
+	<th rowspan="2">徐　晃</th>
+	<td rowspan="2">周亚夫之风</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>断粮</strong>——你可以将一张黑色的基本牌或装备牌当【兵粮寸断】使用；你对手牌数大于或等于你的角色使用【兵粮寸断】无距离限制。<br />
+		<strong>截辎</strong>——锁定技，一名其他角色跳过摸牌阶段后，你摸一张牌。</td>
+	<th class="online">十周年</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>断粮</strong>——出牌阶段，你可以将一张黑色的基本牌或装备牌当一张无视距离的【兵粮寸断】使用；若你对距离超过2的角色使用【兵粮寸断】，则本回合不能再发动“断粮”。</td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="2">WEI 011</td>
+	<td rowspan="3" class="wei">魏</td>
+	<th rowspan="3">曹　仁</th>
+	<td rowspan="2">大将军</td>
+	<td rowspan="3">4</td>
+	<td class="jineng">
+		<strong>据守</strong>——结束阶段开始时，你可以翻面并摸四张牌，然后弃置一张手牌，若以此法弃置的是装备牌，则你改为使用之。<br />
+		<strong>解围</strong>——你可以将装备区里的牌当【无懈可击】使用；当你从背面翻至正面时，你可以弃置一张牌，然后移动场上的一张牌。</td>
+	<th class="xianxia">线下<sub>2017</sub></th></tr>
+<tr>
+	<td class="jineng">
+			珠联璧合：曹洪<br />
+		<strong>据守</strong>——结束阶段，你可以发动此技能。然后你摸X张牌（X为此时亮明势力数），弃置一张手牌，若以此法弃置的是装备牌，则改为你使用之。若X大于2，则你将武将牌翻面。 </td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td>SP.WEI 011</td>
+	<td>冷面将军</td>
+	<td class="jineng">
+		<strong>励战</strong>——回合结束时，你可以令任意名已受伤的角色摸一张牌。<br />
+		<strong>伪溃</strong>——出牌阶段限一次，你可以失去1点体力并选择一名有手牌的其他角色，你观看其手牌：若其手牌中有【闪】，则视为你对其使用【杀】，且本回合你计算与其的距离视为1；若其手牌中没有【闪】，你弃置其中一张牌。</td>
+	<th class="xianxia">线下<sub>2017</sub></th></tr>
+
+<tr>
+	<td rowspan="3">WEI 012</td>
+	<td rowspan="3" class="wei">魏</td>
+	<th rowspan="3">典　韦</th>
+	<td rowspan="3">古之恶来</td>
+	<td rowspan="3">4</td>
+	<td class="jineng" rowspan="2">
+			珠联璧合：曹操<br />
+		<strong>强袭</strong>——出牌阶段限一次，你可以失去1点体力或弃置一张武器牌，并对你攻击范围内的一名其他角色造成1点伤害。</td>
+	<th class="huo">火</th></tr>
+<tr>
+	<th class="guozhan">国战</th></tr>
+<tr><td class="jineng">
+		<strong>强袭</strong>——出牌阶段各限一次，你可以失去1点体力或弃置一张武器牌，并对你攻击范围内的一名其他角色造成1点伤害。你于同一阶段内不能指定同一名角色为目标。</td>
+	<th class="huo">2019</th></tr>
+
+<tr>
+	<td rowspan="2">WEI 013</td>
+	<td rowspan="2" class="wei">魏</td>
+	<th rowspan="2">荀　彧</th>
+	<td rowspan="2">王佐之才</td>
+	<td rowspan="2">3</td>
+	<td class="jineng">
+		珠联璧合：荀攸<br />
+		<strong>驱虎</strong>——出牌阶段限一次，你可以与体力值大于你的一名角色拼点：若你赢，你令其对其攻击范围内的另一名角色造成1点伤害；若你没赢，其对你造成1点伤害。<br />
+		<strong>节命</strong>——当你受到1点伤害后，你可以令一名角色将手牌摸至X张（X为其体力上限且最多为5）。</td>
+	<th class="huo">火</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：荀攸<br />
+		<strong>驱虎</strong>——出牌阶段限一次，你可以与体力值大于你的一名角色拼点：若你赢，你令其对其攻击范围内的另一名角色造成1点伤害；若你没赢，其对你造成1点伤害。<br />
+		<strong>节命</strong>——当你受到伤害后，你可以令一名角色将手牌摸至X张（X为其体力上限且最多为5）。</td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="3">WEI 014</td>
+	<th rowspan="3" class="wei zhugong">魏</th>
+	<th rowspan="3">曹　丕</th>
+	<td rowspan="3">霸业的继承者</td>
+	<td rowspan="3">3</td>
+	<td class="jineng">
+		<strong>行殇</strong>——当其他角色死亡时，你可以获得其所有牌。<br />
+		<strong>放逐</strong>——当你受到伤害后，你可以令一名其他角色翻面，然后该角色摸X张牌（X为你已损失的体力值）。<br />
+		<strong>颂威</strong>——主公技，当其他魏势力角色的黑色判定牌生效后，其可以令你摸一张牌。</td>
+	<th class="lin">林</th></tr>
+<tr>	<td class="jineng">
+		<strong>行殇</strong>——当其他角色死亡时，你可以选择一项：1.获得其所有牌；2.回复1点体力。<br />
+		<strong>放逐</strong>——当你受到伤害后，你可以令一名其他角色选择一项：摸X张牌并将其武将牌翻面；弃置X张牌并失去1点体力。（X为你已损失的体力值）。<br />
+		<strong>颂威</strong>——主公技，当其他魏势力角色的黑色判定牌生效后，其可以令你摸一张牌。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td class="jineng">
+			珠联璧合：甄姬、崔琰&毛玠<br />
+		<strong>行殇</strong>——当其他角色死亡时，你可以获得其所有牌。<br />
+		<strong>放逐</strong>——当你受到伤害后，你可以令一名其他角色选择一项：摸X张牌并将武将牌叠置（X为你已损失的体力值）；弃置一张牌并失去1点体力。</td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="2">WEI 015</td>
+	<td rowspan="2" class="wei">魏</td>
+	<th rowspan="2">邓　艾</th>
+	<td rowspan="2">矫然的壮士</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>屯田</strong>——当你于回合外失去牌后，你可以进行判定，然后将生效后的非红桃判定牌置于你的武将牌上，称为"田"；你计算与其他角色的距离-X（X为"田"的数量）。<br />
+		<strong>凿险</strong>——觉醒技，准备阶段，若"田"的数量不小于3，你减1点体力上限，然后获得"急袭"。<br />
+		<span class='getskill'>急袭</span>——你可以将一张"田"当【顺手牵羊】使用。</td>
+	<th class="shan">山</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>屯田</strong>——当你于回合外失去牌后，你可以进行判定，然后将生效后的非红桃判定牌置于你的武将牌上，称为"田"；你计算与其他角色的距离-X（X为"田"的数量）。<br />
+		<strong>急袭</strong>——主将技，此武将牌减少半个阴阳鱼；你可以将一张“田”当【顺手牵羊】使用。<br />
+		<strong>资粮</strong>——副将技，当与你势力相同的一名角色受到伤害后，你可以将一张“田”交给该角色。</td>
+	<th class="zhen">阵</th></tr>
+
+<tr>
+	<td rowspan="2">WEI 016</td>
+	<td rowspan="2" class="wei">魏</td>
+	<th rowspan="2">乐　进</th>
+	<td>勇猛精进</td>
+	<td rowspan="2">4</td>
+	<td class="jineng" rowspan="2">
+			珠联璧合：李典<br />
+		<strong>骁果</strong>——其他角色的结束阶段，你可以弃置一张基本牌，然后该角色选择一项：1.弃置一张装备牌，你摸一张牌；2.受到你造成的1点伤害。</td>
+	<th class="xianxia">线下<sub>2017</sub></th></tr>
+<tr>
+	<td>奋强突固</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">WEI 017</td>
+	<td rowspan="2" class="wei">魏</td>
+	<th rowspan="2">李　典</th>
+	<td rowspan="2">深明大义</td>
+	<td rowspan="2">3</td>
+	<td class="jineng" rowspan="2">
+			珠联璧合：乐进<br />
+		<strong>恂恂</strong>——摸牌阶段开始时，你可以观看牌堆顶的四张牌，然后将其中的两张牌置于牌堆顶，将其余的牌置于牌堆底。<br />
+		<strong>忘隙</strong>——当你对其他角色造成1点伤害后，或受到其他角色造成的1点伤害后，你可以与该角色各摸一张牌。</td>
+	<th class='xinghuo'>星火燎原-天梁</th></tr>
+<tr>
+	<th class="shi">势</th></tr>
+
+<tr>
+	<td rowspan="2">WEI 018</td>
+	<td rowspan="2" class="wei">魏</td>
+	<th rowspan="2">曹　洪</th>
+	<td>忠躯护主</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>援护</strong>——结束阶段，你可将一张装备牌置入一名角色的装备区里，然后根据此牌的副类别执行以下效果：武器牌，你弃置该角色距离为1的一名角色区域里的一张牌；防具牌，该角色摸一张牌；坐骑牌，该角色回复1点体力。</td>
+	<th class="xianxia">线下<sub>2017</sub></th></tr>
+<tr>
+	<td>魏之福将</td>
+	<td class="jineng">
+			珠联璧合：曹仁<br />
+		<strong>护援</strong>——结束阶段，你可以将一张装备牌置入一名角色的装备区，然后你可以弃置该角色距离为1的一名角色的一张牌。<br />
+		<strong>鹤翼</strong>——阵法技，与你处于同一队列的其他角色拥有“飞影”。<br />
+		<span class='getskill'>飞影</span>——锁定技，其他角色计算与你的距离+1。</td>
+	<th class="zhen">阵</th></tr>
+
+<tr>
+	<td>WEI 019</td>
+	<td class="wei">魏</td>
+	<th>文　聘</th>
+	<td>镇卫江夏</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>镇卫</strong>——当其他角色成为【杀】或黑色锦囊牌的唯一目标时，若该角色的体力值小于你，你可以弃置一张牌并选择一项：1.摸一张牌，然后将此牌转移给你；2.令此牌无效，然后当前回合结束后，使用者获得此牌。</td>
+	<th class='xinghuo'>星火燎原-天相</th></tr>
+
+<tr>
+	<td rowspan="2">WEI 020</td>
+	<td rowspan="2" class="wei">魏</td>
+	<th rowspan="2">荀　攸</th>
+	<td rowspan="2">曹魏的谋主</td>
+	<td rowspan="2">4</td>
+	<td class='jineng'>
+		<strong>奇策</strong>——出牌阶段限一次，你可以将所有手牌当任意一张普通锦囊牌使用。<br />
+		<strong>智愚</strong>——当你受到伤害后，你可以摸一张牌，然后展示所有手牌，若颜色均相同，伤害来源弃置一张手牌。</td>
+	<th class='jiang'>将<sub>2012</sub></th></tr>
+<tr>
+	<td class='jineng'>
+			珠联璧合：荀彧<br />
+		<strong>奇策</strong>——出牌阶段限一次，你可以将所有手牌当任意一张普通锦囊牌使用，以此法使用的目标数不能超过你的手牌数。结算完成后，你可以变更副将。<br />
+		<strong>智愚</strong>——当你受到伤害后，你可以摸一张牌，然后展示所有手牌，若颜色均相同，伤害来源弃置一张手牌。</td>
+	<th class='bian'>变</sub></th></tr>
+
+<tr>
+	<td rowspan="2">WEI 021</td>
+	<td rowspan="2" class="wei">魏</td>
+	<th>崔　琰</th>
+	<td>伯夷之风</td>
+	<td>4</td>
+	<td class="jineng">
+		<strong>雅望</strong>——锁定技，摸牌阶段，你改为摸X张牌，然后你于出牌阶段内至多使用X张牌（X为与你体力值相等的角色数）。<br />
+		<strong>殉志</strong>——准备阶段开始时，若你的上家和下家与你的体力值均不相等，你可以失去1点体力。若如此做，你的手牌上限+2。</td>
+	<th class="online">忠胆英杰</th></tr>
+<tr>
+	<th>崔琰&毛玠</th>
+	<td>日出夕盛</td>
+	<td>3</td>
+	<td class="jineng">
+			珠联璧合：曹丕<br />
+		<strong>征辟</strong>——出牌阶段开始时，你可以选择一项：1.选择一名未确定势力的角色，直到该回合结束或其明置武将牌，该角色视为与你势力相同；2.选择有明置武将牌的角色，交给其一张基本牌，然后该角色交给你一张非基本牌或两张基本牌。<br />
+		<strong>奉迎</strong>——限定技，你可以将所有手牌当【挟天子以令诸侯】使用，然后每名大势力角色将手牌摸至体力上限。</td>
+	<th class="quan">权</th></tr>
+
+<tr>
+	<td>WEI 022</td>
+	<td class="wei">魏</td>
+	<th>卞夫人</th>
+	<td>奕世之雍容</td>
+	<td>3</td>
+	<td class='jineng'>
+			珠联璧合：曹操<br />
+		<strong>挽危</strong>——当你因被其他角色获得或弃置而失去牌时，你可以改为自己选择失去的牌。<br />
+		<strong>约俭</strong>——与你势力相同的角色的弃牌阶段开始时，若其本回合未使用牌指定过其他势力的角色为目标，则该角色本回合手牌上限等同于其体力上限。</td>
+	<th class="bian">变</th></tr>
+
+<tr>
+	<td>WEI 023</td>
+	<td class="wei">魏</td>
+	<th>臧　霸</th>
+	<td>节度青徐</td>
+	<td>4</td>
+	<td class="jineng">
+			珠联璧合：张辽<br />
+		<strong>横江</strong>——当你受到1点伤害后，你可以令当前回合角色本回合的手牌上限-1。然后若其弃牌阶段内没有弃牌，则你摸一张牌。</td>
+	<th class="shi">势</th></tr>
+
+<tr>
+	<td rowspan="2">WEI 024</td>
+	<td rowspan="2" class="wei">魏</td>
+	<th rowspan="2">于　禁</th>
+	<td rowspan="2">讨暴坚垒</td>
+	<td rowspan="2">4</td>
+	<td class='jineng'>
+		<strong>镇军</strong>——出牌阶段开始时，你可交给一名其他角色一张牌，令其使用一张非黑色的【杀】：若其执行，则此【杀】结算后你摸一张牌；若此【杀】造成伤害，你额外摸伤害数值的牌；若其不执行，则你可对其或其攻击范围内的一名角色造成1点伤害。</td>
+	<th class='online'>待定</th></tr>
+<tr>
+	<td class='jineng'>
+		珠联璧合：夏侯惇<br />
+		<strong>节钺</strong>——准备阶段开始时，你可以交给不是魏势力的一名角色一张手牌，然后令其执行一次“军令”。若其执行，你摸一张牌；若其不执行，则你本回合摸牌阶段额外摸三张牌。</td>
+	<th class="quan">权</th></tr>
+</tr>
+	
+<tr>
+	<td>WEI 025</td>
+	<td class="wei">魏</td>
+	<th>牛　金</th>
+	<td>独进的兵胆</td>
+	<td>4</td>
+	<td class="jineng">
+		<strong>挫锐</strong>——锁定技，你的起始手牌数改为X+2（X为你备选区里武将牌的数量）；你跳过登场后的第一个判定阶段。<br />
+		<strong>裂围</strong>——当你杀死对手时，你可以摸三张牌。</td>
+	<th class="v1">1V1</th></tr>
+
+<tr>
+	<td>WEI 026</td>
+	<td class="wei">魏</td>
+	<th>曹　植</th>
+	<td>八斗之才</td>
+	<td>3</td>
+	<td class="jineng">
+		<strong>落英</strong>——当其他角色的梅花牌因弃置或判定而置入弃牌堆后，你可以获得其中的任意张。 <br />
+		<strong>酒诗</strong>——当你需要使用【酒】时，若你的武将牌正面向上，你可以翻面，视为使用一张【酒】。当你受到伤害后，若你的武将牌背面向上，你可以翻面。</td>
+	<th class="jiang">将</th></tr>
+
+<tr>
+	<td>WEI 027</td>
+	<td class="wei">魏</td>
+	<th>张春华</th>
+	<td>冷血皇后</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>绝情</strong>——锁定技，你即将造成的伤害视为失去体力。<br />
+		<strong>伤逝</strong>——当你的手牌数小于X时，你可以将手牌摸至X张。（X为你已损失的体力值数）</td>
+	<th class='jiang'>将<sub>2012</sub></th></tr>
+
+<tr>
+	<td>WEI 028</td>
+	<td class="wei">魏</td>
+	<th>钟　会</th>
+	<td>桀骜的野心家</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>权计</strong>——当你受到1点伤害后，你可以摸一张牌。若如此做，你将一张手牌置于武将牌上，称为“权”；你的手牌上限+X（X为“权”的数量）。<br />
+		<strong>自立</strong>——觉醒技，准备阶段，若"权"的数量不小于3，你选择一项：1.回复1点体力；2.摸两张牌。然后你减1点体力上限，获得"排异"。<br />
+		<span class='getskill'>排异</span>——出牌阶段限一次，你可以将一张"权"置入弃牌堆并选择一名角色，然后其摸两张牌。若该角色的手牌多于你，则你对其造成1点伤害。</td>
+	<th class='jiang'>将<sub>2012</sub></th></tr>
+
+<tr>
+	<td rowspan="2">WEI 029</td>
+	<td rowspan="2" class="wei">魏</td>
+	<th rowspan="2">曹　彰</th>
+	<td rowspan="2">黄须儿</td>
+	<td rowspan="2">4</td>
+	<td class='jineng'>
+		<strong>将驰</strong>——摸牌阶段，你可以选择一项：1.多摸一张牌，然后本回合你不能使用或打出【杀】；2.少摸一张牌，然后本回合你使用【杀】无距离限制且可以多使用一张【杀】。</td>
+	<th class='jiang'>将<sub>2012</sub></th></tr>
+<tr><td class='jineng'>
+		<strong>将驰</strong>——摸牌阶段结束后，你可以：摸一张牌，本回合不能使用或打出【杀】；或弃一张牌，本回合使用【杀】无距离限制且可以多使用一张【杀】。</td>
+	<th class='biaozhun'>标准<sub>2019</sub></th></tr>
+
+<tr>
+	<td>WEI 030</td>
+	<td class="wei">魏</td>
+	<th>王　异</th>
+	<td>决意的巾帼</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>贞烈</strong>——当你成为其他角色使用【杀】或普通锦囊牌的目标后，你可以失去1点体力。若如此做，此牌对你无效，然后你弃置其一张牌。<br />
+		<strong>秘计</strong>——结束阶段，你可以摸X张牌（X为你已损失的体力值），然后你可以将等量的手牌交给其他角色。</td>
+	<th class="xianxia">线下<sub>2016</sub></th></tr>
+
+<tr>
+	<td>WEI 031</td>
+	<td class="wei">魏</td>
+	<th>曹　冲</th>
+	<td>仁爱的神童</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>称象</strong>——当你受到伤害后，你可以亮出牌堆顶的四张牌，然后你获得其中的任意张点数之和不大于13的牌。<br />
+		<strong>仁心</strong>——当其他角色受到伤害时，若该角色的体力值为1，则你可以翻面并弃置一张装备牌，然后防止此伤害。</td>
+	<th class='jiang'>将<sub>2014</sub></th></tr>
+
+<tr>
+	<td>WEI 032</td>
+	<td class="wei">魏</td>
+	<th>郭　淮</th>
+	<td>垂问秦雍</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>精策</strong>——结束阶段，若你于此回合内使用过的牌数量大于等于你的体力值，则你可以摸两张牌。</td>
+	<th class='online'>待定</th></tr>
+
+<tr>
+	<td>WEI 033</td>
+	<td class="wei">魏</td>
+	<th>满　宠</th>
+	<td>政法兵谋</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>峻刑</strong>——出牌阶段限一次，你可以弃置任意张手牌并选择一名其他角色，然后令其选择一项：1.弃置与你弃置的牌类别均不同的一张手牌；2.翻面，然后将手牌摸至四张。<br />
+		<strong>御策</strong>——当你受到伤害后，你可以展示一张手牌，然后除非伤害来源弃置与你展示的牌类别不同的一张手牌，否则你回复1点体力。</td>
+		<th class='online'>待定</th></tr>
+
+<tr>
+	<td>WEI 034</td>
+	<td class="wei">魏</td>
+	<th>曹　真</th>
+	<td>荷国天督</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>司敌</strong>——其他角色出牌阶段开始时，你可以弃置一张与你装备区里的牌颜色相同的非基本牌，然后该角色于此阶段内不能使用和打出其与此牌颜色相同的牌。此阶段结束时，若其此阶段没有使用【杀】，视为你对其使用了【杀】。</td>
+	<th class='jiang'>将<sub>2014</sub></th></tr>
+
+<tr>
+	<td>WEI 035</td>
+	<td class="wei">魏</td>
+	<th>陈　群</th>
+	<td>万世臣表</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>品第</strong>——出牌阶段，你可以弃置一张牌并选择一名其他角色（不能弃置相同类型牌且不能指定相同的角色），然后令其执行一项：摸X张牌；弃置X张牌（X为本回合此技能发动次数）。若其已受伤，你须横置自身。<br />
+		<strong>法恩</strong>——当一名角色翻面或横置后，你可以令其摸一张牌。</td>
+	<th class='jiang'>将<sub>2014</sub></th></tr>
+
+<tr>
+	<td>WEI 036</td>
+	<td class="wei">魏</td>
+	<th>韩浩&史涣</th>
+	<td>中军之主</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>慎断</strong>——当你的一张黑色基本牌因弃置而置入弃牌堆后，你可以将此牌当【兵粮寸断】使用（无距离限制）。<br />
+		<strong>勇略</strong>——其他角色的判定阶段开始时，若其在你的攻击范围内，则你可以弃置其判定区里的一张牌。若如此做，视为你对其使用一张【杀】，然后若此【杀】未造成过伤害，则你摸一张牌。</td>
+	<th class='jiang'>将<sub>2014</sub></th></tr>
+
+<tr>
+	<td>WEI 037</td>
+	<th class='wei zhugong'>魏</th>
+	<th>曹　叡</th>
+	<td>天姿的明君</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>恢拓</strong>——每当你受到伤害后，你可以令一名角色进行一次判定，若结果为红色，该角色回复1点体力；若结果为黑色，该角色摸X张牌（X为此次伤害的伤害数）。<br />
+		<strong>明鉴</strong>——出牌阶段限一次，你可以将所有手牌交给一名其他角色，然后该角色下回合的手牌上限+1，且出牌阶段内可以多使用一张【杀】。<br />
+		<strong>兴衰</strong>——主公技，限定技，当你进入濒死状态时，你可令其他魏势力角色依次选择是否令你回复1点体力。选择是的角色在此次濒死结算结束后受到1点伤害。</td>
+	<th class='jiang'>原<sub>2016</sub></th></tr>
+
+<tr>
+	<td>WEI 038</td>
+	<td class="wei">魏</td>
+	<th>曹　休</th>
+	<td>千里骐骥</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>千驹</strong>——锁定技，你计算与其他角色的距离-X（X为你已损失体力值）。<br />
+		<strong>倾袭</strong>——当你使用【杀】对目标角色造成伤害时，若你的装备区里有武器牌，你可令其选择一项：1.弃置等同于此武器牌攻击范围张数的手牌，然后弃置此牌；2.令此伤害+1。</td>
+	<th class='jiang'>原<sub>2016</sub></td>
+</tr>
+
+<tr>
+	<td>WEI 039</td>
+	<td class="wei">魏</td>
+	<th>钟　繇</th>
+	<td>正楷萧曹</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>活墨</strong>——当你需要使用基本牌时（你本回合使用过的基本牌除外），你可以将一张黑色的非基本牌置于牌堆顶，视为使用此基本牌。<br />
+		<strong>佐定</strong>——当其他角色于其出牌阶段内使用黑桃牌指定目标后，若没有角色于此阶段内受到过伤害，则你可以令其中的一个目标摸一张牌。</td>
+	<th class='jiang'>将<sub>2015</sub></th></tr>
+
+<tr>
+	<td>WEI 040</td>
+	<td class="wei">魏</td>
+	<th>郭皇后</th>
+	<td>月华驱霾</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>矫诏</strong>——出牌阶段限一次，你可以展示一张手牌，然后令你距离最近的角色声明一种基本牌，本回合你可将此牌当声明的牌使用（不能对自己使用）。<br />
+		<strong>殚心</strong>——当你受到伤害后，你可以摸一张牌，或修改“矫诏”（可被修改两次）。<br />
+	<span class='getskill'>修改1·矫诏</span>——出牌阶段限一次，你可以展示一张手牌，然后令你距离最近的角色声明一种基本牌或普通锦囊牌，本回合你可将此牌当声明的牌使用（不能对自己使用）。<br />
+	<span class='getskill'>修改2·矫诏</span>——出牌阶段限一次，你可以将一张手牌当任意一种基本牌或通常锦囊牌使用（不能对自己使用）。</td>
+	<th class='xinghuo'>星火燎原-天机</th></tr>
+
+<tr>
+	<td>WEI 041</td>
+	<td class="wei">魏</td>
+	<th>孙资&刘放</th>
+	<td>服谗搜慝</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>瑰藻</strong>——若你于弃牌阶段弃置过至少两张牌且这些牌花色均不相同，则你可以回复1点体力或摸一张牌。<br />
+		<strong>讥谀</strong>——出牌阶段限一次，你可以令一名角色弃置一张手牌，若如此做，你不能使用与之相同花色的牌，直到回合结束。若其以此法弃置的牌为黑桃，你翻面并令其失去1点体力。若你有未被“讥谀”限制的花色手牌，则你可以对本回合未选择过的角色再发动一次“讥谀”。</td>
+	<th class='jiang'>2019</th></tr>
+
+<tr>
+	<td>WEI 042</td>
+	<td class="wei">魏</td>
+	<th>杨　修</th>
+	<td>胸中锦帛</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>啖酪</strong>——当你成为锦囊牌的目标后，若你不是此牌的唯一目标，你可以摸一张牌，然后此牌对你无效。<br />
+		<strong>鸡肋</strong>——当你受到伤害后，你可以声明一种类别的手牌，本回合伤害来源不能使用、打出或弃置你声明的此类手牌。</td>
+	<th class='online'>限定</th></tr>
+
+<tr>
+	<td>WEI 043</td>
+	<td class="wei">魏</td>
+	<th>陈　琳</th>
+	<td>破竹之咒</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>笔伐</strong>——结束阶段，你可以将一张手牌扣置于没有“笔伐”牌的一名其他角色武将牌旁，然后该角色的回合开始时，其观看“笔伐”牌并选择一项：1.交给你一张类别相同的手牌，并获得此牌；2.移去此牌，然后失去1点体力。<br />
+		<strong>颂词</strong>——出牌阶段，你可以选择一项：1.令一名手牌数小于其体力值的角色摸两张牌；2.令一名手牌数大于其体力值的角色弃置两张牌。每名角色限一次。</td>
+	<th class='online'>限定</th></tr>
+
+<tr>
+	<td>WEI 044</td>
+	<td class="wei">魏</td>
+	<th>程　昱</th>
+	<td>谋定后动</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>设伏</strong>——结束阶段，你可以记录一个基本牌或锦囊牌的名称并扣置一张手牌，称为“伏兵”。当其他角色于你回合外使用手牌时，你可以移去一张记录名称相同的“伏兵”，然后此牌无效。<br />
+		<strong>贲育</strong>——当你受到伤害后，你可以选择一项：1.将手牌摸至与伤害来源手牌数相同（最多摸至5张）；2.弃置大于伤害来源手牌数的手牌，然后对其造成1点伤害。</td>
+	<th class='online'>限定</th></tr>
+
+<tr>
+	<td>WEI 045</td>
+	<td class="wei">魏</td>
+	<th>庞　德</th>
+	<td>抬榇之悟</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>马术</strong>——锁定技，你计算与其他角色的距离-1。<br />
+		<strong>决死</strong>——出牌阶段，你可以弃置一张【杀】并选择你攻击范围内的一名其他角色，然后该角色弃置一张牌。若其弃置的不是【杀】且你的体力值不大于该角色，则你视为对其使用【决斗】。</td>
+	<th class='xinghuo'>星火燎原-天同</th></tr>
+
+<tr>
+	<td>WEI 046</td>
+	<td class="wei">魏</td>
+	<th>蔡文姬</th>
+	<td>金璧之才</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>陈情</strong>——每轮限一次，当一名角色进入濒死状态时，你可以令另一名其他角色摸四张牌，然后弃置四张牌，若其以此法弃置的四张牌花色各不相同，则其视为对处于濒死状态的角色使用一张【桃】。<br />
+		<strong>默识</strong>——结束阶段，你可以将一张手牌当你出牌阶段内使用过的第一张基本牌或普通锦囊牌使用，然后你可以将一张手牌当你出牌阶段使用过的第二张基本牌或普通锦囊牌使用。</td>
+	<th class='xinghuo'>星火燎原-天同</th></tr>
+
+<tr>
+	<td>WEI 047</td>
+	<td class="wei">魏</td>
+	<th>贾　诩</th>
+	<td>算无遗策</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>缜略</strong>——锁定技，你使用的普通锦囊牌不能被【无懈可击】响应；你不能被选择为延时锦囊牌的目标。<br />
+		<strong>间书</strong>——限定技，出牌阶段，你可以将一张黑色手牌交给一名其他角色，并选择一名攻击范围内含有其的另一名角色，然后令这两名角色拼点：赢的角色弃置两张牌，没赢的角色失去1点体力。<br />
+		<strong>拥嫡</strong>——限定技，当你受到伤害后，你可令一名其他男性角色增加1点体力上限，然后若该角色的武将牌上有主公技且其身份不为主公，其拥有此主公技。</td>
+	<th class='xianxia'>珍藏<sub>2017</sub></th></tr>
+
+<tr>
+	<td>WEI 048</td>
+	<td class="wei">魏</td>
+	<th>关　羽</th>
+	<td>汉寿亭侯</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>武圣</strong>——你可以将一张红色牌当【杀】使用或打出。<br />
+		<strong>单骑</strong>——觉醒技，准备阶段，若你的手牌数大于体力值且本局游戏的主公不是刘备，你减1点体力上限，然后获得"马术"和"怒斩"。<br />
+	<span class='getskill'>马术</span>——锁定技，你计算与其他角色的距离-1。<br />
+	<span class='getskill'>怒斩</span>——锁定技，你使用锦囊牌转化的【杀】无次数限制；你使用装备牌转化的【杀】造成的伤害+1。</td>
+	<th class='zhuo'>桌<sub>51</sub></th></tr>
+
+<tr>
+	<td>WEI 049</td>
+	<td class="wei">魏</td>
+	<th>曹　昂</th>
+	<td>悍不畏死</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>慷忾</strong>—— 当一名角色成为【杀】的目标后，若你与其距离1以内，则你可以摸一张牌，然后交给其一张牌并展示之。若此牌为装备牌，该角色可以使用此牌。</td>
+	<th class='xinghuo'>星火燎原-天府</th></tr>
+
+<tr>
+	<td>WEI 050</td>
+	<td class="wei">魏</td>
+	<th>诸葛诞</th>
+	<td>挥剑惊石</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>功獒</strong>——锁定技，当其他角色死亡后，你加1点体力上限，然后回复1点体力。<br />
+		<strong>举义</strong>——觉醒技，准备阶段，若你已受伤且体力上限大于全场角色数，你将手牌摸至等同于体力上限的张数，然后获得"崩坏"和"威重"。<br/>
+	<span class='getskill'>崩坏</span>——锁定技，结束阶段，若你不是体力值最小的角色，你失去1点体力或减1点体力上限。<br/>
+	<span class='getskill'>威重</span>——锁定技，当你的体力上限变化时，你摸一张牌。</td>
+	<th class='xinghuo'>星火燎原-天府</th></tr>
+
+<tr>
+	<td>WEI 051</td>
+	<td class="wei">魏</td>
+	<th>姜　维</th>
+	<td>幼麒</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>困奋</strong>——锁定技，结束阶段，你失去1点体力，然后摸两张牌。<br />
+		<strong>逢亮</strong>——觉醒技，当你进入濒死状态时，你减1点体力上限并将体力回复至2点，然后获得"挑衅"，并修改"困奋"。<br/>
+		<span class='getskill'>挑衅</span>——出牌阶段限一次，你可以选择一名攻击范围内含有你的角色，然后除非该角色对你使用一张【杀】，否则你弃置其一张牌。<br/>
+		<span class='getskill'>修改1·困奋</span>——结束阶段，你可以失去1点体力，然后摸两张牌。</td>
+	<th class='xinghuo'>星火燎原-天同</th></tr>
+
+<tr>
+	<td>WEI 052</td>
+	<td class="wei">魏</td>
+	<th>司马朗</th>
+	<td>试尝百草</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>郡兵</strong>——一名角色的结束阶段，若其手牌数小于2，该角色可以摸一张牌并将所有手牌交给你，然后你将等量的牌交给该角色。<br />
+		<strong>去疾</strong>——出牌阶段限一次，若你已受伤，你可以弃置X张牌并选择至多X名已受伤的角色（X为你已损失的体力值），这些角色各回复1点体力，然后若你以此法弃置过黑色牌，你失去1点体力。</td>
+	<th class='xinghuo'>星火燎原-天梁</th></tr>
+
+<tr>
+	<td>WEI 053</td>
+	<td class="wei">魏</td>
+	<th>王　基</th>
+	<td>经行合一</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>奇制</strong>——当你于回合内使用基本牌或锦囊牌指定目标后，你可以弃置不是此牌目标的一名角色一张牌，然后该角色摸一张牌。<br />
+		<strong>进趋</strong>——结束阶段，你可以摸两张牌，然后将手牌弃置至X张（X为你于此回合内发动过“奇制”的次数）。</td>
+	<th class='yin'>阴</th></tr>
+
+<tr>
+	<td>WEI 054</td>
+	<td class="wei">魏</td>
+	<th>李　通</th>
+	<td>一骑万川</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>推锋</strong>—— 当你受到1点伤害后，你可以将一张牌置于武将牌上，称为“锋”。准备阶段开始时，若你有“锋”，你移去所有“锋”，摸两倍数量的牌，然后本回合你可以多使用X张【杀】。（X为你本回合移去“锋”的数量）</td>
+	<th class='zhuo'>桌<sub>79</sub></th></tr>
+
+<tr>
+	<td>WEI 055</td>
+	<td class="wei">魏</td>
+	<th>戏志才</th>
+	<td>负俗的天才</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>天妒</strong>——当你的判定牌生效后，你可以获得此牌。<br />
+		<strong>先辅</strong>——锁定技，游戏开始时，你选择一名其他角色，当其受到伤害后，你受到等量的伤害，当其回复体力后，你回复等量的体力。<br />
+		<strong>筹策</strong>——当你受到1点伤害后，你可以判定，若结果为：黑色，你弃置一名角色区域里的一张牌；红色，你选择一名角色，其摸一张牌，若其是“先辅”选择的角色，改为其摸两张牌。</td>
+	<th class='xinghuo'>星火燎原-天机</th></tr>
+
+<tr>
+	<td>WEI 056</td>
+	<td class="wei">魏</td>
+	<th>杜　畿</th>
+	<td>卧镇京畿</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>安东</strong>——当你受到其他角色造成的伤害时，你可令伤害来源选择一项：1.防止此伤害，本回合弃牌阶段红桃牌不计入手牌上限；2.观看其手牌，若其中有红桃牌则你获得这些红桃牌。<br />
+		<strong>应势</strong>——出牌阶段开始时，若没有武将牌旁有“酬”的角色，你可将所有红桃牌置于一名其他角色的武将牌旁，称为“酬”。若如此做，当一名角色使用【杀】对武将牌旁有“酬”的角色造成伤害后，其可以获得一张“酬”。当武将牌旁有“酬”的角色死亡时，你获得所有“酬”。
+		</td>
+	<th class='xinghuo'>星火燎原-天梁</th></tr>
+
+<tr>
+	<td>WEI 057</td>
+	<td class="wei">魏</td>
+	<th>吕　虔</th>
+	<td>恩威并诸</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>威虏</strong>——锁定技，当你受到其他角色造成的伤害后，伤害来源在你的下个回合出牌阶段开始时失去体力值直到仅剩1点体力，然后回合结束时回复以此法失去的体力值。<br />
+		<strong>赠刀</strong>——限定技，出牌阶段，你可以将装备区内任意数量的牌置于一名其他角色的武将牌旁。该角色每次造成伤害时，移去一张“赠刀”牌，然后此伤害+1。 
+		</td>
+	<th class='xinghuo'>星火燎原-七杀</th></tr>
+
+<tr>
+	<td>WEI 058</td>
+	<td class="wei">魏</td>
+	<th>王　朗</th>
+	<td>凤鹛</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>鼓舌</strong>——出牌阶段限一次，你可以用一张手牌与至多三名角色同时拼点，然后依次结算拼点结果，没赢的角色选择一项：1.弃置一张牌；2.令你摸一张牌。若拼点没赢的角色是你，你需先获得一个“饶舌”标记（你有7个饶舌标记时，你死亡）。<br />
+		<strong>激词</strong>——当你发动“鼓舌”拼点的牌亮出后，若点数小于X，你可令点数+X；若点数等于X，你可以令你本回合发动“鼓舌”的次数上限+1。（X为你“饶舌”标记的数量）</td>
+	<th class='online'>限定</th></tr>
+
+<tr>
+	<td>WEI 059</td>
+	<td class="wei">魏</td>
+	<th>管　辂</th>
+	<td>问天通神</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>推演</strong>——出牌阶段开始时，你可以观看牌堆顶的两张牌。<br />
+		<strong>卜算</strong>——出牌阶段限一次，你可以选择一名其他角色，然后选择至多两张不同的卡牌名称（限基本牌或锦囊牌）。该角色下次摸牌阶段摸牌时，改为从牌堆或弃牌堆中获得你选择的牌。<br />
+		<strong>命戒</strong>——结束阶段，你可以摸一张牌，若此牌为红色，你可以重复此流程直到摸到黑色牌或摸到第三张牌。当你以此法摸到黑色牌时，你失去1点体力。</td>
+	<th class='online'>待定</th></tr>
+
+<tr>
+	<td>WEI 060</td>
+	<td class="wei">魏</td>
+	<th>朱　灵</th>
+	<td>良将之亚</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>战意</strong>——出牌阶段限一次，你可以弃置一张牌并失去1点体力，然后根据你弃置的牌获得以下效果直到回合结束：基本牌—你可将一张基本牌可当任意一张基本牌使用或打出；锦囊牌—摸两张牌且你使用的牌无距离限制；装备牌—你使用【杀】指定目标后，该角色弃置两张牌。</td>
+	<th class='zhuo'>桌<sub>76</sub></th></tr>
+
+<tr>
+	<td>WEI 061</td>
+	<td class="wei">魏</td>
+	<th>曹　纯</th>
+	<td>虎豹骑首</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>缮甲</strong>——出牌阶段开始时，你可以摸三张牌，然后弃置三张牌（本局游戏你每失去过一张装备区里的牌，便少弃置一张），若你没有以此法弃置基本牌或锦囊牌，可视为使用一张【杀】（不计入次数限制）。</td>
+	<th class='online'>祈福</th>
+
+	<tr>
+		<td>WEI 062</td>
+		<td class="wei">魏</td>
+		<th>刘　晔</th>
+		<td>佐世之才</td>
+		<td>3</td>
+		<td class='jineng'>
+			<strong>破橹</strong>——锁定技，回合开始时，若你的装备区里没有【霹雳车】，你使用一张【霹雳车】；当你受到1点伤害后，若你的装备区内没有【霹雳车】，你摸一张牌。<br/>
+			<strong>筹略</strong>——出牌阶段开始时，你可以令一名其他角色选择是否交给你一张牌，若其选择是，则你使用上一张对你造成伤害的不为延时锦囊的牌。</td>
+		<th class='zhuo'>桌<sub>83</sub></th></tr>
+
+<tr>
+	<td>WEI 063</td>
+	<td class="wei">魏</td>
+	<th>马　钧</th>
+	<td>没渊瑰璞</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>精械</strong>——出牌阶段，你可以展示你手牌区或装备区里的一张防具牌或【诸葛连弩】，然后将此牌的牌名和技能分别做修改。当你进入濒死状态时，你可以重铸一张防具牌。若如此做，你将你的体力值回复至1点。<br/>
+		强化装备：<br/>
+		诸葛连弩→元戎精械弩：攻击范围3，你使用【杀】无次数限制；<br/>
+		八卦阵→先天八卦阵：当你需要使用或打出一张【闪】时，你可以进行判定：若判定结果不为黑桃，则视为你使用或打出了一张【闪】；<br/>
+		仁王盾→仁王金刚盾：锁定技，黑色【杀】及红桃【杀】对你无效；<br/>
+		白银狮子→照月狮子盔：锁定技，当你受到伤害时，若此伤害多于1点，则防止多余的伤害；当你失去装备区里的【白银狮子】时，你回复1点体力，然后摸两张牌；<br/>
+		藤甲→桐油百韧甲：【南蛮入侵】、【万箭齐发】和普通【杀】对你无效；当你受到火焰伤害时，此伤害+1；当你进入连环状态前，你防止此次操作。<br/>
+		<strong>巧思</strong>——出牌阶段限一次，你可以表演“水转百戏图”来赢取相应的牌，然后你选择一项：1.弃置等量的牌；2.将等量的牌交给一名其他角色</td>
+	<th class='online'>Online</th></tr>
+			
+<tr>
+	<td>WEI 064</td>
+	<td class="wei">魏</td>
+	<th>辛宪英</th>
+	<td>名门智女</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>忠鉴</strong>—— 出牌阶段限一次，你可以展示一张手牌，然后展示一名其他角色至多三张手牌。对比你与其展示的牌，每有一张牌花色相同，你摸一张牌；每有一张牌点数相同，你对其造成1点伤害；每有一张牌花色点数均不同，你弃置一张手牌。<br />
+		<strong>才识</strong>——摸牌阶段开始时，你可以选择一项：1.少摸一张牌，然后本回合“忠鉴”可多展示自己一张手牌；2.本回合手牌上限-1，然后本回合“忠鉴”可多展示目标一张牌；3.多摸两张牌，然后本回合不能发动“忠鉴”。</td>
+		<th class='online'>待定</th></tr>
+
+<tr>
+	<td>WEI 065</td>
+	<td class="wei">魏</td>
+	<th>嵇　康</th>
+	<td>峻峰孤松</td>
+	<td>3</td>
+	<td class='jineng'>		
+		<strong>清弦</strong>——当你受到伤害/回复体力后，若没有角色处于濒死状态，你可以令伤害来源/一名其他角色执行一项：失去1点体力，随机使用一张装备牌；回复1点体力，弃置一张装备牌。若其以此法使用或弃置的牌为梅花，你摸一张牌。<br />
+<strong>绝响</strong>——当你死亡后，你可以令一名角色随机获得“清弦残谱”/以下其中一个技能，然后直到其下回合开始，其不能被选择为除其外的角色使用梅花牌的目标。<br />
+<span class="getskill">激弦</span>——当你受到伤害后，若没有角色处于濒死状态，你可以令伤害来源失去1点体力，随机使用一张装备。<br />
+<span class="getskill">烈弦</span>——当你回复体力后，若没有角色处于濒死状态，你可以令一名其他角色失去1点体力，随机使用一张装备。<br />
+<span class="getskill">柔弦</span>——当你受到伤害后，若没有角色处于濒死状态，你可以令伤害来源回复1点体力，弃置一张装备。<br />
+<span class="getskill">和弦</span>——当你回复体力后，若没有角色处于濒死状态，你可以令一名其他角色回复1点体力，弃置一张装备。</td>
+	<th class='jiang'>原<sub>2017</sub></th></tr>
+
+<tr>
+	<td>WEI 066</td>
+	<td class="wei">魏</td>
+	<th>蒯越&蒯良</th>
+	<td>雍论臼谋</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>荐降</strong>——当你成为其他角色使用牌的目标后，你可令手牌数最少的一名角色摸一张牌。<br />
+		<strong>审时</strong>——转换技，①出牌阶段限一次，你可以将一张手牌交给一名手牌数最多的角色，然后对其造成1点伤害，若该角色因此死亡，则你可以令一名角色将手牌摸至四张。②其他角色对你造成伤害后，你可以观看该角色的手牌，然后交给其一张牌，当前回合结束时，若该角色未失去此牌，你将手牌摸至四张。
+		</td>
+	<th class='yin'>阴</th></tr>
+
+<tr>
+	<td>WEI 067</td>
+	<td class="wei">魏</td>
+	<th>郝　昭</th>
+	<td>扣弦的豪将</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>镇骨</strong>——结束阶段，你可以选择一名其他角色，你的回合结束时和该角色的下个回合结束时，其将手牌摸至或弃至与你手牌数相同（摸牌时至多摸至5张）。
+		</td>
+	<th class='lei'>雷</th></tr>
+
+<tr>
+	<td>WEI 068</td>
+	<td class="wei">魏</td>
+	<th>毌丘俭</th>
+	<td>镌功铭征荣</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>征荣</strong>——当你对其他角色造成伤害后，若其手牌比你多，你可以将其一张牌置于你的武将牌上，称为“荣”。<br />
+		<strong>鸿举</strong>——觉醒技，准备阶段，若“荣”的数量大于等于3且场上有角色死亡，则你可以用任意张手牌替换等量的“荣”，然后扣减1点体力上限并获得技能“清侧”。<br />
+		<span class="getskill">清侧</span>——出牌阶段，你可以移去一张“荣”，然后弃置场上的一张牌。
+		</td>
+	<th class='lei'>雷</th></tr>
+
+<tr>
+	<td>WEI 069</td>
+	<td class="wei">魏</td>
+	<th>鲁　芝</th>
+	<td>夷夏慕德</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>清忠</strong>——出牌阶段开始时，你可以摸两张牌，若如此做，本阶段结束时，你与手牌数最少的角色交换手牌。<br />
+		<strong>卫境</strong>——每轮限一次，你可以视为使用一张【杀】或【闪】。
+		</td>
+	<th class='online'>Online</th></tr>
+
+<tr>
+	<td>WEI 070</td>
+	<td class="wei">魏</td>
+	<th>曹　婴</th>
+	<td>龙城凤鸣</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>凌人</strong>——出牌阶段限一次，当你使用【杀】或伤害类锦囊牌指定目标后，你可以猜测其中一个目标的手牌是否有基本牌、锦囊牌或装备牌。至少猜对一项则此牌对其伤害+1；至少猜对两项则你摸两张牌；猜对三项则你获得“奸雄”和“行殇”直到你下回合开始。<br />
+		<span class="getskill">奸雄</span>——当你受到伤害后，你可以选择一项：1.摸一张牌；2.获得造成此伤害的牌。<br />
+		<span class="getskill">行殇</span>——当其他角色死亡时，你可以获得其所有牌。<br />
+		<strong>伏间</strong>——锁定技，结束阶段，你随机观看一名其他角色的X张手牌（X为全场手牌数最少的角色手牌数）。
+		</td>
+	<th class='online'>祈福</th>
+
+<tr>
+	<td>WEI ???</td>
+	<td class="wei">魏</td>
+	<th>张　恭</th>
+	<td></td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>遣信</strong>——出牌阶段限一次，若牌堆中没有“信”，你可以选择一名角色并将任意张手牌放置于牌堆中X倍数的位置（X为存活人数），称为“信”。该角色的弃牌阶段开始时，若其手中有本回合获得的“信”，其选择一项：令你将手牌摸至四张；本回合手牌上限-2。<br />
+		<strong>镇行</strong>——结束阶段开始时或当你受到伤害后，你可以观看牌堆顶的至多三张牌，然后你获得其中与其余牌花色均不相同的一张牌。</td>
+	<th class='online'>逐鹿天下</th>
+
+<tr>
+	<td>WEI ???</td>
+	<td class="wei">魏</td>
+	<th>唐　咨</th>
+	<td>工学之奇才</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>兴棹</strong>——锁定技，场上受伤的角色为1个以上，你拥有技能“恂恂”；2个或以上，你使用装备牌时摸一张牌；3个或以上，你跳过弃牌阶段。<br />
+		<span class="getskill">恂恂</span>——摸牌阶段开始时，你可以观看牌堆顶的四张牌，然后将其中的两张牌置于牌堆顶，将其余的牌置于牌堆底。</td>
+	<th class='daiding'>待定</th></tr>
+
+<tr>
+	<td>WEI ???</td>
+	<td class="wei">魏</td>
+	<th>司马昭</th>
+	<td>四海威服</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>怠攻</strong>——每回合限一次。当你受到伤害时，你可以展示所有手牌令伤害来源选择一项：1.交给你一张你手牌中没有的花色的牌；2.防止此伤害。<br />
+		<strong>昭心</strong>——出牌阶段限一次，你可以将任意张牌置于你的武将牌上，称为“望”（其总数不能超过3），然后你摸等量的牌。你攻击范围内的角色的摸牌阶段结束后，其获得一张由你选择的一张“望”，然后你可以对其造成1点伤害。</td>
+	<th class='daiding'>待定</th></tr>
+
+<tr>
+	<td>WEI ???</td>
+	<td class="wei">魏</td>
+	<th>王元姬</th>
+	<td>清雅抑华</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>谦冲</strong>——锁定技。若你的装备区内的牌全部为黑色，你获得“帷幕”；若你的装备区内的牌全部为红色，你获得“明哲”。出牌阶段开始时，若你不满足上述条件，你选择一种类型的牌，本回合使用此类型的牌无次数和距离限制。<br />
+		<span class="getskill">帷幕</span>——锁定技，你不是黑色锦囊牌的合法目标。<br />
+		<span class="getskill">明哲</span>——当你于回合外使用、打出或因弃置而失去一张红色牌后，你可以摸一张牌。<br />
+		<strong>尚俭</strong>——一名角色的结束阶段开始时，若你此回合失去的牌不大于你的体力值，你可摸等同失去数量的牌。</td>
+	<th class='daiding'>待定</th>
+</tr>
+
+<tr>
+	<td>WEI ???</td>
+	<td class="wei">魏</td>
+	<th>张昌蒲</th>
+	<td></td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>严教</strong>——出牌阶段限一次，你可以选择一名其他角色。从牌堆顶亮出四张牌，该角色将这些牌分成点数之和相等的两组，你与其各获得其中一组，然后将剩余未分组的牌置入弃牌堆。若未分组的牌超过一张，你本回合手牌上限-1。<br />
+		<strong>省身</strong>——当你受到伤害后，你可以摸一张牌且下一次发动“严教”亮出的牌数+1。若你的手牌数为全场最少，则改为摸两张牌；若你的体力值为全场最少，则“严教”亮出的牌数改为+2（加值总数不能超过4）。</td>
+	<th class='online'>自走棋</th></tr>
+</tr>
+
+<tr>
+	<td>WEI ???</td>
+	<td class="wei">魏</td>
+	<th>蒋　干</th>
+	<td></td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>盗书</strong>——出牌阶段限一次，你可以选择一名角色并选择一种花色，然后获得该角色一张手牌。若此牌与你选择的花色相同，你对其造成1点伤害且此技能视为未发动过；若花色不同，则你交给该角色一张其他花色的手牌（若没有需展示所有手牌）。<br />
+		<strong>伪诚</strong>——你交给其他角色手牌，或你的手牌被其他角色获得后，若你的手牌数小于当前体力值，则你可以摸一张牌。</td>
+	<th class='online'>限定</th></tr>
+
+<tr>
+	<td>WEI ???</td>
+	<td class="wei">魏</td>
+	<th>文　鸯</th>
+	<td></td>
+	<td>5</td>
+	<td class='jineng'>
+		<strong>膂力</strong>——回合限一次，当你造成伤害后，你可以将手牌摸至与体力值相同或将体力回复至与手牌数相同。<br/>
+		<strong>仇决</strong>——觉醒技，每个回合结束时，若你的手牌数和体力值相差3或更多，你减1点体力上限并获得技能“背水”，然后“膂力”改为“在自己的回合时每回合限两次”。<br/>
+		<span class="getskill">修改1·膂力</strong>——回合限一次(在自己的回合时每回合限两次)，当你造成伤害后，你可以将手牌摸至与体力值相同或将体力回复至与手牌数相同。<br/>
+		<span class="getskill">背水</strong>——觉醒技，准备阶段，若你的手牌数或体力值小于2，你减1点体力上限并获得技能“清剿”，然后“膂力”改为受到伤害后也可发动。<br/>
+		<span class="getskill">修改2·膂力</strong>——回合限一次(在自己的回合时每回合限两次)，当你造成或受到伤害后，你可以将手牌摸至与体力值相同或将体力回复至与手牌数相同。<br/>
+		<span class="getskill">清剿</strong>——出牌阶段开始时，你可以弃置所有手牌，然后从牌堆或弃牌堆中随机获得八张牌名各不相同且副类别不同的牌。若如此做，结束阶段，你弃置所有牌。</td>
+	<th class='online'>限定</th></tr>
+
+<tr>
+	<td rowspan="2">SHU 001</td>
+	<th rowspan="2" class="shu zhugong">蜀</th>
+	<th rowspan="2">刘　备</th>
+	<td rowspan="2">乱世的枭雄</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>仁德</strong>——出牌阶段每名角色限一次，你可以将任意张手牌交给一名其他角色。当你给出第二张“仁德”牌时，你可以视为使用一张基本牌。<br />
+		<strong>激将</strong>——主公技，当你需要使用或打出【杀】时，你可以令其他蜀势力角色选择是否打出一张【杀】（视为由你使用或打出）。</td>
+	<th class="wujiangtupo">武将突破</th>
+</tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：关羽、张飞、甘夫人、法正<br/>
+		<strong>仁德</strong>——出牌阶段，你可以将任意张手牌交给一名本阶段未获得过“仁德”牌的其他角色。当你于本阶段给出第二张“仁德”牌时，你可以视为使用一张基本牌。 </td>
+	<th class="guozhan">新国战</th>
+</tr>
+
+<tr>
+	<td rowspan="2">SHU 002</td>
+	<td rowspan="2" class="shu">蜀</td>
+	<th rowspan="2">关　羽</th>
+	<td rowspan="2">美髯公</td>
+	<td>4</td>
+	<td class="jineng">
+		<strong>武圣</strong>——你可以将一张红色牌当【杀】使用或打出；你使用的方块【杀】不受攻击范围限制。<br />
+		<strong>义绝</strong>——出牌阶段限一次，你可以弃置一张牌，然后令一名其他角色展示一张手牌。若此牌为黑色，则其本回合内非锁定技失效且不能使用或打出手牌，你对其使用的红桃【杀】伤害+1；若此牌为红色，则你获得之，然后你可令该角色回复1点体力。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td>5</td>
+	<td class="jineng">
+		珠联璧合：刘备<br/>
+		<strong>武圣</strong>——你可以将一张红色牌当【杀】使用或打出。
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="3">SHU 003</td>
+	<td rowspan="3" class="shu">蜀</td>
+	<th rowspan="3">张　飞</th>
+	<td rowspan="3">万夫不当</td>
+	<td rowspan="3">4</td>
+	<td class="jineng">
+		<strong>咆哮</strong>——锁定技，你使用【杀】无次数限制。<br />
+		<strong>替身</strong>——限定技。准备阶段开始时，你可以将体力回复至等同于你上回合结束时的体力值，然后摸X张牌（X为你以此法回复的体力数值）。</td>
+	<th class="jiexiantupo">界限突破</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>咆哮</strong>——锁定技，你使用【杀】无次数限制。你的出牌阶，若你于当前阶段内使用过【杀】，你于此阶段使用【杀】无距离限制。<br />
+		<strong>替身</strong>——出牌阶段结束时，你可以弃置所有锦囊牌和坐骑牌，然后直到你的下回合开始，获得所有以你为目标且未对你造成伤害的【杀】。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：刘备<br />
+		<strong>咆哮</strong>——锁定技，你使用【杀】无次数限制；你在一回合内使用第二张【杀】时，摸一张牌。 </td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="3">SHU 004</td>
+	<td rowspan="3" class="shu">蜀</td>
+	<th rowspan="3">诸葛亮</th>
+	<td rowspan="3">迟暮的丞相</td>
+	<td rowspan="3">3</td>
+	<td class="jineng">
+		<strong>观星</strong>——准备阶段开始时，你可以观看牌堆顶的X张牌（X为全场角色的数量且至多为5），然后以任意顺序放回牌堆顶或牌堆底。<br />
+		<strong>空城</strong>——锁定技，若你没有手牌，你不是【杀】和【决斗】的合法目标。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>观星</strong>——准备阶段开始时，你可以观看牌堆顶的五张牌（存活人数小于4时改为三张），然后以任意顺序放回牌堆顶或牌堆底。若你将这些牌均放至牌堆底，则结束结束你可以再进行一次“观星”。<br />
+		<strong>空城</strong>——锁定技，若你没有手牌，你不是【杀】和【决斗】的合法目标。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：黄月英<br />
+		<strong>观星</strong>——准备阶段开始时，你可以观看牌堆顶的X张牌（X为全场角色的数量且至多为5），然后以任意顺序放回牌堆顶或牌堆底。<br />
+		<strong>空城</strong>——锁定技，若你没有手牌：当你成为【杀】或【决斗】的目标时，取消之；你的回合外，其他角色交给你的牌置于你的武将牌上。摸牌阶段开始时，你获得你武将牌上的牌。 </td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="3">SHU 005</td>
+	<td rowspan="3" class="shu">蜀</td>
+	<th rowspan="3">赵　云</th>
+	<td rowspan="2">虎威将军</td>
+	<td rowspan="3">4</td>
+	<td class="jineng">
+		<strong>龙胆</strong>——你可以将一张【杀】当【闪】、【闪】当【杀】使用或打出。<br />
+		<strong>涯角</strong>——当你于回合外使用或打出手牌时，你可以展示牌堆顶的一张牌，若这两张牌的类别：相同，你可以将牌堆顶的一张牌交给一名角色；不同，你可以将牌堆顶的一张牌置入弃牌堆。</td>
+	<th class="jiexiantupo">界限突破</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>龙胆</strong>——你可以将一张【杀】当【闪】、【闪】当【杀】使用或打出。<br />
+		<strong>涯角</strong>——当你于回合外使用或打出手牌时，你可以展示牌堆顶的一张牌并将其交给任意一名角色。若这两张牌的类别不同，你弃置一张牌。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td>少年将军</td>
+	<td class="jineng">
+		珠联璧合：刘禅<br/>
+		<strong>龙胆</strong>——你可以将【杀】当【闪】、【闪】当【杀】使用或打出。当你通过发动【龙胆】使用的【杀】被一名角色使用的【闪】抵消时，你可以对另一名角色造成1点伤害。当一名角色使用的【杀】被你通过发动【龙胆】使用的【闪】抵消时，你可以令另一名其他角色回复1点体力。 </td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="2">SHU 006</td>
+	<td rowspan="2" class="shu">蜀</td>
+	<th rowspan="2">马　超</th>
+	<td rowspan="2">一骑当千</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>马术</strong>——锁定技，你计算与其他角色的距离-1。<br />
+		<strong>铁骑</strong>——当你使用【杀】指定一个目标后，你可以令其非锁定技于当前回合内无效，然后进行判定，再令其选择一项：1.弃置与结果花色相同的一张牌；2.令此【杀】不是【闪】的合法目标。</td>
+	<th class="jiexiantupo">界限突破</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：马岱<br />
+		<strong>马术</strong>——锁定技，你计算与其他角色的距离-1。<br />
+		<strong>铁骑</strong>——当你使用【杀】指定一个目标后，你可以进行判定，然后令其本回合一张明置的武将牌的所有非锁定技失效，除非该角色弃置与结果花色相同的一张牌，否则不能使用【闪】。</td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="3">SHU 007</td>
+	<td rowspan="3" class="shu">蜀</td>
+	<th rowspan="3">黄月英</th>
+	<td rowspan="3">归隐的杰女</td>
+	<td rowspan="3">3</td>
+	<td class="jineng">
+		<strong>集智</strong>——当你使用普通锦囊牌时，你摸一张牌。<br />
+		<strong>奇才</strong>——锁定技，你使用锦囊牌无距离限制。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>集智</strong>——当你使用一张锦囊牌时，你可以摸一张牌。若此牌是基本牌，你可以弃置此牌然后本回合手牌上限+1。<br />
+		<strong>奇才</strong>——锁定技，你使用锦囊牌无距离限制；其他角色不能弃置你装备区里的防具和宝物牌。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：诸葛亮、卧龙诸葛亮<br />
+		<strong>集智</strong>——当你使用非转化的普通锦囊牌时，你可以摸一张牌。<br />
+		<strong>奇才</strong>——锁定技。你使用锦囊牌无距离限制。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">SHU 008</td>
+	<td rowspan="2" class="shu">蜀</td>
+	<th rowspan="2">黄　忠</th>
+	<td rowspan="2">老当益壮</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>烈弓</strong>—— 你使用【杀】可以选择距离不大于此【杀】点数的角色为目标；当你使用【杀】指定一个目标后，你可以根据下列条件执行相应的效果：1.其手牌数不大于你的手牌数，此【杀】不可被【闪】响应.2.其体力值不小于你的体力值，此【杀】伤害+1。</td>
+	<th class="biaozhun">标准<sub>2017</sub></th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：魏延<br />
+		<strong>烈弓</strong>——当你于出牌阶段内使用【杀】指定一名角色为目标后，若该角色的手牌数不小于你的体力值或不大于你的攻击范围，你可以令其不能使用【闪】响应此【杀】。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">SHU 009</td>
+	<td rowspan="2" class="shu">蜀</td>
+	<th rowspan="2">魏　延</th>
+	<td rowspan="2">嗜血的独狼</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>狂骨</strong>——锁定技，当你对距离不大于1的一名角色造成1点伤害后，你回复1点体力或摸一张牌。<br />
+		<strong>奇谋</strong>——限定技，出牌阶段，你可以失去任意点体力，然后直到回合结束，你计算与其他角色的距离-X，且你可以多使用X张【杀】（X为你失去的体力值）。</td>
+	<th class="biaozhun">标准<sub>2017</sub></th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：黄忠<br />
+		<strong>狂骨</strong>——当你对距离1以内的一名角色造成1点伤害后，你可以回复1点体力或摸一张牌。</td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="3">SHU 010</td>
+	<td rowspan="3" class="shu">蜀</td>
+	<th rowspan="3">庞　统</th>
+	<td rowspan="3">凤雏</td>
+	<td rowspan="3">3</td>
+	<td class="jineng">
+		<strong>连环</strong>——你可以将一张梅花手牌当【铁索连环】使用或重铸。<br />
+		<strong>涅槃</strong>——限定技，当你处于濒死状态时，你可以弃置你区域里的所有牌，然后将武将牌恢复至游戏开始时的状态，摸三张牌，将体力值回复至3点。</td>
+	<th class="huo">火</th></tr>
+<tr><td class="jineng">
+		<strong>连环</strong>——你可以将梅花牌当【铁索连环】使用或重铸；你使用【铁索连环】选择目标的个数上限+1。<br />
+		<strong>涅槃</strong>——限定技，出牌阶段或当你处于濒死状态时，你可以弃置你区域里的所有牌，复原武将牌，摸三张牌，将体力回复至3点。</td>
+	<th class="huo">2019</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：卧龙诸葛亮<br />
+		<strong>连环</strong>——你可以将一张梅花手牌当【铁索连环】使用或重铸。<br />
+		<strong>涅槃</strong>——限定技，当你处于濒死状态时，你可以弃置你区域里的所有牌，然后将武将牌平置并重置副将的武将牌，摸三张牌，将体力值回复至3点。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">SHU 011</td>
+	<td rowspan="2" class="shu">蜀</td>
+	<th rowspan="2">诸葛亮</th>
+	<td rowspan="2">卧龙</td>
+	<td rowspan="2">3</td>
+	<td class="jineng" rowspan="2">
+		珠联璧合：庞统<br />
+		<strong>八阵</strong>——锁定技，若你的装备区里没有防具牌，你视为装备着【八卦阵】。<br />
+		<strong>火计</strong>——你可以将一张红色手牌当【火攻】使用。<br />
+		<strong>看破</strong>——你可以将一张黑色手牌当【无懈可击】使用。</td>
+	<th class="huo">火</th></tr>
+<tr>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">SHU 012</td>
+	<td rowspan="2" class="shu">蜀</td>
+	<th rowspan="2">姜　维</th>
+	<td rowspan="2">龙的衣钵</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>挑衅</strong>——出牌阶段限一次，你可以令攻击范围内含有你的一名其他角色选择是否对你使用一张【杀】，若该角色选择否，你弃置其一张牌。 <br />
+		<strong>志继</strong>——觉醒技，准备阶段开始时，若你没有手牌，你选择一项：1.回复1点体力；2.摸两张牌。然后你减1点体力上限，获得“观星”。<br />
+		<span class="getskill">观星</span>——准备阶段开始时，你可以观看牌堆顶的X张牌（X为全场角色的数量且至多为5）并调整这些牌的顺序，然后将其中任意数量的牌置于牌堆底。</td>
+	<th class="shan">山</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>挑衅</strong>——出牌阶段限一次，你可以令攻击范围内含有你的一名其他角色选择是否对你使用一张【杀】，若该角色选择否，你弃置其一张牌。 <br />
+		<strong>天覆</strong>——主将技，阵法技。你于与你处于同一队列的角色的回合内视为拥有“看破”。<br />
+		<span class="getskill">看破</span>——你可以将一张黑色手牌当【无懈可击】使用。 <br />
+		<strong>遗志</strong>——副将技。此武将牌上单独的阴阳鱼个数-1；若你的主将拥有“观星”，其描述中的X视为5，否则你视为拥有“观星”。<br />
+		<span class="getskill">观星</span>——准备阶段开始时，你可以观看牌堆顶的X张牌（X为全场角色的数量且至多为5）并调整这些牌的顺序，然后将其中任意数量的牌置于牌堆底。</td>
+	<th class="zhen">阵</th></tr>
+
+<tr>
+	<td rowspan="2">SHU 013</td>
+	<th rowspan="2" class="shu zhugong">蜀</th>
+	<th rowspan="2">刘　禅</th>
+	<td rowspan="2">无为的真命主</td>
+	<td rowspan="2">3</td>
+	<td class="jineng">
+		<strong>享乐</strong>——锁定技，当你成为其他角色使用【杀】的目标时，你令该角色选择是否弃置一张基本牌，若其选择否或其已死亡，此次对你结算的此【杀】对你无效。<br />
+		<strong>放权</strong>——你可以跳过出牌阶段，若如此做，此回合结束时，你可以弃置一张手牌并选择一名其他角色，若如此做，该角色获得一个额外的回合。<br />
+		<strong>若愚</strong>——主公技，觉醒技，准备阶段开始时，若你是体力值最小的角色，你加1点体力上限，然后回复1点体力，获得“激将”。<br />
+		<span class="getskill">激将</span>——主公技，当你需要使用或打出【杀】时，你可以令其他蜀势力角色选择是否打出一张【杀】（视为由你使用或打出）。</td>
+	<th class="shan">山</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：赵云<br />
+		<strong>享乐</strong>——锁定技，当你成为其他角色使用【杀】的目标时，你令该角色选择是否弃置一张基本牌，若其选择否或其已死亡，此次对你结算的此【杀】对你无效。<br />	
+		<strong>放权</strong>——你可以跳过出牌阶段，若如此做，此回合结束时，你可以弃置一张手牌并选择一名其他角色，若如此做，该角色获得一个额外的回合。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="3">SHU 014</td>
+	<td rowspan="3" class="shu">蜀</td>
+	<th rowspan="3">孟　获</th>
+	<td rowspan="3">南蛮王</td>
+	<td rowspan="3">4</td>
+	<td class="jineng" rowspan="2">
+		珠联璧合：祝融<br />
+		<strong>祸首</strong>——锁定技，【南蛮入侵】对你无效；锁定技，当其他角色使用【南蛮入侵】指定目标后，你将此【南蛮入侵】造成的伤害的来源改为你。<br />
+		<strong>再起</strong>——摸牌阶段开始时，若你已受伤，你可以放弃摸牌，亮出牌堆顶的X张牌（X为你已损失的体力值），然后回复等同于其中红桃牌数量的体力，将这些红桃牌置入弃牌堆，获得其余的牌。</td>
+	<th class="lin">林</th></tr>
+<tr>
+	<th class="guozhan">国战</th></tr>
+<tr><td class="jineng">
+		<strong>祸首</strong>——锁定技，【南蛮入侵】对你无效；其他角色使用【南蛮入侵】指定目标后，你成为此牌造成的伤害的伤害来源。<br />
+		<strong>再起</strong>——弃牌阶段结束时，你可以令至多X名角色各选择一项（X为本回合进入弃牌堆的红色牌的数量）：1.摸1张牌；2.令已受伤的你回复1点体力。</td>
+	<th class="lin">2019</th></tr>
+
+<tr>
+	<td rowspan="3">SHU 015</td>
+	<td rowspan="3" class="shu">蜀</td>
+	<th rowspan="3">祝　融</th>
+	<td rowspan="3">野性的女王</td>
+	<td rowspan="3">4</td>
+	<td class="jineng" rowspan="2">
+		珠联璧合：孟获<br />
+		<strong>巨象</strong>——锁定技，【南蛮入侵】对你无效；锁定技，当其他角色使用的【南蛮入侵】因结算完毕而置入弃牌堆后，你获得之。<br />
+		<strong>烈刃</strong>——当你使用【杀】对目标角色造成伤害后，你可以与该角色拼点，若你赢，你获得其一张牌。</td>
+	<th class="lin">林</th></tr>
+<tr>
+	<th class="guozhan">国战</th></tr>
+<tr><td class="jineng">
+		<strong>巨象</strong>——锁定技，【南蛮入侵】对你无效；其他角色使用的【南蛮入侵】结算结束后，你获得此【南蛮入侵】。<br />
+		<strong>烈刃</strong>——当你使用【杀】指定角色后，你可以与目标角色拼点。若你：赢，你获得其一张牌；没赢，你获得其拼点的牌，其获得你拼点的牌。</td>
+	<th class="lin">2019</th></tr>
+
+<tr>
+	<td rowspan="2">SHU 016</td>
+	<td rowspan="2" class="shu">蜀</td>
+	<th rowspan="2">甘夫人</th>
+	<td rowspan="2">昭烈皇后</td>
+	<td rowspan="2">3</td>
+	<td class='jineng'>
+		<strong>淑慎</strong>——当你回复1点体力时，你可以令一名其他角色回复1点体力或摸两张牌。<br />
+		<strong>神智</strong>——准备阶段开始时，你可以弃置所有手牌，若你以此法弃置的手牌数不小于X，你回复1点体力(X为你当前的体力值)。</td>
+	<th class='zhuo'>桌<sub>45</sub></th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：刘备<br />
+		<strong>淑慎</strong>——当你回复1点体力后，你可以令一名其他角色摸一张牌。<br />
+		<strong>神智</strong>——准备阶段开始时，你可以弃置所有手牌，若你以此法弃置的牌的数量不小于X（X为你的体力值），你回复1点体力。</td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="2">SHU 017</td>
+	<td class="shu">蜀</td>
+	<th rowspan="2">徐　庶</th>
+	<td>化剑为犁</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>诛害</strong>——其他角色的结束阶段开始时，若该角色于此回合内造成过伤害，你可以对其使用一张【杀】（无距离限制）。<br />
+		<strong>潜心</strong>——觉醒技，当你造成伤害后，若你已受伤，你减1点体力上限，然后获得“荐言”。<br />
+		<span class="getskill">荐言</span>——出牌阶段限一次，你可以声明一种牌的类别或颜色，并亮出牌库中第一张符合你声明的牌，然后你令一名男性角色获得此牌。</td>
+	<th class="jiexiantupo">界限突破</th></tr>
+<tr>
+	<td class="wei">蜀</td>
+	<td>忠孝的侠士</td>
+	<td class='jineng'>
+		<strong>无言</strong>——锁定技，当锦囊牌造成伤害时，若你为来源，你防止此伤害；锁定技，当你受到锦囊牌造成的伤害时，你防止此伤害。<br />
+		<strong>举荐</strong>——结束阶段开始时，你可以弃置一张不为基本牌的牌并选择一名其他角色，令该角色选择一项：1.摸两张牌；2.回复1点体力；3.将背面朝上的武将牌翻面，然后重置之。</td>
+	<th class='xinghuo'>星火燎原-天同</th></tr>
+	
+<tr>
+	<td>SHU 018</td>
+	<td class="shu">蜀</td>
+	<th>蒋琬&费祎</th>
+	<td>社稷股肱</td>
+	<td>3</td>
+	<td class="jineng">
+		<strong>生息</strong>——出牌阶段结束时，若你未于此阶段内造成过伤害，你可以摸两张牌。<br />
+		<strong>守成</strong>——当与你势力相同的一名角色于其回合外失去所有手牌后，你可以令该角色摸一张牌。</td>
+	<th class="zhen">阵</th></tr>
+
+<tr>
+	<td rowspan="2">SHU 019</td>
+	<td rowspan="2" class="shu">蜀</td>
+	<th rowspan="2">马　岱</th>
+	<td rowspan="2">临危受命</td>
+	<td rowspan="2">4</td>
+	<td rowspan="2" class='jineng'>
+		<strong>马术</strong>——锁定技，你计算与其他角色的距离-1。<br />
+		<strong>潜袭</strong>——准备阶段开始时，你可以摸一张牌，并弃置一张牌。若如此做，你选择距离为1的一名其他角色，然后本回合该角色不能使用或打出与你以此法弃置的牌颜色相同的手牌。</td>
+	<th class='zhuo'>桌<sub>58</sub></th></tr>
+	<th class="shi">势</th></tr>
+	
+<tr>
+	<td>SHU 020</td>
+	<td class="shu">蜀</td>
+	<th>沙摩柯</th>
+	<td>五溪蛮王</td>
+	<td>4</td>
+	<td class="jineng">
+		<strong>蒺藜</strong>——当你于一回合内使用或打出第X张牌时，你可以摸X张牌（X为你的攻击范围）。</td>
+	<th class='online'>自走棋</th>
+	
+<tr>
+	<td>SHU 021</td>
+	<td class="shu">蜀</td>
+	<th>糜夫人</th>
+	<td>乱世沉香</td>
+	<td>3</td>
+	<td class="jineng">
+		<strong>闺秀</strong>——当你明置此武将牌后，你可以摸两张牌；当你移除此武将牌后，你可以回复1点体力。<br />
+		<strong>存嗣</strong>——出牌阶段，你可以移除此武将牌并选择一名角色，然后其获得技能“勇决”，若你没有获得“勇决”，则获得“勇决”的角色摸两张牌。<br />
+		<span class="getskill">勇决</span>——当一名角色于其出牌阶段内使用的【杀】结算结束后，若其与你势力相同且此【杀】为其于此阶段内使用的第一张牌，则其可以获得之。</td>
+	<th class="shi">势</th></tr>
+
+<tr>
+	<td rowspan="2">SHU 022</td>
+	<td rowspan="2" class="shu">蜀</td>
+	<th rowspan="2">马　谡</th>
+	<td>军略之才器</td>
+	<td rowspan="2">3</td>
+	<td class='jineng'>
+		<strong>散谣</strong>——出牌阶段限一次，你可以弃置一张牌并指定一名体力最多（或之一）的角色，你对其造成1点伤害。<br />
+		<strong>制蛮</strong>——当你对一名其他角色造成伤害时，你可以防止此伤害，然后获得其装备区或判定区的一张牌。</td>
+	<th class='zhuo'>桌<sub>55</sub></th></tr>
+<tr>
+	<td>帷幄经谋</td>
+	<td class='jineng'>
+		<strong>散谣</strong>——出牌阶段限一次，你可以弃置一张牌并指定一名体力最多（或之一）的角色，你对其造成1点伤害。<br />
+		<strong>制蛮</strong>——当你对一名其他角色造成伤害时，你可以防止此伤害，然后获得其装备区或判定区的一张牌。然后若该角色与你势力相同，则该角色可以变更其副将。</td>
+	<th class='bian'>变</th></tr>
+
+<tr>
+	<td rowspan="2">SHU 023</td>
+	<td rowspan="2" class="shu">蜀</td>
+	<th rowspan="2">王　平</th>
+	<td>兵谋以致用</td>
+	<td rowspan="2">4</td>
+	<td class='jineng'>
+		<strong>飞军</strong>——出牌阶段限一次，你可以弃置一张牌，然后选择一项：令一名手牌数大于你的角色交给你一张牌；或另一名装备区里牌数大于你的角色弃置一张装备牌。<br />
+		<strong>兵略</strong>——锁定技，当你发动“飞军”时，若目标与你之前指定的目标均不相同，则你摸两张牌。</td>
+	<th class='yin'>阴</th></tr>
+<tr>
+	<td>键闭剑门</td>
+	<td class='jineng'>
+		珠联璧合：蒋琬&费祎<br />
+		<strong>将略</strong>——限定技，出牌阶段,你可以选择一个“军令”，与你势力相同的其他角色均可执行该军令（未确定势力的角色可以在此时明置武将牌）。你和每一个执行军令的角色体力上限+1且回复1点体力，然后你摸X张牌（X为因此回复体力的角色数）。</td>
+	<th class='quan'>权</th></tr>
+
+<tr>
+	<td rowspan="2">SHU 024</td>
+	<td rowspan="2" class="shu">蜀</td>
+	<th rowspan="2">法　正</th>
+	<td rowspan="2">蜀汉的辅翼</td>
+	<td rowspan="2">3</td>
+	<td class='jineng'>
+		<strong>恩怨</strong>——锁定技，当你获得一名其他角色的两张或更多的牌时，你可以令其摸一张牌；当你受到1点伤害后，该角色需交给你一张手牌，否则失去1点体力。<br />
+		<strong>眩惑</strong>——摸牌阶段开始时，你可以放弃摸牌并选择一名其他角色，令该角色摸两张牌，然后其可以对其攻击范围内你选择的其使用【杀】的一个合法目标使用一张【杀】，若其未如此做或没有其使用【杀】的合法目标，你获得其两张牌。</td>
+	<th class='jiang'>将<sub>2012</sub></th></tr>
+<tr>
+	<td class='jineng'>
+		珠联璧合：刘备<br />
+		<strong>眩惑</strong>——与你势力相同的其他角色的出牌阶段限一次，该角色可以交给你两张牌，然后其本回合获得以下技能之一：“武圣”、“咆哮”、“龙胆”、“铁骑”、“烈弓”、“狂骨”。<br />
+		<strong>恩怨</strong>——锁定技，当你获得一名其他角色的两张或更多的牌时，你可以令其摸一张牌；当你受到1点伤害后，该角色需交给你一张手牌，否则失去1点体力。</td>
+	<th class='quan'>权</th></tr>
+
+<tr>
+	<td>SHU 025</td>
+	<td class="shu">蜀</td>
+	<th>向　宠</th>
+	<td></td>
+	<td></td>
+	<td class='jineng'></td>
+	<th></th></tr>
+
+<tr>
+	<td>SHU 026</td>
+	<td class="shu">蜀</td>
+	<th>关兴&张苞</th>
+	<td>将门虎子</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>父魂</strong>——你可以将两张手牌当【杀】使用或打出；当你于出牌阶段内发动“父魂”使用的【杀】造成伤害后，你本回合获得“武圣”和“咆哮”。<br />
+		<span class="getskill">武圣</span>——你可以将一张红色牌当【杀】使用或打出。<br />
+		<span class="getskill">咆哮</span>——锁定技，你使用【杀】无次数限制。<br /></td>
+	<th class='tian'>天</th></tr>
+
+<tr>
+	<td>SHU 027</td>
+	<td class="shu">蜀</td>
+	<th>廖　化</th>
+	<td>历尽沧桑</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>当先</strong>——锁定技，回合开始时，你失去1点体力并从弃牌堆获得一张【杀】，然后执行一个额外的出牌阶段。<br />
+		<strong>伏枥</strong>——限定技，当你处于濒死状态时，你可以将体力回复至X点且手牌摸至X张（X为全场势力的数量）。若X大于等于3，你翻面。</td>
+	<th class='online'>待定</th></tr>
+
+<tr>
+	<td>SHU 028</td>
+	<td class='shu'>蜀</td>
+	<th>关　平</th>
+	<td>忠臣孝子</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>龙吟</strong>——当一名角色于出牌阶段内使用【杀】时，你可以弃置一张牌，令此【杀】不计入限制的使用次数，然后若此【杀】为红色，你摸一张牌。</td>
+	<th class='jiang'>将<sub>2013</sub></th></tr>
+
+<tr>
+	<td>SHU 029</td>
+	<td class='shu'>蜀</td>
+	<th>简　雍</th>
+	<td>优游风议</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>巧说</strong>——出牌阶段开始时，你可以与一名角色拼点。若你赢，你本回合使用下一张基本牌或普通锦囊牌能额外（无距离限制）或少选择一个目标。若你没赢，你本回合不能使用锦囊牌。<br />
+		<strong>纵适</strong>——当你拼点赢，你可以获得两张拼点的牌中点数小的一张；当你拼点没赢，你可以获得你拼点的牌。</td>
+	<th class='jiang'>将<sub>2013</sub></th></tr>
+
+<tr>
+	<td>SHU 030</td>
+	<td class='shu'>蜀</td>
+	<th>刘　封</th>
+	<td>骑虎之殇</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>陷嗣</strong>——准备阶段开始时，你可以选择一至两名有牌的角色，将这些角色的各一张牌置于武将牌上，称为“逆”；当一名角色需要对你使用【杀】时，该角色可以将两张“逆”置入弃牌堆，视为对你使用一张【杀】（有距离限制）。</td>
+	<th class='jiang'>将<sub>2013</sub></th></tr>
+
+<tr>
+	<td>SHU 031</td>
+	<td class='shu'>蜀</td>
+	<th>吴　懿</th>
+	<td>建兴鞍辔</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>奔袭</strong>——锁定技，当你于回合内使用牌时，本回合你与其他角色的距离-1；你的回合内，若你与所有其他角色的距离均为1，则你使用仅指定一个目标的牌时选择至多两项：1.此牌目标+1；2.此牌无视防具；3.此牌不能被抵消；4.此牌造成伤害时，摸一张牌。</td>
+		<th class='online'>待定</th></tr>
+
+<tr>
+	<td>SHU 032</td>
+	<td class='shu'>蜀</td>
+	<th>张　松</th>
+	<td>怀璧待凤仪</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>强识</strong>——出牌阶段开始时，你可以展示一名其他角色的一张手牌，若如此做，当你于此阶段内使用与之类别相同的牌时，你可以摸一张牌。<br />
+		<strong>献图</strong>——其他角色的出牌阶段开始时，你可以摸两张牌，然后将两张牌交给该角色，若如此做，此阶段结束时，若其未于此阶段内杀死过角色，你失去1点体力。</td>
+	<th class='jiang'>将<sub>2014</sub></th></tr>
+
+<tr>
+	<td>SHU 033</td>
+	<td class='shu'>蜀</td>
+	<th>周　仓</th>
+	<td>披肝沥胆</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>忠勇</strong>——当你使用的【杀】结算完毕后，你可以将此【杀】或目标角色使用的【闪】交给一名该角色以外的其他角色，以此法获得红色牌的角色可以对你攻击范围内的角色使用一张【杀】。</td>
+	<th class='jiang'>将<sub>2014</sub></th></tr>
+
+<tr>
+	<td>SHU 034</td>
+	<th class='shu zhugong'>蜀</th>
+	<th>刘　谌</th>
+	<td>血荐轩辕</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>战绝</strong>——你可以将所有手牌当【决斗】使用，然后你和受伤的角色各摸一张牌。若你在同一阶段内以此法摸过两张或更多的牌，则本回合“战绝”失效。<br />
+		<strong>勤王</strong>——主公技，你可以弃置一张牌，然后发动一次“激将”。响应此“激将”打出【杀】的角色摸一张牌。</td>
+	<th class='xianxia'>线下<sub>2016</sub></th></tr>
+
+<tr>
+	<td>SHU 035</td>
+	<td rowspan="2" class='shu'>蜀</td>
+	<th rowspan="2">夏侯氏</th>
+	<td>采缘撷睦</td>
+	<td rowspan="2">3</td>
+	<td class='jineng'>
+		<strong>樵拾</strong>——其他角色的结束阶段开始时，若你的手牌数与其相等，则你可以与其各摸一张牌。<br />
+		<strong>燕语</strong>——出牌阶段，你可以重铸【杀】。出牌阶段结束时，若你于此阶段重铸了两张或更多的【杀】，则你可以令一名男性角色摸两张牌。</td>
+	<th class='jiang'>将<sub>2015</sub></th></tr>
+
+<tr>
+	<td>SP 023</td>
+	<td>疾冲之恋</td>
+	<td class='jineng'>
+		<strong>燕语</strong>——一名角色的出牌阶段开始时，你可以弃置一张牌，若如此做，此回合限三次，当一张牌于出牌阶段内置入弃牌堆时，若此牌与你执行消耗弃置的牌类别相同，你可以将此牌移动的目标区域改为一名角色的手牌。<br />
+		<strong>孝德</strong>——当一名其他角色死亡后，你可以声明该角色的武将牌的一项技能（觉醒技和主公技除外），直到你的回合结束，你拥有此技能且“孝德”无效。</td>
+	<th class='zhuo'>桌<sub>32</sub></th></tr>
+
+<tr>
+	<td>SHU 036</td>
+	<td class='shu'>蜀</td>
+	<th>张　嶷</th>
+	<td>通壮逾古</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>怃戎</strong>——出牌阶段限一次，你可以令一名其他角色与你同时展示一张手牌：若你展示的是【杀】且该角色展示的不是【闪】，则你弃置此【杀】并对其造成1点伤害；若你展示的不是【杀】且该角色展示的是【闪】，则你弃置你展示的牌并获得其一张牌。<br />
+		<strong>矢志</strong>——锁定技，当你体力为1时，你的【闪】均视为【杀】。</td>
+	<th class='jiang'>将<sub>2015</sub></th></tr>
+
+<tr>
+	<td>SHU 037</td>
+	<td class='shu'>蜀</td>
+	<th>黄　皓</th>
+	<td>便辟佞慧</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>寝情</strong>——结束阶段，你可以选择任意名攻击范围内含有主公的角色，然后弃置这些角色各一张牌并令其摸一张牌（无牌则不弃），若如此做，你摸X张牌（X为其中手牌比主公多的角色数）。<br />
+		<strong>贿生</strong>——当你受到其他角色对你造成的伤害时，你可以令其观看你任意数量的牌并令其选择一项：1.获得这些牌中的一张，防止此伤害，然后你不能再对其发动“贿生”；2.弃置等量的牌。</td>
+	<th class='jiang'>原<sub>2016</sub></th></tr>
+
+<tr>
+	<td>SHU 038</td>
+	<td class='shu'>蜀</td>
+	<th>李　严</th>
+	<td>矜风流务</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>督粮</strong>——出牌阶段限一次，你可以获得一名其他角色的一张手牌，然后选择一项：1.令其观看牌堆顶的两张牌，然后获得其中的基本牌；2.令其于下个摸牌阶段额外摸一张牌。<br />
+		<strong>腹鳞</strong>——锁定技，弃牌阶段内，你于此回合内获得的牌不计入你的手牌数。</td>
+	<th class='xinghuo'>星火燎原-天相</th></tr>
+
+<tr>
+	<td>SHU 039</td>
+	<td class='shu'>蜀</td>
+	<th>关银屏</th>
+	<td>将门虎女</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>血祭</strong>——出牌阶段限一次，你可以弃置一张红色牌，然后选择至多X名角色，横置这些角色并对其中一名角色造成1点火焰伤害。（X为你已损失的体力值数且至少为1）<br />
+		<strong>虎啸</strong>——锁定技，当你造成火焰伤害后，受到此伤害的角色各摸一张牌，本回合你对这些角色使用牌没有次数限制。<br />
+		<strong>武继</strong>——觉醒技，结束阶段，若你于此回合内造成过3点或更多伤害，你加1点体力上限并回复1点体力，失去"虎啸"，然后从场上、牌堆或弃牌堆中获得【青龙偃月刀】。</td>
+	<th class='xinghuo'>星火燎原-七杀</th></tr>
+
+<tr>
+	<td>SHU 040</td>
+	<td class='shu'>蜀</td>
+	<th>孙尚香</th>
+	<td>梦醉良缘</td>
+	<td>3</td>
+	<td class="jineng">
+		<strong>良助</strong>——当一名角色于其出牌阶段内回复体力时，你可以选择一项：摸一张牌，或令该角色摸两张牌。<br />
+		<strong>返乡</strong>——觉醒技，准备阶段，若有至少一名已受伤且你发动过"良助"令其摸牌的角色，则你加1点体力上限，然后回复1点体力，失去"良助"并获得"枭姬"。<br />
+		<span class="getskill">枭姬</span>——当你失去装备区里的一张牌后，你可以摸两张牌。</td>
+	<th class='xinghuo'>星火燎原-天同</th></tr>
+
+<tr>
+	<td>SHU 041</td>
+	<td class='shu'>蜀</td>
+	<th>夏侯霸</th>
+	<td>盘马弯弓</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>豹变</strong>——锁定技，若你的体力值：不大于3，你拥有技能"挑衅"；不大于2，你拥有技能"咆哮"；为1，你拥有技能"神速"。<br />
+		<span class="getskill">挑衅</span>——出牌阶段限一次，你可以选择一名攻击范围内含有你的角色，然后除非该角色对你使用一张【杀】，否则你弃置其一张牌。<br />
+		<span class="getskill">咆哮</span>——锁定技，你使用【杀】无次数限制。<br />
+		<span class="getskill">神速</span>——你可以选择至多三项：1.跳过判定阶段和摸牌阶段；2.跳过出牌阶段并弃置一张装备牌；3.跳过弃牌阶段并翻面。你每选择一项，视为你使用一张无距离限制的【杀】。</td>
+	<th class='xianxia'>珍藏<sub>2017</sub></th></tr>
+
+<tr>
+	<td>SHU 042</td>
+	<td class='shu'>蜀</td>
+	<th>张星彩</th>
+	<td>枪碎星河</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>甚贤</strong>——每名其他角色的回合限一次，当其他角色因弃置而失去基本牌后，你可以摸一张牌。<br />
+		<strong>枪舞</strong>——出牌阶段限一次，你可以进行判定，然后本回合你使用点数小于判定结果的【杀】无距离限制，且你使用点数大于判定结果的【杀】无次数限制。</td>
+	<th class='xinghuo'>星火燎原-天府</th></tr>
+
+<tr>
+	<td>SHU 043</td>
+	<td class='shu'>蜀</td>
+	<th>马　良</th>
+	<td>文经勤类</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>自书</strong>——锁定技，你的回合外，你获得的牌均会在当前回合结束后置入弃牌堆；你的回合内，当你不因此技能效果获得牌时，额外摸一张牌。<br />
+		<strong>应援</strong>——当你于回合内使用的牌置入弃牌堆后，你可以将之交给一名其他角色（相同牌名的牌每回合限一次）。</td>
+	<th class='xianxia'>线下<sub>2017</sub></th></tr>
+
+<tr>
+	<td>SHU 044</td>
+	<td class='shu'>蜀</td>
+	<th>马云禄</th>
+	<td>虎威夫人</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>凤魄</strong>——当你于出牌阶段内使用第一张【杀】或【决斗】指定目标后，若目标角色数为1，你可以选择一项：1.摸X张牌；2.此牌造成的伤害+X。（X为其方块手牌数）。<br />
+		<strong>马术</strong>——锁定技，你计算与其他角色的距离-1。</td>
+	<th class='xinghuo'>星火燎原-七杀</th></tr>
+
+<tr>
+	<td>SHU 045</td>
+	<td class='shu'>蜀</td>
+	<th>关　索</th>
+	<td>倜傥孑侠</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>征南</strong>——当其他角色死亡后，你可以摸三张牌，或获得下列技能中的一个：“武圣”、“当先”和“制蛮”。<br />
+		<span class="getskill">武圣</span>——你可以将一张红色牌当【杀】使用或打出。<br />
+		<span class="getskill">当先</span>——锁定技，回合开始时，你失去1点体力并从弃牌堆获得一张【杀】，然后执行一个额外的出牌阶段。<br />
+		<span class="getskill">制蛮</span>——当你对其他角色造成伤害时，你可以防止此伤害，然后你获得其装备区或判定区里的一张牌。<br />
+		<strong>撷芳</strong>——锁定技，你计算与其他角色的距离-X（X为女性角色数）。</td>
+	<th class='online'>待定</th></tr>
+
+<tr>
+	<td>SHU 046</td>
+	<td class='shu'>蜀</td>
+	<th>糜　竺</th>
+	<td>挥金追义</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>资援</strong>——出牌阶段限一次，你可以将任意张点数之和为13的手牌交给一名其他角色，然后该角色回复1点体力。<br />
+		<strong>巨贾</strong>——锁定技，你的手牌上限+X；游戏开始时，你多摸X张牌。（X为你的体力上限数）</td>
+	<th class='xinghuo'>星火燎原-天相</th></tr>
+</tr>
+
+<tr>
+	<td>SHU 047</td>
+	<td class='shu'>蜀</td>
+	<th>赵　襄</th>
+	<td>惊鸿魅影</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>芳魂</strong>——当你使用【杀】造成伤害后，你获得1个“梅影”标记；你可以移去1个“梅影”标记来发动“龙胆”并摸一张牌。<br />
+		<span class="getskill">龙胆</span>——你可以将一张【杀】当【闪】、【闪】当【杀】使用或打出。<br />
+		<strong>扶汉</strong>——限定技，回合开始时，你可以移去所有“梅影”标记，随机观看五名未登场的蜀势力角色，将武将牌替换为其中一名角色，并将体力上限数调整为本局游戏中移去“梅影”标记的数量（至多为游戏人数），然后若你是体力值最低的角色，你回复1点体力。</td>
+	<th class='online'>祈福</th>
+
+<tr>
+	<td>SHU 048</td>
+	<td class='shu'>蜀</td>
+	<th>董　允</th>
+	<td>骨鲠良相</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>秉正</strong>——出牌阶段结束时，你可以令手牌数不等于体力值的一名角色弃置一张手牌或摸一张牌。然后若其手牌数等于体力值，你摸一张牌，且可以交给该角色一张牌。<br />
+		<strong>舍宴</strong>——当你成为一张普通锦囊牌的目标时，你可以为此牌增加一个目标或减少一个目标（目标数至少为一）。</td>
+	<th class='xinghuo'>星火燎原-天梁</th></tr>
+
+<tr>
+	<td>SHU 049</td>
+	<td class='shu'>蜀</td>
+	<th>马　忠</th>
+	<td>笑合南中</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>抚蛮</strong>——出牌阶段，你可以将一张【杀】交给一名本回合未获得过“抚蛮”牌的其他角色，然后其于下个回合结束之前使用“抚蛮”牌时，你摸一张牌。</td>
+	<th class='xinghuo'>星火燎原-天相</th></tr>
+
+<tr>
+	<td>SHU 050</td>
+	<td class="shu">蜀</td>
+	<th>孙　乾</th>
+	<td>折冲樽俎</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>谦雅</strong>——当你成为锦囊牌的目标后，你可以将任意张手牌交给一名其他角色。<br />
+		<strong>说盟</strong>——出牌阶段结束时，你可以与一名角色拼点，若你赢，视为你使用【无中生有】；若你没赢，视为其对你使用【过河拆桥】。
+	</td>
+	<th class='xinghuo'>星火燎原-天机</th></tr>
+
+<tr>
+	<td>SHU 051</td>
+	<td class="shu">蜀</td>
+	<th>伊　籍</th>
+	<td>礼仁同渡</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>机捷</strong>——出牌阶段限一次，你可以观看牌堆底的一张牌，然后交给任意角色。<br />
+		<strong>急援</strong>——当一名角色进入濒死或你交给一名其他角色牌时，你可令该角色摸一张牌。</td>
+	<th class='biaozhun'>标准<sub>2019</sub></th></tr>
+
+<tr>
+	<td>SHU 052</td>
+	<td class="shu">蜀</td>
+	<th>黄　权</th>
+	<td>道绝殊途</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>点虎</strong>——锁定技，游戏开始时，你指定一名其他角色；当你对该角色造成伤害或该角色回复体力后，你摸一张牌。<br />
+		<strong>谏计</strong>——出牌阶段限一次，你可以令一名其他角色摸一张牌，然后其可以使用该牌。</td>
+	<th class='daiding'>待定</th></tr>
+
+<tr>
+	<td>SHU 059</td>
+	<td class='shu'>蜀</td>
+	<th>蒲　元</th>
+	<td></td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong></strong></td>
+	<th class='jiang'>原<sub>2017</sub></th></tr>
+
+<tr>
+	<td>SHU 060</td>
+	<td class='shu'>蜀</td>
+	<th>李　丰</th>
+	<td>继父尽事</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>屯储</strong>——摸牌阶段摸牌时，你可以额外摸两张牌。若如此做，将一张手牌至于你的武将牌上，称为“粮”。只要你的武将牌上有“粮”，你便不能使用【杀】和【决斗】。<br />
+		<strong>输粮</strong>——当一名角色的结束阶段开始时，若其没有手牌，你可以将一张“粮”置入弃牌堆，然后该角色摸两张牌。</td>
+	<th class='zhuo'>桌<sub>75</sub></th></tr>
+
+<tr>
+	<td>SHU 061</td>
+	<td class="shu">蜀</td>
+	<th>诸葛果</th>
+	<td>凤阁乘烟</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>祈禳</strong>——当装备牌置入你的装备区后，你可以从牌堆里随机获得一张锦囊牌。<br />
+		<strong>羽化</strong>——锁定技，弃牌阶段内，你的锦囊牌和装备牌不计入你的手牌数。
+	</td>
+	<th class='online'>限定</th></tr>
+
+<tr>
+	<td>SHU 062</td>
+	<td class="shu">蜀</td>
+	<th>赵统&赵广</th>
+	<td>身继龙魂</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>翊赞</strong>——你可以将两张牌（其中至少一张牌是基本牌）当任意基本牌使用或打出。<br />
+		<strong>龙渊</strong>——觉醒技，准备阶段，若你至少已发动过三次“翊赞”，你将“翊赞”改为”你可以将一张基本牌当任意基本牌使用或打出“。<br />
+		<span class="getskill">修改·翊赞</strong>——你可以将一张基本牌当任意基本牌使用或打出。
+	</td>
+	<th class='daiding'>待定</th></tr>
+	
+<tr>
+	<td>SHU 064</td>
+	<td class="shu">蜀</td>
+	<th>吴　苋</th>
+	<td>穆皇后</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>福绵</strong>—— 准备阶段，你可以选择一项：1.摸牌阶段多摸一张牌；2.使用红色牌可以多选一个目标（限一次）。若你下回合选择另一项，则该选项数值+1并复原此技能。<br />
+		<strong>怠宴</strong>——结束阶段，你可以令一名其他角色从牌堆中获得一张红桃基本牌，然后若其于上回合成为过该技能目标，则其失去1点体力。</td>
+	<th class='xinghuo'>星火燎原-天府</th></tr>
+
+<tr>
+	<td>SHU 065</td>
+	<td class="shu">蜀</td>
+	<th>秦　宓</th>
+	<td>彻天之舌</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>谏征</strong>——当一名其他角色使用【杀】指定目标时，若你在其攻击范围内且你不是目标，则你可以将一张手牌置于牌堆顶，取消所有目标，然后若此【杀】不为黑色，你成为目标。<br />
+		<strong>专对</strong>——当你使用【杀】指定目标/成为【杀】的目标后，你可以与目标角色/此【杀】使用者拼点，若你赢，此杀不能被【闪】响应/对你无效。<br />
+		<strong>天辩</strong>——你拼点时，可以改为用牌堆顶的一张牌进行拼点；当你拼点的牌亮出后，若此牌花色为红桃，则点数视为K。
+	</td>
+	<th class='xinghuo'>星火燎原-天机</th></tr>
+
+<tr>
+	<td>SHU 066</td>
+	<td class="shu">蜀</td>
+	<th>严　颜</th>
+	<td>断头将军</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>拒战</strong>——转换技，①其他角色对你出【杀】后，你可以和对方各自摸1张牌，然后这个回合内他不能再对你出牌。②你对其他角色出【杀】后，你可以获得对方的1张牌，然后这个回合内你不能再对他出牌。
+	</td>
+	<th class='yin'>阴</th></tr>
+
+<tr>
+	<td>SHU 067</td>
+	<td class="shu">蜀</td>
+	<th>陈　到</th>
+	<td>白毦督</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>往烈</strong>——出牌阶段，你使用的第一张牌无距离限制。当你于出牌阶段使用一张牌时，你可令此牌不能被相应，若如此做，此阶段你不能再使用牌。
+	</td>
+	<th class='lei'>雷</th></tr>
+
+<tr>
+	<td>SHU 068</td>
+	<td class="shu">蜀</td>
+	<th>诸葛瞻</th>
+	<td>临难死义</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>罪论</strong>——结束阶段，你可以观看牌堆顶三张牌，你每满足以下一项便保留一张，然后以任意顺序放回其余的牌：1.你于此回合内造成过伤害；2.你于此回合内未弃置过牌；3手牌数为全场最少。若均不满足，你与一名其他角色失去1点体力。 <br />
+		<strong>父荫</strong>——锁定技，你每回合第一次成为【杀】或【决斗】的目标后，若你的手牌数小于等于该角色，此牌对你无效。	
+	</td>
+	<th class='lei'>雷</th></tr>
+
+<tr>
+	<td>SHU ???</td>
+	<td class="shu">蜀</td>
+	<th>鲍三娘</th>
+	<td>平南之巾帼</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>武娘</strong>——当你使用或打出【杀】时，你可以获得一名其他角色的一张牌，然后其摸一张牌，若果武将“关索”在场，你可以令“关索”也摸一张牌。<br />
+		<strong>许身</strong>——限定技，当其他男性角色令你离开濒死状态后，如果“关索”不在场，其可以选择是否用“关索”代替其武将，然后你回复1点体力并获得技能“镇南”。<br />
+		<span class="getskill">镇南</span>——当你成为【南蛮入侵】的目标时，你可以对一名其他角色造成1~3点随机伤害。		
+	</td>
+	<th class='online'>祈福</th>
+
+	<tr>
+		<td>SHU ???</td>
+		<td class="shu">蜀</td>
+		<th>吕　凯</th>
+		<td></td>
+		<td>3</td>
+		<td class='jineng'>
+			<strong>图南</strong>——出牌阶段限一次，你可令一名其他角色观看牌堆顶的一张牌，然后该角色选择一项：使用此牌（无距离限制）；或将此牌当普通【杀】使用。<br />
+			<strong>闭境</strong>——结束阶段，你可以选择一张手牌标记为“闭境”。若你于回合外失去“闭境”牌，则当前回合角色的弃牌阶段开始时其需弃置两张牌。你的准备阶段，弃置手牌中的“闭境”牌。</td>
+	<th class='online'>逐鹿天下</th>
+
+<tr>
+	<td rowspan="3">WU 001</td>
+	<th rowspan="3" class="wu zhugong">吴</th>
+	<th rowspan="3">孙　权</th>
+	<td rowspan="3">年轻的贤君</td>
+	<td rowspan="3">4</td>
+	<td class="jineng">
+		<strong>制衡</strong>——牌阶段限一次，你可以弃置任意张牌，然后摸等量的牌。<br />
+		<strong>救援</strong>——主公技，锁定技，当你因执行其他吴势力角色对你使用的【桃】的效果而回复体力前，你令此回复值+1。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>制衡</strong>——出牌阶段限一次，你可以弃置任意张牌，然后摸等量的牌。若你以此法弃置了所有的手牌，则额外摸一张牌。<br />
+		<strong>救援</strong>——主公技，其他吴势力角色对其自己使用【桃】时，若其体力值大于你，则该角色可以改为令你回复1点体力，然后其摸一张牌。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：周泰<br />
+		<strong>制衡</strong>——出牌阶段限一次，你可以弃置一至X张牌（X为你的体力上限），摸等量的牌。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">WU 002</td>
+	<td rowspan="2" class="wu">吴</td>
+	<th rowspan="2">甘　宁</th>
+	<td rowspan="2">锦帆游侠</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>奇袭</strong>——你可以将一张黑色牌当【过河拆桥】使用。<br />
+		<strong>奋威</strong>——限定技，当一名角色使用锦囊牌指定至少两名角色为目标时，你可以令此牌对其中的至少一名角色无效。</td>
+	<th class="jiexiantupo">界限突破</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：凌统<br />
+		<strong>奇袭</strong>——你可以将一张黑色牌当【过河拆桥】使用。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">WU 003</td>
+	<td rowspan="2" class="wu">吴</td>
+	<th rowspan="2">吕　蒙</th>
+	<td rowspan="2">白衣渡江</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>克己</strong>——若你未于出牌阶段内使用或打出过【杀】，则你可以跳过弃牌阶段。<br />
+		<strong>勤学</strong>——觉醒技，准备阶段，若你的手牌数比你的体力值多3或更多（若游戏人数不小于7则改为2），你减1点体力上限，然后获得"攻心"。<br />
+		<span class="getskill">攻心</span>——出牌阶段限一次，你可以观看一名其他角色的手牌，然后你可以展示其中一张红桃牌，选择一项：1.弃置此牌；2.将此牌置于牌堆顶。</td>
+	<th class="jiexiantupo">界限突破</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>克己</strong>——锁定技，若你未于出牌阶段内使用过颜色不同的牌，则你本回合的手牌上限+4。<br />
+		<strong>谋断</strong>——结束阶段，若你于出牌阶段内使用过四种花色或三种类别的牌，则你可以移动场上的一张牌。</td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="2">WU 004</td>
+	<td rowspan="2" class="wu">吴</td>
+	<th rowspan="2">黄　盖</th>
+	<td rowspan="2">轻身为国</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>苦肉</strong>——出牌阶段限一次，你可以弃一张牌，失去1点体力。<br />
+		<strong>诈降</strong>——锁定技，当你失去1点体力后，你摸三张牌，然后此时若在你的出牌阶段内，你本回合使用红色【杀】无距离限制且目标角色不能使用【闪】响应你使用的红色【杀】且你能额外使用一张【杀】。</td>
+	<th class="jiexiantupo">界限突破</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：周瑜<br />
+		<strong>苦肉</strong>——出牌阶段限一次，你可以弃一张牌。若如此做，你失去1点体力，然后摸三张牌，此阶段你使用【杀】的次数上限+1。</td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="2">WU 005</td>
+	<td rowspan="2" class="wu">吴</td>
+	<th rowspan="2">周　瑜</th>
+	<td rowspan="2">大都督</td>
+	<td rowspan="2">3</td>
+	<td class="jineng">
+		<strong>英姿</strong>——锁定技，摸牌阶段，你多摸一张牌；你的手牌上限与你的体力上限相同。<br />
+		<strong>反间</strong>——出牌阶段限一次，你可以展示一张手牌并将之交给一名角色，其选择一项：1.展示所有手牌，弃置与此牌同花色的牌；2.失去1点体力。</td>
+	<th class="jiexiantupo">界限突破</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：黄盖、小乔、孙策<br />
+		<strong>英姿</strong>——锁定技，摸牌阶段，你多摸一张牌；你的手牌上限等于X（X为你的体力上限）。<br />
+		<strong>反间</strong>——出牌阶段限一次，你可以展示一张手牌并将之交给一名其他角色，该角色选择一项：1.展示所有手牌，然后弃置与此牌花色相同的所有牌；2.失去1点体力。 </td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="2">WU 006</td>
+	<td rowspan="2" class="wu">吴</td>
+	<th rowspan="2">大　乔</th>
+	<td rowspan="2">矜持之花</td>
+	<td rowspan="2">3</td>
+	<td class="jineng">
+		<strong>国色</strong>——出牌阶段限一次，你可以选择一项：1.将一张方块牌当【乐不思蜀】使用；2. 弃置一张方块牌并选择判定区里有【乐不思蜀】的一名角色，若如此做，你弃置该角色判定区里的【乐不思蜀】。若如此做，你摸一张牌。<br />
+		<strong>流离</strong>——当你成为【杀】的目标时，你可以弃置一张牌并选择你攻击范围内的是此【杀】合法目标的一名角色，将此【杀】转移给该角色。</td>
+	<th class="jiexiantupo">界限突破</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：小乔、孙策<br />
+		<strong>国色</strong>——你可以将一张方块牌当【乐不思蜀】使用。<br />
+		<strong>流离</strong>。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">WU 007</td>
+	<td rowspan="2" class="wu">吴</td>
+	<th rowspan="2">陆　逊</th>
+	<td>儒生雄才</td>
+	<td rowspan="2">3</td>
+	<td class="jineng">
+		珠联璧合：陆抗<br />
+		<strong>谦逊</strong>——当一张延时锦囊牌或其他角色使用的普通锦囊牌对你生效时，若你是此牌唯一目标，则你可以将所有手牌扣置于武将牌上，然后此回合结束时，你获得这些牌。<br />
+		<strong>连营</strong>——当你失去手牌后，若你没有手牌，则你可以令至多X名角色各摸一张牌（X为你此次失去的手牌数）。</td>
+	<th class="jiexiantupo">界限突破</th></tr>
+<tr>
+	<td>擎天之柱</td>
+	<td class="jineng">
+		<strong>谦逊</strong>——锁定技，当你成为【顺手牵羊】或【乐不思蜀】的目标时，则取消之。<br />
+		<strong>度势</strong>——出牌阶段限四次，你可以将一张红色手牌当【以逸待劳】使用。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="3">WU 008</td>
+	<td rowspan="3" class="wu">吴</td>
+	<th rowspan="3">孙尚香</th>
+	<td rowspan="3">弓腰姬</td>
+	<td rowspan="3">3</td>
+	<td class="jineng">
+		<strong>结姻</strong>——出牌阶段限一次，你可以弃置两张手牌并选择一名已受伤的男性角色，令你与该角色各回复1点体力。<br />
+		<strong>枭姬</strong>——当你失去装备区里的一张牌后，你可以摸两张牌。</td>
+	<th class="biaozhun">标准</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>结姻</strong>——出牌阶段限一次，选择一名男性角色，弃置一张手牌或将一张装备牌置入其装备区：你与其体力值较高的角色摸一张牌，体力值较低的角色回复1点体力。<br />
+		<strong>枭姬</strong>——当你失去装备区里的一张牌后，你可以摸两张牌。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>结姻</strong>——出牌阶段限一次，你可以弃置两张手牌并选择一名已受伤的其他男性角色，令你与该角色各回复1点体力。<br />
+		<strong>枭姬</strong>——当你失去装备区里的一张牌后，你可以摸两张牌。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="3">WU 009</td>
+	<td rowspan="3" class="wu">吴</td>
+	<th rowspan="3">孙　坚</th>
+	<td rowspan="3">武烈帝</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>英魂</strong>——准备阶段开始时，若你已受伤，你可以选择一项：1.令一名其他角色摸X张牌，然后该角色弃置一张牌；2.令一名其他角色摸一张牌，然后该角色弃置X张牌（X为你已损失的体力值）。</td>
+		<th class="lin">林</th></tr>
+	<td class="jineng">
+		<strong>英魂</strong>——准备阶段开始时，若你已受伤，你可以选择一项：1.令一名其他角色摸X张牌，然后该角色弃置一张牌；2.令一名其他角色摸一张牌，然后该角色弃置X张牌（X为你已损失的体力值）。<br/>
+		<strong>破虏</strong>——当你杀死一名角色或死亡后，你可以令任意名角色各摸X张牌（X为本技能发动次数且包含本次）。</td>
+		<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td>5</td>
+	<td class="jineng">
+		珠联璧合：吴国太<br />
+		<strong>英魂</strong>——准备阶段开始时，若你已受伤，你可以选择一项：1.令一名其他角色摸X张牌，然后该角色弃置一张牌；2.令一名其他角色摸一张牌，然后该角色弃置X张牌（X为你已损失的体力值）。</td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="2">WU 010</td>
+	<th rowspan="2" class="wu zhugong">吴</th>
+	<th rowspan="2">孙　策</th>
+	<td rowspan="2">江东的小霸王</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>激昂</strong>——当你使用【决斗】或红色【杀】指定目标后，或成为【决斗】或红色【杀】的目标后，你可以摸一张牌。<br />
+		<strong>魂姿</strong>——觉醒技，准备阶段开始时，若你的体力值为1，你减1点体力上限，然后获得“英姿”和“英魂”。<br />
+		<span class="getskill">英姿</span>——锁定技，摸牌阶段，你多摸一张牌；你的手牌上限等于你的体力上限。<br />
+		<span class="getskill">英魂</span>——准备阶段，若你已受伤，你可以选择一名其他角色并选择一项：1.令其摸X张牌，然后弃置一张牌；2.令其摸一张牌，然后弃置X张牌。（X为你已损失的体力值）<br />
+		<strong>制霸</strong>——主公技，其他吴势力角色的出牌阶段限一次，该角色可以与你拼点（若你发动过“魂姿”，你可以拒绝此拼点），若其没赢，你可以获得两张拼点的牌。</td>
+	<th class="shan">山</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：周瑜、太史慈、大乔<br />
+		<strong>激昂</strong>——当你使用【决斗】或红色【杀】指定目标后，或成为【决斗】或红色【杀】的目标后，你可以摸一张牌。<br />
+		<strong>鹰扬</strong>——当你拼点的牌亮出后，你可以令此牌的点数于此次拼点中+3或-3。<br />
+		<strong>魂殇</strong>——副将技，此武将牌减少半个阴阳鱼；准备阶段，若你的体力值不大于1，则你本回合获得“英姿”和“英魂”。<br />
+		<span class="getskill">英姿</span>——摸牌阶段，你可以多摸一张牌。<br />
+		<span class="getskill">英魂</span>——准备阶段，若你已受伤，你可以选择一名其他角色并选择一项：1.令其摸X张牌，然后弃置一张牌；2.令其摸一张牌，然后弃置X张牌。（X为你已损失的体力值）<br /></td>
+	<th class="shi">势</th></tr>
+
+<tr>
+	<td rowspan="2">WU 011</td>
+	<td rowspan="2" class="wu">吴</td>
+	<th rowspan="2">小　乔</th>
+	<td rowspan="2">矫情之花</td>
+	<td rowspan="2">3</td>
+	<td class="jineng">
+		<strong>天香</strong>——当你受到伤害时，你可以弃置一张红桃牌，防止此次伤害并选择一名其他角色，你选择一项：令其受到1点伤害，然后摸X张牌（X为其已损失体力值且至多为5）；令其失去1点体力，然后其获得你弃置的牌。<br />
+		<strong>红颜</strong>——锁定技，你的黑桃牌视为红桃牌。</td>
+	<th class="feng">风</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：周瑜、大乔<br />
+		<strong>天香</strong>——当你受到伤害时，你可以弃置一张红桃手牌,防止此次伤害并选择一名其他角色，你选择一项：令其受到1点伤害，然后摸X张牌（X为其已损失体力值且至多为5）；令其失去1点体力，然后其获得你弃置的牌。 <br />
+		<strong>红颜</strong>——锁定技，你的黑桃牌视为红桃牌。</td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="2">WU 012</td>
+	<td rowspan="2" class="wu">吴</td>
+	<th rowspan="2">太史慈</th>
+	<td rowspan="2">笃烈之士</td>
+	<td rowspan="2">4</td>
+	<td class="jineng" rowspan="2">
+		珠联璧合：孙策<br />
+		<strong>天义</strong>——出牌阶段限一次，你可以与一名角色拼点。若你赢，你本回合能额外使用一张【杀】且使用【杀】无距离限制且使用【杀】选择目标的个数上限+1。若你没赢，你本回合不能使用【杀】。</td>
+	<th class="huo">火</th></tr>
+<tr>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">WU 013</td>
+	<td rowspan="2" class="wu">吴</td>
+	<th rowspan="2">周　泰</th>
+	<td rowspan="2">历战之躯</td>
+	<td rowspan="2">3</td>
+	<td class="jineng">
+		<strong>不屈</strong>——锁定技，当你处于濒死状态时，你将牌堆顶的一张牌置于武将牌上，称为“创”，若此牌点数与已有的“创”点数均不同，你将体力值回复至1点，若点数相同否则你将此“创”置入弃牌堆且“不屈”无效，直到此次濒死结算完毕；锁定技，若有“创”，你的手牌上限为X（X为“创”的数量）。<br />
+		<strong>奋激</strong>——当一名角色因另一名角色的弃置或获得而失去手牌后，你可以失去1点体力，令该失去手牌的角色摸两张牌。</td>
+	<th class="xianxia">珍藏<sub>2017</sub></th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：孙权、蒋钦<br />
+		<strong>不屈</strong>——锁定技，当你处于濒死状态时，你将牌堆顶的一张牌置于你的武将牌上，称为"创"：若此牌点数与已有的"创"点数均不同，你将体力回复至1点；若点数相同，将此牌置入弃牌堆。 <br />
+		<strong>奋激</strong>——一名角色的结束阶段，若其没有手牌，你可令其摸两张牌，然后你失去一点体力。 </td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="2">WU 014</td>
+	<td rowspan="2" class="wu">吴</td>
+	<th rowspan="2">鲁　肃</th>
+	<td rowspan="2">独断的外交家</td>
+	<td rowspan="2">3</td>
+	<td class="jineng" rowspan="2">
+		<strong>好施</strong>——摸牌阶段，你可以额外摸两张牌，然后若你的手牌数大于5，你将一半（向下取整）的手牌交给手牌最少的一名其他角色。<br />
+		<strong>缔盟</strong>——出牌阶段限一次，你可以选择两名其他角色并弃置X张牌（X为这两名角色手牌数的差），令这两名角色交换手牌。</td>
+	<th class="lin">林</th></tr>
+<tr>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">WU 015</td>
+	<td rowspan="2" class="wu">吴</td>
+	<th rowspan="2">张昭&张纮</th>
+	<td rowspan="2">经天纬地</td>
+	<td rowspan="2">3</td>
+	<td class="jineng" rowspan="2">
+		<strong>直谏</strong>——出牌阶段，你可以将手牌中的一张装备牌置入一名其他角色的装备区，摸一张牌。<br />
+		<strong>固政</strong>——其他角色的弃牌阶段结束时，你可以将弃牌堆里该角色于此阶段内因其弃置而失去过的一张手牌交给该角色，若如此做，你可以获得弃牌堆里的其余于此阶段内弃置的牌。</td>
+	<th class="shan">山</th></tr>
+<tr>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">WU 016</td>
+	<td rowspan="2" class="wu">吴</td>
+	<th rowspan="2">丁　奉</th>
+	<td>神行太保</td>
+	<td rowspan="2">4</td>
+	<td class="jineng" rowspan="2">
+		珠联璧合：徐盛<br />
+		<strong>短兵</strong>——锁定技，你使用【杀】能额外选择距离为1的一名角色为目标。<br />
+		<strong>奋迅</strong>——出牌阶段限一次，你可以弃置一张牌并选择一名其他角色，令你与该角色的距离于此回合内视为1。</td>
+	<th class="xianxia">线下<sub>2017</sub></th></tr>
+<tr>
+	<td>清侧重臣</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td>WU 017</td>
+	<td class="wu">吴</td>
+	<th>蒋　钦</th>
+	<td>祁奚之器</td>
+	<td>4</td>
+	<td class="jineng">
+		珠联璧合：周泰<br />
+		<strong>尚义</strong>——出牌阶段限一次，你可以令一名其他角色观看你的所有手牌，你选择一项：1.观看该角色的手牌并可以弃置其中的一张黑色牌；2.观看该角色暗置的所有武将牌。<br />
+		<strong>鸟翔</strong>——阵法技，在你为围攻角色的围攻关系中，当围攻角色使用【杀】指定被围攻角色为目标后，该围攻角色将抵消此【杀】需使用的【闪】的数量改为2。</td>
+	<th class="zhen">阵</th></tr>
+
+<tr>
+	<td>WU 018</td>
+	<td class="wu">吴</td>
+	<th>诸葛瑾</th>
+	<td>谋定全局</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>弘援</strong>——摸牌阶段，你可以少摸一张牌，令至多两名其他角色各摸一张牌。<br />
+		<strong>缓释</strong>——当一名角色的判定牌生效前，你可以令该角色观看你的所有手牌并选择你的一张牌，你打出此牌代替之。<br />
+		<strong>明哲</strong>——当你于回合外使用、打出或因弃置而失去一张红色牌后，你可以摸一张牌。</td>
+	<th class='xinghuo'>星火燎原-天梁</th></tr>
+
+<tr>
+	<td rowspan="2">WU 019</td>
+	<td rowspan="2" class="wu">吴</td>
+	<th rowspan="2">陆　抗</th>
+	<td>社稷之瑰宝</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>谦节</strong>——锁定技，你不能被横置，且不能成为延时类锦囊牌或其他角色拼点的目标。<br />
+		<strong>决堰</strong>——出牌阶段限一次，你可以废除你装备区里的一个装备栏，若废除的是：武器栏，本回合你可以多使用三张【杀】；防具栏，摸3张牌，本回合手牌上限+3；2个坐骑栏，本回合你使用牌无距离限制；宝物栏，本回合获得技能“集智”。<br />
+		<span class="getskill">集智</span>——当你使用普通锦囊牌时，你可以摸一张牌。<br />
+		<strong>破势</strong>——觉醒技，准备阶段开始时，若你的装备栏均已废除或体力值为1，则你扣减1点体力上限，然后将手牌补至体力上限，失去技能“决堰”并获得技能“怀柔”。<br />
+		<span class="getskill">怀柔</span>——出牌阶段，你可以重铸装备牌。</td>
+	<th class='lei'>雷</th></tr>	
+<tr>
+	<td>克构者</td>
+	<td>3</td>
+	<td class='jineng'>
+		珠联璧合：陆逊<br />
+		<strong>危贤</strong>——当你受到伤害时，你可以弃置一张手牌并防止此伤害，然后若你是唯一的吴势力角色，你可以判定，若结果为红色，则你获得此判定牌。<br/>
+		<strong>围堰</strong>——当你的判定牌生效后，若此牌为【杀】或【决斗】，你可以获得之，然后若在你的回合内，则本回合你使用【杀】的次数上限+1。</td>
+	<th class='quan'>权</th></tr>
+
+<tr>
+	<td rowspan="2">WU 020</td>
+	<td rowspan="2" class="wu">吴</td>
+	<th rowspan="2">徐　盛</th>
+	<td>整军经武</td>
+	<td rowspan="2">4</td>
+	<td class='jineng'>
+		<strong>破军</strong>——出牌阶段，你的【杀】指定目标后，你可以将目标至多X张牌移出游戏外，若如此做，结束阶段开始时，其获得以此法移出游戏的牌（X为目标角色的体力值）。</td>
+	<th class='zhuo'>桌<sub>60</sub></th></tr>
+<tr>
+	<td>江东的铁壁</td>
+	<td class="jineng">
+		珠联璧合：丁奉<br />
+		<strong>疑城</strong>——当与你势力相同的一名角色成为【杀】的目标后，你可以令该角色摸一张牌，然后其弃置一张牌。</td>
+	<th class="zhen">阵</th></tr>
+
+<tr>
+	<td rowspan="2">WU 021</td>
+	<td rowspan="2" class="wu">吴</td>
+	<th rowspan="2">凌　统</th>
+	<td rowspan="2">豪情烈胆</td>
+	<td rowspan="2">4</td>
+	<td class='jineng'>
+		<strong>旋风</strong>——当你于弃牌阶段弃置过至少两张牌，或当你失去装备区里的牌后，你可以弃置至多两名其他角色的共计两张牌。</td>
+	<th class='jiang'>将<sub>2012</sub></th></tr>
+<tr>
+	<td class='jineng'>
+		珠联璧合：甘宁<br />
+		<strong>旋略</strong>——当你失去装备区里的牌后，你可以弃置一名其他角色的一张牌。<br />
+		<strong>勇进</strong>——限定技，出牌阶段，你可以移动场上的至多三张装备牌。</td>
+	<th class='bian'>变</th></tr>
+
+<tr>
+	<td>WU 022</td>
+	<td class="wu">吴</td>
+	<th>吕　范</th>
+	<td>忠笃亮直</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>调度</strong>——与你势力相同的角色使用装备牌时可以摸一张牌。出牌阶段开始时，你可以获得与你势力相同的一名角色装备区里的一张牌，然后可以将此牌交给另一名角色。<br />
+		<strong>典财</strong>——其他角色的出牌阶段结束时，若你于此阶段失去了X张或更多的牌，则你可以将手牌摸至体力上限，然后你可以变更副将（X为你的体力值）。</td>
+	<th class='bian'>变</th></tr>
+
+<tr>
+	<td>WU 023</td>
+	<td class="wu">吴</td>
+	<th>陈武&董袭</th>
+	<td>壮怀激烈</td>
+	<td>4</td>
+	<td class="jineng">
+		<strong>断泄</strong>——出牌阶段限一次，你可以令一名其他角色横置副将的武将牌，若如此做，你横置副将的武将牌。<br />
+		<strong>奋命</strong>——结束阶段开始时，若你处于连环状态，你可以弃置处于连环状态的每名角色的一张牌。</td>
+	<th class="shi">势</th></tr>
+
+<tr>
+	<td rowspan="2">WU 024</td>
+	<td rowspan="2" class="wu">吴</td>
+	<th rowspan="2">吴国太</th>
+	<td rowspan="2">武烈皇后</td>
+	<td rowspan="2">3</td>
+	<td class='jineng'>
+		<strong>甘露</strong>——出牌阶段限一次，你可以令两名装备区里牌的数量之差不大于X的角色交换装备区里的牌（X为你已损失的体力值）。<br />
+		<strong>补益</strong>——当一名角色进入濒死状态时，你可以展示该角色的一张手牌，然后若此牌不为基本牌：其弃置之，回复1点体力。</td>
+	<th class='jiang'>将</th></tr>
+<tr>
+	<td class='jineng'>
+		珠联璧合：孙坚<br />
+		<strong>甘露</strong>——出牌阶段限一次，你可以令两名装备区里牌的数量之差不大于X的角色交换装备区里的牌（X为你已损失的体力值）。<br />
+		<strong>补益</strong>——每回合限一次，与你势力相同的角色进入濒死状态时，你可令本次伤害来源执行一次“军令”。若其不执行，则该濒死的角色回复1点体力。</td>
+	<th class='quan'>十周年</th></tr>
+
+<tr>
+	<td>WU 025</td>
+	<td class="wu">吴</td>
+	<th>孙　翊</th>
+	<td></td>
+	<td></td>
+	<td class='jineng'></td>
+	<th></th></tr>
+
+<tr>
+	<td>WU 026</td>
+	<td class="wu">吴</td>
+	<th>步练师</th>
+	<td>无冕之后</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>安恤</strong>——出牌阶段限一次，你可以选择手牌数不同的两名其他角色，令其中手牌多的角色将一张手牌交给手牌少的角色。然后若这两名角色手牌数相等，你摸一张牌或回复一点体力。<br />
+		<strong>追忆</strong>。</td>
+	<th class='zhuo'>桌<sub>59</sub></th></tr>
+
+<tr>
+	<td>WU 027</td>
+	<td class="wu">吴</td>
+	<th>程　普</th>
+	<td>三朝虎臣</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>疠火</strong>——你可以将一张普通【杀】当火【杀】使用，或将视为使用一张【杀】改为视为使用一张火【杀】，若如此做，当此【杀】结算结束后，若此【杀】造成过伤害，你失去1点体力；你使用火【杀】选择目标的个数上限+1。<br />
+		<strong>醇醪</strong>——结束阶段开始时，若没有“醇”，你可以将至少一张【杀】置于武将牌上，称为“醇”；当一名角色处于濒死状态时，你可以将一张“醇”置入弃牌堆，令该角色视为使用一张【酒】。</td>
+	<th class='jiang'>将<sub>2012</sub></th></tr>
+
+<tr>
+	<td>WU 028</td>
+	<td class="wu">吴</td>
+	<th>韩　当</th>
+	<td>石城侯</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>弓骑</strong>——出牌阶段限一次，你可以弃置一张牌，令你于此回合内攻击范围无限，然后若你以此法弃置的牌为装备牌，你可以弃置一名其他角色的一张牌。<br />
+		<strong>解烦</strong>——限定技，出牌阶段，你可以选择一名角色，令攻击范围内含有该角色的所有角色（该角色除外）各选择一项：1.弃置一张武器牌；2.令其摸一张牌。</td>
+	<th class='jiang'>将<sub>2012</sub></th></tr>
+
+<tr>
+	<td>WU 029</td>
+	<td class="wu">吴</td>
+	<th>潘璋&马忠</th>
+	<td>擒龙伏虎</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>夺刀</strong>——当你受到【杀】造成的伤害后，你可以弃置一张牌，获得来源装备区里的武器牌。<br />
+		<strong>暗箭</strong>—— 锁定技，当你使用【杀】对目标角色造成伤害时，若你不在其攻击范围内，则此伤害+1。</td>
+	<th class="xianxia">线下<sub>2016</sub></th></tr>
+
+<tr>
+	<td>WU 030</td>
+	<td class="wu">吴</td>
+	<th>虞　翻</th>
+	<td>狂直之士</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>纵玄</strong>——当你的牌因弃置而置入弃牌堆前，你可以将其中至少一张牌移动的目标区域改为牌堆顶。<br />
+		<strong>直言</strong>——结束阶段开始时，你可以令一名角色先摸一张牌再展示之，然后若此牌为装备牌：该角色回复1点体力，使用之。</td>
+	<th class='jiang'>将<sub>2013</sub></th></tr>
+
+<tr>
+	<td>WU 031</td>
+	<td class="wu">吴</td>
+	<th>朱　然</th>
+	<td>不动之督</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>胆守</strong>——每回合限一次，当你成为基本牌或锦囊牌的目标后，你可以摸X张牌（X为你本回合成为牌的目标次数）；当前回合角色的结束阶段，若你本回合没有以此法摸牌，你可以弃置与其手牌数相同的牌数对其造成1点伤害。</td>
+		<th class='online'>待定</th></tr>
+
+<tr>
+	<td>WU 032</td>
+	<td class="wu">吴</td>
+	<th>顾　雍</th>
+	<td>庙堂的玉磬</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>慎行</strong>——出牌阶段，你可以弃置两张牌，摸一张牌。<br />
+		<strong>秉壹</strong>——结束阶段开始时，你可以展示所有手牌，若颜色均相同，你令一至X名角色各摸一张牌（X为你的手牌数）。</td>
+	<th class='jiang'>将<sub>2014</sub></th></tr>
+
+<tr>
+	<td>WU 033</td>
+	<td class="wu">吴</td>
+	<th>孙鲁班</th>
+	<td>为虎作伥</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>譛毁</strong>——当你于出牌阶段内使用【杀】或黑色普通锦囊牌指定目标时，若目标数为1，你可以令除该目标外的一名是此牌的合法目标的其他角色选择一项：1.将一张牌交给你，若如此做，其代替你成为此牌的使用者；2.也成为此牌的目标。每阶段限一次。<br />
+		<strong>骄矜</strong>——当你受到男性角色造成的伤害时，你可以弃置一张装备牌，令此伤害-1。</td>
+	<th class='jiang'>将<sub>2014</sub></th></tr>
+
+<tr>
+	<td>WU 034</td>
+	<td class="wu">吴</td>
+	<th>朱　桓</th>
+	<td>中洲拒天人</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>奋励</strong>——若你的手牌数为全场最多，你可以跳过摸牌阶段；若你的体力值为全场最多，你可以跳过出牌阶段；若你的装备区里有牌且数量为全场最多，你可以跳过弃牌阶段。<br />
+		<strong>平寇</strong>——回合结束时，你可以对至多X名其他角色各造成1点伤害（X为你本回合跳过的阶段数）。</td>
+	<th class='jiang'>将<sub>2014</sub></th></tr>
+
+<tr>
+	<td>WU 035</td>
+	<td class="wu">吴</td>
+	<th>全　琮</th>
+	<td>慕势耀族</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>邀名</strong>——每回合每个选项限一次，当你造成或受到伤害后，你可以选择一项：1.弃置手牌数大于你的一名角色的一张手牌；2.令手牌数小于你的一名角色摸一张牌；3.令手牌数与你相同的角色弃置至多两张牌然后摸等量的牌。</td>
+		<th class='online'>待定</th></tr>
+
+<tr>
+	<td>WU 036</td>
+	<th class="wu zhugong">吴</th>
+	<th>孙　休</th>
+	<td>弥殇的景君</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>宴诛</strong>——出牌阶段限一次，你可以令一名有牌的其他角色选择一项：令你获得其装备区里所有的牌，然后你失去技能“宴诛”，直到游戏结束；或弃置一张牌。<br />
+		<strong>兴学</strong>——结束阶段开始时，你可以令至多X名角色依次摸一张牌并将一张牌置于牌堆顶（X为你的体力值）；若你已失去技能“宴诛”，则将X改为你的体力上限。<br />
+		<strong>诏缚</strong>——主公技，锁定技，你距离为1的角色视为在其他吴势力角色的攻击范围内。</td>
+	<th class='jiang'>将<sub>2015</sub></th></tr>
+
+<tr>
+	<td>WU 037</td>
+	<td class="wu">吴</td>
+	<th>朱　治</th>
+	<td>王事靡盬</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>安国</strong>——出牌阶段限一次，你可以选择一名其他角色，若其手牌数为全场最少，其摸一张牌；体力值为全场最低，回复1点体力；装备区内牌数为全场最少，随机使用一张装备牌。然后若该角色有未执行的效果且你满足条件，你执行之。 </td>
+	<th class='jiang'>将<sub>2015</sub></th></tr>
+
+<tr>
+	<td>WU 038</td>
+	<td class="wu">吴</td>
+	<th>岑　昏</th>
+	<td>伐梁倾瓴</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>极奢</strong>——出牌阶段，若你的手牌上限大于0，你可以摸一张牌，然后你本回合的手牌上限-1。结束阶段开始时，若你没有手牌，则你可以横置至多X名角色的武将牌（X为你的体力值）。<br />
+		<strong>链祸</strong>——锁定技，当你受到火焰伤害时，若你处于“连环状态”且你是传导伤害的起点，则此伤害+1。</td>
+	<th class='jiang'>原<sub>2016</sub></th></tr>
+
+<tr>
+	<td>WU 039</td>
+	<td class="wu">吴</td>
+	<th>孙　登</th>
+	<td>才高德茂</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>匡弼</strong>——出牌阶段限一次，你可以选择一名其他角色，该角色将至多三张牌置于你的武将牌上。若如此做，你的下回合开始时，你获得“匡弼”牌，然后该角色摸等量的牌。</td>
+	<th class='xinghuo'>星火燎原-天府</th></tr>
+
+<tr>
+	<td>WU 040</td>
+	<td class="wu">吴</td>
+	<th>大乔&小乔</th>
+	<td>同气连枝</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>星舞</strong>——弃牌阶段开始时，你可将一张手牌置于武将牌上。若所有星舞牌的花色数大于2，你将三张花色均不相同的星舞牌置入弃牌堆，然后选择一名其他角色，你弃置其装备区里的所有牌。若其为男/女性角色，你对其造成2/1点伤害。<br />
+		<strong>落雁</strong>—— 锁定技，若你有“星舞”牌，你视为拥有“天香”和“流离”。<br />
+		<span class="getskill">天香</span>——当你受到伤害时，你可以弃置一张红桃牌，防止此次伤害并选择一名其他角色，你选择一项：令其受到1点伤害，然后摸X张牌（X为其已损失体力值且至多为5）；令其失去1点体力，然后其获得你弃置的牌。<br />
+		<span class="getskill">流离</span>——当你成为【杀】的目标时，你可以弃置一张牌并选择你攻击范围内的一名其他角色，然后将此【杀】转移给该角色。</td>
+	<th class='online'>Online</th></tr>
+
+<tr>
+	<td>WU 041</td>
+	<td class="wu">吴</td>
+	<th>祖　茂</th>
+	<td>杀身成仁</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>引兵</strong>——结束阶段，你可以将任意张非基本牌置于你的武将牌上；当你受到【杀】或【决斗】造成的伤害后，你移去一张“引兵”牌。<br />
+		<strong>绝地</strong>——锁定技，准备阶段，你选择一项：1.移去“引兵”牌，将手牌补至体力上限数；2.将“引兵”牌交给一名体力值不大于你的其他角色，其回复1点体力，摸等量的牌。</td>
+	<th class='xinghuo'>星火燎原-七杀</th></tr>
+
+<tr>
+	<td>WU 042</td>
+	<td class="wu">吴</td>
+	<th>诸葛恪</th>
+	<td>全力攻城</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>傲才</strong>——当你于回合外需要使用或打出基本牌时，你可以观看牌堆顶的两张牌，若如此做，你可以使用或打出其中的一张基本牌。<br />
+		<strong>黩武</strong>——出牌阶段，你可以选择你攻击范围内的一名其他角色并弃置X张牌（X为该角色的体力值），对其造成1点伤害，若其因受到此伤害而进入濒死状态，当此濒死结算结束后，你失去1点体力且本回合“黩武”无效。</td>
+	<th class='online'>限定</th></tr>
+
+<tr>
+	<td>WU 043</td>
+	<td class="wu">吴</td>
+	<th>孙鲁育</th>
+	<td>刹那芳华</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>魅步</strong>——其他角色的出牌阶段开始时，若你在其攻击范围内，你可以弃置一张牌，然后其本回合获得"止息"。若你以此法弃置的不是【杀】或黑色锦囊牌，则本回合其与你的距离为1。<br />
+		<span class="getskill">止息</span>——锁定技，出牌阶段，你至多使用X张牌（X为你的体力值）。你使用锦囊牌后，结束出牌阶段。<br />
+		<strong>穆穆</strong>——出牌阶段开始时，你可以选择一项：弃置场上的一张装备牌；获得场上的一张防具牌，然后你本回合不能使用或打出【杀】。</td>
+	<th class='xianxia'>线下<sub>2017</sub></th></tr>
+
+<tr>
+	<td>WU 044</td>
+	<td class="wu">吴</td>
+	<th>步　骘</th>
+	<td>积硅靖边</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>弘德</strong>——当你一次性获得或失去至少两张牌时，你可以令一名其他角色摸一张牌。<br />
+		<strong>定叛</strong>——出牌阶段限X次，你可以选择一名装备区内有牌的角色，令其摸一张牌，然后令其选择一项：1.你弃置其一张装备牌；2.收回装备区里的牌，你对其造成1点伤害。（X为场上反贼数）</td>
+	<th class='xinghuo'>星火燎原-天府</th></tr>
+
+<tr>
+	<td>WU 045</td>
+	<th class="wu zhugong">吴</th>
+	<th>孙　皓</th>
+	<td>溺酒残戮</td>
+	<td class='gy'>5</td>
+	<td class='jineng'>
+		<strong>残蚀</strong>——摸牌阶段开始时，你可放弃摸牌，改为摸X张牌（X为已受伤的角色数），若如此做，当你于此回合内使用基本牌或锦囊牌时，你弃置一张牌。<br />
+		<strong>仇海</strong>——锁定技，当你受到伤害时，若你没有手牌，你令此伤害+1。<br />
+		<strong>归命</strong>——主公技，锁定技，其他吴势力角色于你的回合内视为已受伤的角色。</td>
+	<th class='online'>限定</th></tr>
+
+<tr>
+	<td>WU 047</td>
+	<td class="wu">吴</td>
+	<th>阚　泽</th>
+	<td>慧眼的博士</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>下书</strong>——出牌阶段开始时，你可以将所有手牌交给一名其他角色，然后该角色亮出任意数量的手牌（至少一张），令你选择一项：1.获得其亮出的手牌；2.获得其未亮出的手牌。<br />
+		<strong>宽释</strong>——结束阶段，你可以选择一名角色。直到你的下回合开始，该角色下一次受到超过1点的伤害时，防止此伤害，然后你跳过下个回合的摸牌阶段。</td>
+	<th class='zhuo'>桌<sub>81</sub></th></tr>
+
+<tr>
+	<td>WU 048</td>
+	<td class="wu">吴</td>
+	<th>贺　齐</th>
+	<td>马踏群峦</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>绮胄</strong>——锁定技，你根据装备区里牌的花色数获得以下技能：1种以上-马术；2种以上-英姿；3种以上-短兵；4种-奋威。<br />
+		<span class="getskill">马术</span>——锁定技，你计算与其他角色的距离-1。<br />
+		<span class="getskill">英姿</span>——摸牌阶段，你可以多摸一张牌。<br />
+		<span class="getskill">短兵</span>——你使用【杀】可以多选择一名距离为1的角色为目标。<br />
+		<span class="getskill">奋威</span>——限定技，当一张锦囊牌指定两个或更多目标后，你可令此牌对其中任意名目标角色无效。<br />
+		<strong>闪袭</strong>——出牌阶段限一次，你可以弃置一张红色基本牌，然后弃置攻击范围内的一名其他角色的一张牌，若弃置的牌是【闪】，你观看其手牌，若弃置的不是【闪】，其观看你的手牌。</td>
+	<th class='xinghuo'>星火燎原-天相</th></tr>
+
+<tr>
+	<td>WU 049</td>
+	<td class="wu">吴</td>
+	<th>吕　岱</th>
+	<td>清身奉公</td>
+	<td>4</td>
+	<td class='jineng'>		
+		<strong>勤国</strong>——当你与回合内使用装备牌结算完毕后，你可以视为使用一张【杀】。当你的装备里的牌移动后，或装备牌移至你的装备区后，若你装备区里的牌数与你的体力值相等且与此次移动之前你的装备区里的牌数不等，你回复一点体力。</td>
+	<th class='xinghuo'>星火燎原-天相</th></tr>
+
+<tr>
+	<td>WU 050</td>
+	<td class="wu">吴</td>
+	<th>潘　濬</th>
+	<td>方严疾恶</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>观微</strong>——每名角色的回合限一次，出牌阶段结束时，若其于此回合内使用过至少两张花色均相同的牌，你可以弃置一张牌，其摸两张牌并获得一个额外出牌阶段。<br />
+		<strong>公清</strong>——锁定技，当你受到伤害时，若伤害来源攻击范围小于3，则你只受1点伤害；若伤害来源攻击范围大于3，则此伤害+1。</td>
+	<th class='xinghuo'>星火燎原-天机</th></tr>
+
+<tr>
+	<td>WU 051</td>
+	<td class="wu">吴</td>
+	<th>庞　统</th>
+	<td>南州士冠</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>过论</strong>——出牌阶段限一次，你可展示一名其他角色的一张手牌。然后你可选择你的一张牌。若其选择的点数小，你与其交换这两张牌，其摸一张牌；若你选择的点数小，你与其交换这两张牌，你摸一张牌。<br />
+		<strong>送丧</strong>——限定技，当其他角色死亡时，若你已受伤，你可以回复1点体力；若你未受伤，你可加1点体力上限。若如此做，你获得【展骥】。<br />
+		<span class="getskill">展骥</span>——锁定技，当你与出牌阶段内因摸牌且并非发动此技能而得到牌时，你摸一张牌。</td>
+	<th class='xinghuo'>星火燎原-天同</th></tr>
+
+<tr>
+	<td>WU 052</td>
+	<td class="wu">吴</td>
+	<th>严　畯</th>
+	<td>志存补益</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>观潮</strong>——出牌阶段开始时，你可以选择一项直到回合结束：1.当你使用牌时，若你此阶段使用过的所有牌的点数为严格递增，你摸一张牌；1.当你使用牌时，若你此阶段使用过的所有牌的点数为严格递减，你摸一张牌。<br />
+		<strong>逊贤</strong>——每名其他角色的回合限一次，你使用或打出的牌置入弃牌堆时，你可以将之交给一名手牌比你多的角色。</td>
+	<th class='xinghuo'>星火燎原-天梁</th></tr>
+
+<tr>
+	<td>WU 053</td>
+	<td class="wu">吴</td>
+	<th>周　鲂</th>
+	<td>下发载义</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>诱敌</strong>——结束阶段，你可以令一名其他角色弃置你一张手牌，若弃置的牌不是【杀】，则你获得其一张牌；若弃置的牌不是黑色，则你摸一张牌。<br />
+		<strong>断发</strong>——出牌阶段，你可以弃置任意张黑色牌，然后摸等量的牌（你每阶段以此法弃置的牌数总和不能大于你的体力上限）。</td>
+	<th class='xinghuo'>星火燎原-天相</th></tr>
+
+<tr>
+	<td>WU 059</td>
+	<td class="wu">吴</td>
+	<th>葛　玄</th>
+	<td>太极仙翁</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>炼化</strong>——你的回合外，每当有其他角色受到伤害后，你获得一个“丹血”标记（该角色与你阵营一致为红色，不一致为黑色，此颜色对玩家不可见）直到你的准备阶段开始。准备阶段，根据你获得的“丹血”标记的数量和颜色，你获得相应的游戏牌以及获得相应技能直到回合结束。3枚或以下：“英姿”和【桃】；超过3枚且红色“丹血”较多：“观星”和【无中生有】；超过3枚且黑色“丹血”较多：“直言”和【顺手牵羊】；超过3枚且红色和黑色一样多：【杀】、【决斗】和“攻心”。<br/>
+		<strong>札符</strong>——限定技，出牌阶段，你可以选择一名其他角色。该角色的下一个弃牌阶段开始时，其选择保留一张手牌，然后将其余的手牌交给你。<br/>
+		<span class="getskill">英姿</span>——锁定技，摸牌阶段，你多摸一张牌；你的手牌上限与你的体力上限相同。<br />
+		<span class="getskill">观星</span>——准备阶段开始时，你可以观看牌堆顶的X张牌（X为全场角色的数量且至多为5），然后以任意顺序放回牌堆顶或牌堆底。<br />
+		<span class="getskill">攻心</span>——出牌阶段限一次，你可以观看一名其他角色的手牌，然后你可以展示其中一张红桃牌，选择一项：1.弃置此牌；2.将此牌置于牌堆顶。<br />
+		<span class="getskill">直言</span>——结束阶段开始时，你可以令一名角色先摸一张牌再展示之，然后若此牌为装备牌：该角色回复1点体力，使用之。</td>
+	<th class='online'>待定</th></tr>
+
+<tr>
+	<td>WU 060</td>
+	<td class="wu">吴</td>
+	<th>孙　茹</th>
+	<td>出水青莲</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>轻逸</strong>——你可以跳过你此回合的判定阶段和摸牌阶段。若如此做，视为对一名其他角色使用一张【杀】。<br />
+		<strong>释衅</strong>——锁定技，防止你受到的火焰伤害。</td>
+	<th class='zhuo'>桌<sub>73</sub></th></tr>
+
+<tr>
+	<td>WU 061</td>
+	<td class="wu">吴</td>
+	<th>凌　操</th>
+	<td>激流勇进</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>独进</strong>——摸牌阶段摸牌时，你可以额外摸X+1张牌，X为你装备区的牌数量的一半（向下取整）。</td>
+	<th class='zhuo'>桌<sub>74</sub></th></tr>
+
+<tr>
+	<td>WU 062</td>
+	<td class="wu">吴</td>
+	<th>留　赞</th>
+	<td>啸天亢音</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>奋音</strong>——你的回合内，从本回合你使用的第二张牌起，当你使用一张牌时，若此牌与你使用的上一张牌颜色不同，你可以摸一张牌。</td>
+	<th class='zhuo'>桌<sub>78</sub></th></tr>
+
+<tr>
+	<td>WU 064</td>
+	<td class="wu">吴</td>
+	<th>徐　氏</th>
+	<td>节义双全</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>问卦</strong>——其他角色/你的出牌阶段限一次，其可以交给你一张牌，(若当前回合角色为你，则跳过此步骤)，你可以将此牌/一张牌置于牌堆顶或牌堆底，然后你与其/你从另一端摸一张牌。<br />
+		<strong>伏诛</strong>——一名男性角色的结束阶段，若牌堆剩余牌数不大于你体力值的十倍，则你可以依次对其使用牌堆中所有的【杀】（不能超过游戏人数），然后洗牌。</td>
+	<th class='xinghuo'>星火燎原-七杀</th></tr>
+
+<tr>
+	<td>WU 065</td>
+	<td class="wu">吴</td>
+	<th>薛　综</th>
+	<td>彬彬之玊</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>复难</strong>——其他角色使用或打出牌响应你使用的牌时，你可以令其获得你使用的牌（其本回合不能使用或打出这张牌），然后你获得其使用或打出的牌。<br />
+		<strong>诫训</strong>——结束阶段，你可令一名其他角色摸等同于场上方块牌数的牌，然后弃置X张牌（X为此前该技能发动过的次数）。若有角色因此法弃置了所有牌，则你失去“诫训”，然后你发动“复难”时，无须令其获得你使用的牌。<br />
+		<span class="getskill">复难·修改</span>——其他角色使用或打出牌响应你使用的牌时，你可以获得其使用或打出的牌。</td>
+	<th class='xinghuo'>星火燎原-天机</th></tr>
+
+<tr>
+	<td>WU 066</td>
+	<td class="wu">吴</td>
+	<th>陆　绩</th>
+	<td>瑚琏之器</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>怀橘</strong>——锁定技，游戏开始时，你获得3个“橘”标记。有“橘”的角色受到伤害时，防止此伤害并移去一个“橘”；有“橘”的角色摸牌阶段额外摸一张牌。<br />
+		<strong>遗礼</strong>——出牌阶段开始时，你可以失去1点体力或移去一个“橘”，然后令一名其他角色获得一个“橘”。<br />
+		<strong>整论</strong>——若你没有“橘”，你可以跳过摸牌阶段，然后获得一个“橘”。</td>
+	<th class='yin'>阴</th></tr>
+
+<tr>
+	<td>WU 067</td>
+	<td class="wu zhugong">吴</td>
+	<th>孙　亮</th>
+	<td>寒江枯木</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>溃诛</strong>——弃牌阶段结束后，你可以选择一项：令至多X名角色各摸一张牌；对任意名体力值之和为X的角色造成一点伤害，若不少于2名角色，你须受到一点伤害（X为你于此阶段弃置的牌数）。<br />
+		<strong>掣政</strong>——锁定技，你的出牌阶段内，攻击范围不包含你的角色不能成为你使用牌的目标。出牌阶段结束时，若你本阶段内使用的牌数小于这些角色数，你弃置其中一名角色一张牌。<br />
+		<strong>立军</strong>——主公技，每个出牌阶段限一次，其他吴势力角色于其出牌阶段使用【杀】结算结束后，其可以将此【杀】交给你，然后你可以令其摸一张牌。</td>
+	<th class='yin'>阴</th></tr>
+
+<tr>
+	<td>WU 068</td>
+	<td class="wu">吴</td>
+	<th>周　妃</th>
+	<td>软玉温香</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>良姻</strong>——当有牌移除游戏时，你可以令手牌数大于你的一名角色摸一张牌；当有牌从游戏外加入任意角色的手牌时，你可以令手牌数小于你的一名角色弃置一张牌。<br />
+		<strong>箜声</strong>——准备阶段，你可以将任意张牌置于武将牌上。结束阶段，你使用武将牌上的装备牌，并获得武将牌上的其他牌。<br />
+	<th class='lei'>雷</th></tr>
+
+<tr>
+	<td>WU ???</td>
+	<td class="wu">吴</td>
+	<th>卫温&诸葛直</th>
+	<td></td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>浮海</strong>——出牌阶段对每名角色限一次，你可以展示一张手牌并选择上家或下家。该角色展示一张手牌，若你的牌点数大于等于他的牌点数，你弃置你展示的牌，然后继续对其上家或下家重复此流程；你的牌点数小于该角色牌的点数，则该角色弃置其展示的牌，然后你与其各摸X张牌（X为你此回合内发动此技能选择的角色数），且你此阶段内不能再发动“浮海”。<br />
+	<th class='online'>逐鹿天下</th>
+
+<tr>
+	<td>WU ???</td>
+	<td class="wu">吴</td>
+	<th>苏　飞</th>
+	<td>与子同袍</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>联翩</strong>——当你于出牌阶段使用牌连续指定同一名角色为目标（或之一）时，你可以摸一张牌，若如此做，你可以将此牌交给该角色（或其中之一）。每回合限三次。</td>
+	<th class='daiding'>待定</th>
+</tr>
+
+<tr>
+	<td>WU ???</td>
+	<td class="wu">吴</td>
+	<th>许　贡</th>
+	<td></td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>表召</strong>——结束阶段，你可以将一张牌置于武将牌上，称为“表”。当有一张与“表”花色点数均相同的牌进入弃牌堆时，移去“表”且你失去1点体力，若此牌是其他角色因弃置而进入弃牌堆的，则改为该角色获得“表”。准备阶段，若你的武将牌上有“表”，则移去“表”然后你选择一名角色，该角色回复1点体力且将手牌摸至与全场手牌数最多的人相同（最多摸五张）。<br/>
+		<strong>业仇</strong>——你死亡时，可以选择一名已损失体力值大于1的角色。每个回合结束时，该角色失去1点体力直到其回合开始。</td>
+	<th class='online'>自走棋</th>
+</tr>
+
+<tr>
+	<td rowspan="2">QUN 001</td>
+	<td rowspan="2" class="qun">群</td>
+	<th rowspan="2">华　佗</th>
+	<td rowspan="2">神医</td>
+	<td rowspan="2">3</td>
+	<td class="jineng">
+		<strong>除疠</strong>——出牌阶段限一次，若你有牌，你可以选择势力各不同的有牌的至少一名其他角色，弃置你和这些角色的各一张牌，然后以此法被弃置黑桃牌的角色各摸一张牌。<br />
+		<strong>急救</strong>——你于回合外可以将一张红色牌当【桃】使用。</td>
+	<th class="jiexiantupo">界限突破</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>急救</strong>——你于回合外可以将一张红色牌当【桃】使用。<br />
+		<strong>除疠</strong>——出牌阶段限一次，你可以选择至多三名势力各不相同或未确定势力的其他角色，然后你弃置你和这些角色的各一张牌。被弃置黑桃牌的角色各摸一张牌。</td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="2">QUN 002</td>
+	<td rowspan="2" class="qun">群</td>
+	<th rowspan="2">吕　布</th>
+	<td rowspan="2">武的化身</td>
+	<td rowspan="2">5</td>
+	<td class="jineng">
+		<strong>无双</strong>——锁定技，你使用的【杀】需两张【闪】才能抵消；与你进行【决斗】的角色每次需打出两张【杀】。<br />
+		<strong>利驭</strong>——当你使用的【杀】对一名其他角色造成伤害后，你可以获取其区域里的一张牌。然后若获得的牌不是装备牌，其摸一张牌；若获得的牌时装备牌，则视为你对其选择的另一名角色使用一张【决斗】。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：貂蝉<br />
+		<strong>无双</strong>——锁定技，你使用的【杀】需两张【闪】才能抵消；与你进行【决斗】的角色每次需打出两张【杀】。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="4">QUN 003</td>
+	<td rowspan="4" class="qun">群</td>
+	<th rowspan="4">貂　蝉</th>
+	<td rowspan="3">绝世的舞姬</td>
+	<td rowspan="3">4</td>
+	<td class="jineng">
+		<strong>离间</strong>——出牌阶段限一次，你可以弃置一张牌并选择两名男性角色，令其中的一名男性角色视为对另一名男性角色使用【决斗】。<br />
+		<strong>闭月</strong>——结束阶段开始时，你可以摸一张牌。</td>
+	<th class="zhuo">桌<sub>3</sub></th></tr>
+<tr>
+	<td class="jineng">
+		<strong>离间</strong>——出牌阶段限一次，你可以弃置一张牌并选择两名男性角色，令其中的一名男性角色视为对另一名男性角色使用【决斗】。<br />
+		<strong>闭月</strong>——结束阶段，你可以摸一张牌。若你没有手牌，则改为摸两张牌。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：吕布<br />
+		<strong>离间</strong>——出牌阶段限一次，你可以弃置一张牌并选择两名其他男性角色，令其中的一名男性角色视为对另一名男性角色使用【决斗】。<br />
+		<strong>闭月</strong>——结束阶段开始时，你可以摸一张牌。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td>驭魂千机</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>离魂</strong>——出牌阶段限一次，你可以弃置一张牌并指定一名男性角色，将你的武将牌翻面并获得其所有手牌，若如此做，出牌阶段结束时，你交给其X张牌，X为其当前的体力值。<br />
+		<strong>闭月</strong>——结束阶段开始时，你可以摸一张牌。</td>
+	<th class="xianxia">线下<sub>2017</sub></th>
+
+<tr>
+	<td rowspan="2">QUN 004</td>
+	<th rowspan="2" class="qun zhugong">群</th>
+	<th rowspan="2">袁　绍</th>
+	<td rowspan="2">高贵的名门</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>乱击</strong>——你可以将花色相同的两张手牌当【万箭齐发】使用。<br />
+		<strong>血裔</strong>——主公技，锁定技，你的手牌上限+2X（X为其他群势力角色的数量）。</td>
+	<th class="huo">火</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：颜良&文丑<br />
+		<strong>乱击</strong>——出牌阶段，你可以将两张手牌当【万箭齐发】使用（不能使用本回合发动此技能时已用过的花色） 。若如此做，当与你势力相同的角色因响应此【万箭齐发】而打出的【闪】结算结束时，其可以摸一张牌。<br /></td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="3">QUN 005</td>
+	<td rowspan="3" class="qun">群</td>
+	<th rowspan="3">颜良&文丑</th>
+	<td rowspan="3">虎狼兄弟</td>
+	<td rowspan="3">4</td>
+	<td class="jineng" rowspan="2">
+		珠联璧合：袁绍<br />
+		<strong>双雄</strong>——摸牌阶段开始时，你可以放弃摸牌，进行判定，当判定牌生效后，你获得此牌，若如此做，你于此回合内可以将与此牌颜色不同的一张手牌当【决斗】使用。</td>
+	<th class="huo">火</th></tr>
+<tr>
+	<th class="guozhan">国战</th></tr>
+<tr><td class="jineng">
+		<strong>双雄</strong>——摸牌阶段，你可以改为亮出牌堆顶的两张牌，选择并获得其中一张牌，将另一张牌置入弃牌堆。若此做，你于此阶段内可以将以此法置入弃牌堆的牌颜色不同的手牌当【决斗】使用；当你受到【决斗】造成的伤害后，你获得其他角色因此【决斗】打出的所有非转化的【杀】。</td>
+	<th class="huo">2019</th></tr>
+
+<tr>
+	<td rowspan="3">QUN 006</td>
+	<th rowspan="3" class="qun zhugong">群</th>
+	<th rowspan="3">董　卓</th>
+	<td rowspan="3">魔王</td>
+	<td rowspan="3">8</td>
+	<td class="jineng">
+		<strong>酒池</strong>——你可以将一张黑桃手牌当【酒】使用。<br />
+		<strong>肉林</strong>——锁定技，当你使用【杀】指定一名女性角色为目标后，或成为女性角色使用【杀】的目标后，你将抵消此【杀】需使用的【闪】的数量改为2。<br />
+		<strong>崩坏</strong>——锁定技，结束阶段开始时，若你不是体力值最小的角色，你选择一项：1.失去1点体力；2.减1点体力上限。<br />
+		<strong>暴虐</strong>——主公技，当其他群势力角色造成伤害后，该角色可以进行判定，若结果为黑桃，你回复1点体力。</td>
+	<th class="lin">林</th></tr>
+	<td class="jineng">
+		<strong>酒池</strong>——你可以将一张黑桃手牌当【酒】使用。你使用的受【酒】影响的【杀】造成伤害后，本回合“崩坏”失效。<br />
+		<strong>肉林</strong>——锁定技，当你使用【杀】指定一名女性角色为目标后，或成为女性角色使用【杀】的目标后，你将抵消此【杀】需使用的【闪】的数量改为2。<br />
+		<strong>崩坏</strong>——锁定技，结束阶段开始时，若你不是体力值最小的角色，你选择一项：1.失去1点体力；2.减1点体力上限。<br />
+		<strong>暴虐</strong>——主公技，当其他群势力角色造成伤害后，该角色可以进行判定，若结果为黑桃，你回复1点体力。</td>	
+	<th class="wujiangtupo">武将突破</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>横征</strong>——摸牌阶段开始时，若你的体力值为1或你没有手牌，你可以放弃摸牌，获得每名其他角色区域里的一张牌。<br />
+		<strong>暴凌</strong>——主将技，锁定技，出牌阶段结束时，若此武将牌已明置且你有副将，你移除副将的武将牌，然后加3点体力上限，回复3点体力，获得“崩坏”。<br />
+		<span class="getskill">崩坏</span>——锁定技，结束阶段开始时，若你不是体力值最小的角色，你选择一项：1.失去1点体力；2.减1点体力上限。</td>
+	<th class="shi">势</th></tr>
+
+<tr>
+	<td rowspan="2">QUN 007</td>
+	<td rowspan="2" class="qun">群</td>
+	<th rowspan="2">贾　诩</th>
+	<td rowspan="2">冷酷的毒士</td>
+	<td rowspan="2">3</td>
+	<td class="jineng" rowspan="2">
+		珠联璧合：李傕&郭汜、张　绣<br />
+		<strong>完杀</strong>——锁定技，不处于濒死状态的其他角色于你的回合内不能使用【桃】。<br />
+		<strong>乱武</strong>——限定技，出牌阶段，你可以选择所有其他角色，这些角色各需对距离最小的另一名角色使用一张【杀】，否则失去1点体力。<br />
+		<strong>帷幕</strong>——锁定技，你不是黑色锦囊牌的合法目标。</td>
+	<th class="lin">林</th></tr>
+<tr>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">QUN 008</td>
+	<td rowspan="2" class="qun">群</td>
+	<th rowspan="2">庞　德</th>
+	<td rowspan="2">人马一体</td>
+	<td rowspan="2">4</td>
+	<td class="jineng" rowspan="2">
+		<strong>马术</strong>——锁定技，你计算与其他角色的距离-1。<br />
+		<strong>鞬出</strong>——当你使用【杀】指定一个目标后，你可以弃置其一张牌，若弃置的牌：是装备牌，该角色不能使用【闪】；不是装备牌，该角色获得此【杀】。 </td>
+	<th class="xianxia">线下<sub>2017</sub></th></tr>
+<tr>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="2">QUN 009</td>
+	<td rowspan="2" class="qun">群</td>
+	<th rowspan="2">左　慈</th>
+	<td rowspan="2">谜之仙人</td>
+	<td rowspan="2">3</td>
+	<td class="jineng">
+		<strong>化身</strong>——所有玩家亮出武将牌后，你随机将两张游戏外的武将牌扣置于一旁，形成“化身牌堆”（扣置入过“化身牌堆”的牌称为“化身牌”，武将牌须扣置入“化身牌堆”，“化身牌堆”里的牌对你可见），然后选择一张“化身牌”；回合开始时和结束后，你可以选择一张“化身牌”。<br />
+		<strong>新生</strong>——当你受到1点伤害后，你可以随机将一张游戏外的武将牌置入“化身牌堆”。</td>
+	<th class="shan">山</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：于吉<br />
+		<strong>化身</strong>——准备阶段开始时，若你的“化身”不足两张，则你可以观看剩余武将牌堆中的五张牌，然后扣置其中至多两张武将牌在你的武将牌旁，称为“化身”;若“化身”有两张以上，则你可以用剩余武将牌堆顶的一张牌替换一张“化身”。你可以于相应的时机明置并发动“化身”的一个技能，技能结算完成后将该“化身”放回剩余武将牌堆。你每个时机只能发动一张“化身”的技能，且不能发动带有技能类型的技能(锁定技、限定技等)。<br />
+		<strong>新生</strong>——当你受到伤害后，你可以从剩余武将牌堆中扣置一张牌加入“化身”牌中。</td>
+	<th class="bian">变</th></tr>
+
+<tr>
+	<td rowspan="2">QUN 010</td>
+	<th rowspan="2" class="qun zhugong">群</th>
+	<th rowspan="2">张　角</th>
+	<td rowspan="2">天公将军</td>
+	<td rowspan="2">3</td>
+	<td class="jineng">
+		<strong>雷击</strong>——当你使用或打出【闪】时，你可以令一名其他角色进行判定，若结果为：黑桃，你对该角色造成2点雷电伤害；梅花，你回复1点体力，然后对该角色造成1点雷电伤害。 <br />
+		<strong>鬼道</strong>——当一名角色的判定牌生效前，你可以打出一张黑色牌替换之。<br />
+		<strong>黄天</strong>——主公技，其他群势力角色的出牌阶段限一次，其可以将一张【闪】或【闪电】交给你。</td>
+	<th class="xianxia">珍藏<sub>2015</sub></th></tr>
+<tr>
+	<td class="jineng">
+		<strong>雷击</strong>——当你使用或打出【闪】时，你可以令一名角色进行判定，若结果为黑桃，你对该角色造成2点雷电伤害。<br />
+		<strong>鬼道</strong>——当一名角色的判定牌生效前，你可以打出一张黑色牌替换之。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">QUN 011</td>
+	<td rowspan="2" class="qun">群</td>
+	<th rowspan="2">于　吉</th>
+	<td>太平道人</td>
+	<td rowspan="2">3</td>
+	<td class="jineng">
+		<strong>蛊惑</strong>——你于一名角色的回合内可以将一张手牌当一张基本牌或普通锦囊牌背面朝上使用或打出，其他角色可以质疑。若没有角色质疑，你亮出此牌，取消不合法的目标。当有角色质疑，你亮出此牌验明：若为假，终止此牌的结算流程，你将此牌置入弃牌堆；若为真，该角色获得“缠怨”（锁定技，你不能对“蛊惑”进行质疑；锁定技，若你的体力值为1，你除“缠怨”外的技能无效），然后取消不合法的目标。每名角色的回合限一次。 <br />
+		<span class="getskill">缠怨</span>——锁定技，你不能对“蛊惑”进行质疑；锁定技，若你的体力值为1，你除“缠怨”外的技能无效。</td>
+	<th class="feng">风<sub>新</sub></th></tr>
+<tr>
+	<td>魂绕左右</td>
+	<td class="jineng">
+		珠联璧合：左慈<br />
+		<strong>千幻</strong>——当与你势力相同的一名角色受到伤害后，若该角色存活，你可以将牌堆顶的一张牌置于武将牌上，称为“幻”，若此“幻”与另一张“幻”花色相同，你将此“幻”置入弃牌堆；当与你势力相同的一名角色成为基本牌或锦囊牌唯一的目标时，你可以将一张“幻”置入弃牌堆，取消之。</td>
+	<th class="zhen">阵</th></tr>
+
+<tr>
+	<td rowspan="2">QUN 012</td>
+	<td rowspan="2" class="qun">群</td>
+	<th rowspan="2">蔡文姬</th>
+	<td rowspan="2">异乡的孤女</td>
+	<td rowspan="2">3</td>
+	<td class="jineng">
+		<strong>悲歌</strong>——当一名角色受到【杀】造成的伤害后，你可以弃置一张牌并选择该角色，令其进行判定，若结果为：红桃，该角色回复1点体力；方块，该角色摸两张牌；梅花，来源弃置两张牌；黑桃，来源将武将牌翻面。<br />
+		<strong>断肠</strong>——锁定技，当你死亡时，你令杀死你的角色失去其所有技能。 </td>
+	<th class="shan">山</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>悲歌</strong>——当一名角色受到【杀】造成的伤害后，若该角色存活，你可以弃置一张牌，令其判定，若结果为：红桃，其回复1点体力；方块，其摸两张牌；梅花，来源弃置两张牌；黑桃，来源选择一项：1.将武将牌叠置；2.将武将牌平置。<br />
+		<strong>断肠</strong>——锁定技，当你死亡时，你令杀死你的角色失去你选择的其一张武将牌的技能。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td>QUN 013</td>
+	<td class="qun">群</td>
+	<th>马　腾</th>
+	<td>驰骋西陲</td>
+	<td>4</td>
+	<td class="jineng">
+		<strong>马术</strong>——锁定技，你计算与其他角色的距离-1。<br />
+		<strong>雄异</strong>——限定技。出牌阶段，你可以令与你势力相同的所有角色各摸三张牌，然后若你的势力是角色最少的势力，你回复1点体力。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td>QUN 014</td>
+	<td class="qun">群</td>
+	<th>孔　融</th>
+	<td>凛然重义</td>
+	<td>3</td>
+	<td class="jineng">
+		<strong>名士</strong>——锁定技，当你受到伤害时，若来源有暗置的武将牌，你令此伤害-1。<br />
+		<strong>礼让</strong>——当你的一张牌因弃置而置入弃牌堆时，你可以将此牌移动的目标区域改为一名其他角色的手牌。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td>QUN 015</td>
+	<td class="qun">群</td>
+	<th>纪　灵</th>
+	<td>仲家的主将</td>
+	<td>4</td>
+	<td class="jineng">
+		珠联璧合：袁术<br />
+		<strong>双刃</strong>——出牌阶段开始时，你可以与一名角色拼点。若你赢，你视为对其或一名与其势力相同的其他角色使用一张【杀】。若你没赢，你结束出牌阶段。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td>QUN 016</td>
+	<td class="qun">群</td>
+	<th>田　丰</th>
+	<td>河北瑰杰</td>
+	<td>3</td>
+	<td class="jineng">
+		<strong>死谏</strong>——当你失去所有手牌后，你可以弃置一名其他角色的一张牌。<br />
+		<strong>随势</strong>——锁定技，当其他角色因受到伤害而进入濒死状态时，若来源与你势力相同，你摸一张牌；锁定技，当其他与你势力相同的角色死亡时，你失去1点体力。</td>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td rowspan="2">QUN 017</td>
+	<td rowspan="2" class="qun">群</td>
+	<th rowspan="2">潘　凤</th>
+	<td rowspan="2">嗜血狂斧</td>
+	<td rowspan="2">4</td>
+	<td rowspan="2" class="jineng">
+		<strong>狂斧</strong>——当你使用【杀】对目标角色造成伤害后，你可以选择一项：1.将其装备区里的一张牌置入你的装备区；2.弃置其装备区里的一张牌。</td>
+	<th class='xianxia'>线下<sub>2017</sub></th></tr>
+<tr>
+	<th class="guozhan">国战</th></tr>
+
+<tr>
+	<td>QUN 018</td>
+	<td class="qun">群</td>
+	<th>邹　氏</th>
+	<td>惑心之魅</td>
+	<td>3</td>
+	<td class="jineng">
+		<strong>祸水</strong>——出牌阶段，你可以明置此武将牌；其他角色于你的回合内不能明置其武将牌。<br />
+		<strong>倾城</strong>——出牌阶段，你可以弃置一张黑色牌并选择一名武将牌均明置的其他角色，然后你暗置其一张武将牌。然后若你以此法弃置的牌是装备牌，则你可以再选择另一名武将牌均明置的其他角色，暗置其一张武将牌。</td>
+	<th class="guozhan">新国战</th></tr>
+
+<tr>
+	<td rowspan="2">QUN 019</td>
+	<td rowspan="3" class="qun">群</td>
+	<th rowspan="3">华　雄</th>
+	<td rowspan="2">飞扬跋扈</td>
+	<td rowspan="3">6</td>
+	<td class="jineng">
+		<strong>耀武</strong>——锁定技，当一名角色使用红色【杀】对你造成伤害时，该角色选择一项：1.回复1点体力；2.摸一张牌。</td>
+	<th class="jiexiantupo">界限突破</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>耀武</strong>——锁定技，当你受到【杀】造成的伤害时，若此【杀】为红色，伤害来源回复1点体力或摸一张牌；若此【杀】不为红色，则你摸一张牌。</td>
+	<th class="wujiangtupo">武将突破</th></tr>
+
+
+<tr>
+	<td>YJ 106</td>
+	<td>魔将</td>
+	<td class='jineng'>
+		<strong>恃勇</strong>——锁定技，当你受到红色【杀】或因【酒】生效而伤害值基数+1的【杀】造成的伤害后，你减1点体力上限。</td>
+	<th class='jiang'>将<sub>2012</sub></th></tr>
+
+<tr>
+	<td rowspan="2">QUN 020</td>
+	<td rowspan="2" class="qun">群</td>
+	<th rowspan="2">何太后</th>
+	<td>斜倚凤榻</td>
+	<td rowspan="2">3</td>
+	<td class='jineng'>
+		<strong>鸩毒</strong>——其他角色出牌阶段开始时，你可以弃置一张手牌，视为该角色使用一张【酒】，然后你对其造成1点伤害。<br />
+		<strong>戚乱</strong>——一名角色的回合结束后，你可以摸3X张牌（X为你于此回合内杀死过的角色数。</td>
+	<th class='xianxia'>线下<sub>2017</sub></th></tr>
+<tr>
+	<td>弄权之蛇蝎</td>
+	<td class="jineng">
+		<strong>鸩毒</strong>——其他角色的出牌阶段开始时，你可以弃置一张手牌，令该角色视为使用【酒】，然后你对其造成1点伤害。<br />
+		<strong>戚乱</strong>——一名角色的回合结束后，若你于此回合内杀死过角色，你可以摸三张牌。</td>
+	<th class="zhen">阵</th></tr>
+
+<tr>
+	<td rowspan="3">QUN 021</td>
+	<td rowspan="3" class="qun zhugong">群</td>
+	<th rowspan="3">袁　术</th>
+	<td>野心渐增</td>
+	<td rowspan="3">4</td>
+	<td class="jineng">
+		<strong>妄尊</strong>——主公的准备阶段开始时，你可以摸一张牌，然后本回合主公的手牌上限-1。<br />
+		<strong>同疾</strong>——锁定技，若你的手牌数大于你的体力值，除你外的角色不是攻击范围内含有你的其他角色使用【杀】的合法目标。</td>
+	<th class="jiexiantupo">界限突破</th></tr>
+<tr>
+	<td rowspan="2">仲家帝</td>
+	<td class="jineng">
+		<strong>庸肆</strong>——锁定技，摸牌阶段，你改为摸X张牌（X为存活势力数）；弃牌阶段，若你本回合：1.没有造成伤害，将手牌摸至当前体力值；2.造成的伤害超过1点，本回合手牌上限改为已损失体力值。<br />
+		<strong>伪帝</strong>——主公技，你于弃牌阶段弃置的牌可以交给任意名其他群雄角色。</td>
+	<th class="lei">雷</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：纪灵<br />
+		<strong>伪帝</strong>——出牌阶段限一次，你可以选择一名本回合从牌堆获得过牌的角色，令其执行一次“军令”。若其不执行，则你获得其所有手牌，然后交给其等量的牌。<br />
+		<strong>庸肆</strong>——锁定技，若场上没有【玉玺】，视为你装备着【玉玺】；你成为【知己知彼】的目标时，展示你的。</td>
+	<th class="quan">权</th></tr>
+
+	
+<tr>
+	<td>QUN 022</td>
+	<td class="qun">群</td>
+	<th>李傕&郭汜</th>
+	<td>犯祚倾祸</td>
+	<td>4</td>
+	<td class="jineng">
+		珠联璧合：贾诩<br />
+		<strong>凶算</strong>——限定技，出牌阶段，你可以弃置一张手牌并选择与你势力相同的一名角色，对其造成1点伤害，然后你摸三张牌。若该角色有已发动的限定技，则你选择其一个限定技，此回合结束后视为该限定技未发动过。</td>
+	<th class="bian">变</th></tr>
+		
+<tr>
+	<td rowspan="2">QUN 023</td>
+	<td rowspan="2" class="qun">群</td>
+	<th rowspan="2">张　绣</th>
+	<td rowspan="2">北地枪王</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>雄乱</strong>——限定技，出牌阶段，你可以废除你的判定区和装备区，然后指定一名其他角色，直到回合结束，你对其使用牌无距离和次数限制，其不能使用或打出手牌。<br/>
+		<strong>从谏</strong>——当你成为锦囊牌的目标时，若此牌的目标数大于1，则你可以交给其中一名目标角色一张牌，然后摸一张牌。若你给出的是装备牌，改为摸两张牌。</td>
+	<th class="lei">雷</th></tr>
+<tr>
+	<td class="jineng">
+		珠联璧合：贾诩<br />
+		<strong>附敌</strong>——当你受到伤害后，你可以交给伤害来源一张手牌，若如此做，你对其势力体力值最多且不小于你的角色造成1点伤害。<br/>
+		<strong>从谏</strong>——锁定技，你于回合外造成的伤害+1；你于回合内受到的伤害+1。</td>
+	<th class="quan">权</th></tr>
+	
+<tr>
+	<td>QUN 024</td>
+	<td class="qun">群</td>
+	<th>张　任</th>
+	<td>索命神射</td>
+	<td>4</td>
+	<td class="jineng">
+		<strong>穿心</strong>——当你于出牌阶段内使用【杀】或【决斗】对与你势力不同的目标角色造成伤害时，若该角色有副将，你可以防止此伤害，令其选择一项：1.弃置装备区里的所有牌，若如此做，其失去1点体力；2.移除副将的武将牌。<br />
+		<strong>锋矢</strong>——阵法技，在同一个围攻关系中，若你是围攻角色，则你或另一名攻角色使用【杀】指定被围攻角色为目标后，可令该角色弃置装备区里的一张牌。</td>
+	<th class="shi">势</th></tr>
+
+<tr>
+	<td>QUN 025</td>
+	<td class="qun">群</td>
+	<th>何　进</th>
+	<td>色厉内荏</td>
+	<td>4</td>
+	<td class="jineng">
+		<strong>谋诛</strong>——出牌阶段限一次，你可令对手将一张手牌交给你，然后若其手牌比你少，则其选择一项：1.视为使用一张【杀】；2.视为使用一张【决斗】。<br />
+		<strong>延祸</strong>——当你死亡时，你可以依次弃置对手的X张牌（X为你的牌的张数）。</td>
+	<th class="v1">1V1</th></tr>
+
+<tr>
+	<td rowspan="2">QUN 026</td>
+	<td rowspan="2" class="qun">群</td>
+	<th rowspan="2">公孙瓒</th>
+	<td rowspan="2">白马将军</td>
+	<td rowspan="2">4</td>
+	<td class="jineng">
+		<strong>趫猛</strong>——当你使用的黑色【杀】对一名角色造成伤害后，你可以弃置其装备区里的一张牌，若如此做，当此牌置入弃牌堆后，若此牌为坐骑牌，你可以获得之。<br />
+		<strong>义从</strong>——锁定技，若你的体力值：大于2，你与其他角色的距离-1；不大于2，其他角色与你的距离+1。</td>
+	<th class='xinghuo'>星火燎原-七杀</th></tr>
+<tr>
+	<td class="jineng">
+		<strong>义从</strong>——锁定技，若你的体力值：大于2，你与其他角色的距离-1；不大于2，其他角色与你的距离+1。</td>
+	<th class='biaozhun'>标准<sub>2019</sub></th></tr>
+
+<tr>
+	<td>QUN 027</td>
+	<td class="qun">群</td>
+	<th>韩　遂</th>
+	<td>雄踞北疆</td>
+	<td>4</td>
+	<td class="jineng">
+		<strong>逆乱</strong>——对手的结束阶段，若其体力值大于你，或其于此回合内使用过【杀】，则你可以将一张黑色牌当【杀】使用。<br />
+		<strong>骁袭</strong>——当你登场时，你可以视为使用【杀】。</td>
+	<th class="v1">1V1</th></tr>
+
+<tr>
+	<td>QUN 028</td>
+	<td class='qun'>群</td>
+	<th>陈　宫</th>
+	<td>刚直壮烈</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>明策</strong>——出牌阶段限一次，你可以将一张装备牌或【杀】交给一名角色，令该角色选择是否视为对其攻击范围内你选择的其使用【杀】的一个合法目标使用一张【杀】，若其选择否或其攻击范围内没有其使用【杀】的合法目标，其摸一张牌。<br />
+		<strong>智迟</strong>——锁定技，当你于回合外受到伤害后，本回合【杀】或普通锦囊牌对你无效。</td>
+	<th class='jiang'>将</th></tr>
+
+<tr>
+	<td>QUN 029</td>
+	<td class='qun'>群</td>
+	<th>高　顺</th>
+	<td>攻无不克</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>陷阵</strong>——出牌阶段限一次，你可以与一名角色拼点：当你赢后，你于此回合内无视与其的距离及其防具且对其使用【杀】无次数限制；当你没赢后，你于此回合内不能使用【杀】。<br />
+		<strong>禁酒</strong>——锁定技，你的【酒】视为【杀】。</td>
+	<th class='jiang'>将</th></tr>
+
+<tr>
+	<td>QUN 030</td>
+	<td class='qun'>群</td>
+	<th>刘　表</th>
+	<td>跨蹈汉南</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>自守</strong>——摸牌阶段，你可以额外摸X张牌（X为现存势力数）。若如此做，你于本回合出牌阶段内使用的牌不能指定其他角色为目标。<br />
+		<strong>宗室</strong>——锁定技，你的手牌上限+X（X为全场势力的数量）。</td>
+	<th class='zhuo'>桌<sub>57</sub></th></tr>
+
+<tr>
+	<td>QUN 031</td>
+	<td class='qun'>群</td>
+	<th>伏皇后</th>
+	<td>孤注一掷</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>惴恐</strong>——其他角色的回合开始时，若你已受伤，你可以与该角色拼点。若你赢，本回合该角色使用牌不能选择除该角色外的角色为目标；若你没赢，本回合该角色与你的距离视为1。<br />
+		<strong>求援</strong>——当你成为【杀】的目标时，你可以选择另一名其他角色，除非该角色交给你一张【闪】，否则也成为此【杀】的目标。</td>
+	<th class='jiang'>将<sub>2014</sub></th></tr>
+
+<tr>
+	<td>QUN 032</td>
+	<td class='qun'>群</td>
+	<th>李　儒</th>
+	<td>魔仕</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>绝策</strong>——结束阶段，你可以对一名没有手牌的其他角色造成1点伤害。<br />
+		<strong>灭计</strong>——出牌阶段限一次，你可以将一张黑色锦囊牌置于牌堆顶并选择一名有手牌的其他角色，然后令该角色弃置一张锦囊牌或依次弃置两张非锦囊牌。<br />
+		<strong>焚城</strong>——限定技，出牌阶段，你可以令所有其他角色依次选择一项：1.弃置至少X张牌（X为发动此技能时该角色的上家以此法弃置牌的数量+1）；2.受到你造成的2点火焰伤害。</td>
+	<th class='jiang'>将<sub>2014</sub></th></tr>
+
+<tr>
+	<td>QUN 033</td>
+	<td class='qun'>群</td>
+	<th>蔡夫人</th>
+	<td>襄江的蒲苇</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>窃听</strong>——其他角色的回合结束时，若其未于此回合内使用过确定目标是除其外的角色的牌，你可以选择一项：1.将其装备区里的一张牌置入你的装备区；2.摸一张牌。<br />
+		<strong>献州</strong>——限定技，出牌阶段，你可以将装备区里的所有牌交给一名角色，令其选择一项： 1.令你回复X点体力；2.选择其攻击范围内的一至X名角色，然后对这些角色各造成1点伤害。（X为你以此法交给其的牌数）</td>
+	<th class='jiang'>将<sub>2014</sub></th></tr>
+
+<tr>
+	<td>QUN 034</td>
+	<td class='qun'>群</td>
+	<th>沮　授</th>
+	<td>监军谋国</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>渐营</strong>——当你于出牌阶段内使用与你于此阶段内使用的上一张牌点数/花色相同的牌时，你可以摸一张牌。<br />
+		<strong>矢北</strong>——锁定技，当你于一名角色的回合内受到第一次伤害后，你回复1点体力；锁定技，当你于一名角色的回合内受到第X次伤害后（X至少为2），你失去1点体力。</td>
+	<th class='jiang'>将<sub>2014</sub></th></tr>
+
+<tr>
+	<td>QUN 035</td>
+	<td class='qun'>群</td>
+	<th>公孙渊</th>
+	<td>狡徒悬海</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>怀异</strong>——出牌阶段限一次，你可以展示所有手牌，若其中包含不止一种颜色，则你选择一种颜色并弃置该颜色的所有手牌，然后你可以获得至多X名角色的各一张牌（X为你以此法弃置的手牌数）。若你以此法获得的牌不少于两张，则你失去1点体力。</td>
+	<th class='jiang'>将<sub>2015</sub></th></tr>
+
+<tr>
+	<td>QUN 036</td>
+	<td class='qun'>群</td>
+	<th>郭图&逢纪</th>
+	<td>凶蛇两端</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>急攻</strong>——出牌阶段开始时，你可以摸两张牌。若如此做，此回合你的手牌上限改为X(X为你此阶段造成的伤害数)。<br />
+		<strong>饰非</strong>——当你需要使用或打出【闪】时，你可以令当前回合角色摸一张牌，然后若其不是手牌唯一最多的角色，则你弃置一名手牌最多的角色的一张牌，视为你使用或打出一张【闪】。</td>
+	<th class='jiang'>将<sub>2015</sub></th></tr>
+
+<tr>
+	<td>QUN 037</td>
+	<td class='qun'>群</td>
+	<th>刘　虞</th>
+	<td>甘棠永固</td>
+	<td>2</td>
+	<td class='jineng'>
+		<strong>止戈</strong>——出牌阶段限一次，你可以选择攻击范围内含有你的其他角色，除非该角色交给你一张【杀】或武器牌，否则视为对其攻击范围内你选择的另一名角色使用一张【杀】。<br />
+		<strong>宗祚</strong>——锁定技，游戏开始时，你加X点体力上限和体力（X为全场势力数）；当某势力的最后一名角色死亡后，你减1点体力上限。</td>
+		<th class='online'>待定</th></tr>
+
+<tr>
+	<td>QUN 038</td>
+	<td class='qun'>群</td>
+	<th>张　让</th>
+	<td>宠幸绝禋</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>滔乱</strong>——你可将你的一张牌当做任意一张本回合没使用过的基本牌或普通锦囊牌使用，然后你令一名其他角色选择一项：1.交给你X张与“滔乱”牌类别不同的牌；2.你失去X点体力，“滔乱”无效直到回合结束（X为你本回合发动“滔乱”的次数且最多为3）。</td>
+		<th class='online'>待定</th></tr>
+
+<tr>
+	<td>QUN 039</td>
+	<td class='qun'>群</td>
+	<th>伏　完</th>
+	<td>身陷囹圄</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>谋溃</strong>——当你使用【杀】指定一名角色为目标后，你可以选择一项：1.摸一张牌；2.弃置该角色的一张牌。若如此做，当此【杀】被其使用的【闪】抵消时，你令其弃置你的一张牌。</td>
+	<th class='xianxia'>线下<sub>2017</sub></th></tr>
+
+<tr>
+	<td>QUN 040</td>
+	<td class='qun'>群</td>
+	<th>刘　协</th>
+	<td>汉末龙裔</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>天命</strong>——当你成为【杀】的目标时，你可以先弃置两张牌再摸两张牌，然后若体力值最大的角色仅有一名且不为你，该角色可以先弃置两张牌再摸两张牌。<br />
+		<strong>密诏</strong>——出牌阶段限一次，你可以将所有手牌交给一名角色，令该角色与你选择的有手牌的另一名角色拼点，然后拼点赢的角色视为对拼点没赢的角色使用一张【杀】。</td>
+	<th class='xinghuo'>星火燎原-天府</th></tr>
+
+<tr>
+	<td>QUN 041</td>
+	<td class='qun'>群</td>
+	<th>灵　雎</th>
+	<td>情随梦逝</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>竭缘</strong>——当你对一名其他角色造成伤害时，若其体力值不小于你，你可以弃置一张黑色手牌，令此伤害+1；当你受到一名其他角色造成的伤害时，若其体力值不小于你，你可以弃置一张红色手牌，令此伤害-1。<br />
+		<strong>焚心</strong>——锁定技，一名其他角色死亡后，若其身份为：忠臣，你发动“竭缘”减少伤害无体力值限制；反贼，你发动“竭缘”增加伤害无体力值限制；内奸，将“竭缘”中的黑色手牌和红色手牌改为一张牌。</td>
+	<th class='online'>限定</th></tr>
+
+<tr>
+	<td>QUN 042</td>
+	<td class='qun'>群</td>
+	<th>马　超</th>
+	<td>西凉的猛狮</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>追击</strong>——锁定技，你计算体力值比你少的角色的距离始终为1。<br />
+		<strong>誓仇</strong>——你使用【杀】可以多选择至多X名角色为目标（X为你已损失的体力值）。</td>
+	<th class='online'>限定</th></tr>
+
+<tr>
+	<td rowspan="2">QUN 043</td>
+	<td rowspan="2" class='qun'>群</td>
+	<th rowspan="2">赵　云</th>
+	<td>真龙之意</td>
+	<td rowspan="2">3</td>
+	<td class='jineng'>
+		<strong>龙胆</strong>——你可以将一张【杀】当【闪】、【闪】当【杀】使用或打出。<br />
+		<strong>冲阵</strong>——每当你发动"龙胆"使用或者打出一张手牌时，你可以立即获得对方的一张手牌。</td>
+	<th class='xianxia'>线下<sub>2017</sub></th></tr>
+<tr>
+	<td>常山的游龙</td>
+	<td class='jineng'>
+		<strong>赤心</strong>——你可以将方块牌当【杀】或【闪】使用或打出。出牌阶段，你对你攻击范围内的每名角色均可使用一张【杀】。<br />
+		<strong>义从</strong>——锁定技，若你的体力值大于2，你计算与其他角色的距离-1；若你的体力值不大于2，其他角色计算与你的距离+1。<br />
+		<strong>随仁</strong>——限定技，准备阶段开始时，你可以失去技能“义从”，然后加1点体力上限并回复1点体力，再令一名角色摸三张牌。</td>
+	<th class='zhuo'>桌<sub>53</sub></th></tr>
+
+<tr>
+	<td>QUN 044</td>
+	<td class='qun'>群</td>
+	<th>张　宝</th>
+	<td>地公妖将</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>咒缚</strong>——出牌阶段限一次，你可以将一张手牌置于一名没有"咒"的其他角色武将牌旁，称为"咒"。当有“咒”的角色判定时，将"咒"作为判定牌；一名角色回合结束时，若有角色于此回合因判定移除过“咒”，则你令这些角色各失去1点体力。<br />
+		<strong>影兵</strong>——锁定技，有“咒”的角色使用与“咒”花色相同的牌时，你摸一张牌；你因同一名角色的同一张“咒”的效果摸过牌，移去该“咒”。</td>
+	<th class='online'>限定</th></tr>
+
+<tr>
+	<td>QUN 045</td>
+	<td class='qun'>群</td>
+	<th>张　梁</th>
+	<td>人公将军</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>集军</strong>——当武器牌或不为装备牌的牌于你出牌阶段指定你为目标后，你可判定，然后将所有判定牌置于你的武将牌上，称为“方”。<br/>
+		<strong>方统</strong>——结束阶段开始时，若有“方”，你可以弃置一张牌并将至少一张“方”置入弃牌堆。若此牌和以此法置入弃牌堆的“方”点数和为36，你对一名其他角色造成3点雷电伤害。</td>
+	<th class='xinghuo'>星火燎原-七杀</th></tr>
+
+<tr>
+	<td>QUN 046</td>
+	<td class='qun'>群</td>
+	<th>黄月英</th>
+	<td>闺中璞玉</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>机巧</strong>——出牌阶段开始时，你可以弃置任意张装备牌，然后亮出牌堆顶两倍数量的牌，你获得其中的锦囊牌，将其余的牌置入弃牌堆。<br />
+		<strong>玲珑</strong>——锁定技，若你的装备区没有防具牌，视为你装备着【八卦阵】；若你的装备区没有坐骑牌，你的手牌上限+1；若你的装备区没有宝物牌，视为你拥有技能“奇才”。<br />
+		<span class="getskill">奇才</span>——锁定技，你使用锦囊牌无距离限制；锁定技，其他角色不能弃置你装备区里不为坐骑牌的牌。</td>
+	<th class='xinghuo'>星火燎原-天同</th></tr>
+
+<tr>
+	<td>QUN 047</td>
+	<td class='qun'>群</td>
+	<th>兀突骨</th>
+	<td>霸体金刚</td>
+	<td>15</td>
+	<td class='jineng'>
+		<strong>燃殇</strong>——锁定技，当你受到1点火焰伤害后，你获得1枚“燃”标记；结束阶段开始时，你失去X点体力（X为“燃”标记的数量）。<br />
+		<strong>悍勇</strong>——当你使用【南蛮入侵】或【万箭齐发】时，若你的体力值小于游戏轮数，你可以令此牌造成的伤害+1。</td>
+	<th class='online'>限定</th></tr>
+
+<tr>
+	<td>QUN 048</td>
+	<td class='qun'>群</td>
+	<th>张　鲁</th>
+	<td>不鏖遗民</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>义舍</strong>——结束阶段，若你没有“米”，你可以摸两张牌，然后将两张牌置于武将牌上，称为“米”；当你移去最后一张“米”时，你回复1点体力。 <br />
+		<strong>布施</strong>——当你造成或受到伤害后，受到此伤害的角色可以选择并获得你的一张“米”。<br />
+		<strong>米道</strong>——当一张判定牌生效前，你可以打出一张“米”代替之。</td>
+	<th class='xinghuo'>星火燎原-天梁</th></tr>
+
+<tr>
+	<td>QUN 049</td>
+	<td class='qun'>群</td>
+	<th>踏　顿</th>
+	<td>北狄王</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>乱战</strong>——你使用【杀】或黑色普通锦囊牌可以额外选择X名角色为目标；当你使用【杀】或黑色普通锦囊牌指定目标后，若此牌的目标角色数小于X，则X减至0。（X为你于本局游戏内造成过伤害的次数）</td>
+	<th class='xinghuo'>星火燎原-七杀</th></tr>
+
+<tr>
+	<td>QUN 050</td>
+	<td class='qun'>群</td>
+	<th>严白虎</th>
+	<td>豺牙落涧</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>雉盗</strong>——锁定技，当你于出牌阶段内第一次对区域里有牌的其他角色造成伤害后，你获得其手牌、装备区和判定区里的各一张牌，然后本回合其他角色不能被选择为你使用牌的目标。<br />
+		<strong>寄篱</strong>——锁定技，当一名其他角色成为红色基本牌或红色普通锦囊牌的目标时，若其与你的距离为1且你既不是此牌的使用者也不是目标，你也成为此牌的目标。</td>
+	<th class='zhuo'>桌<sub>75</sub></th></tr>
+
+<tr>
+	<td>QUN 051</td>
+	<td class='qun'>群</td>
+	<th>士　燮</th>
+	<td>雄长百越</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>避乱</strong>——摸牌阶段开始时，若有其他角色与你距离不大于1，则你可以放弃摸牌。若如此做，其他角色与你距离+X（X为势力数）。<br />
+		<strong>礼下</strong>——锁定技，其他角色结束阶段开始时，若你不在其攻击范围内，你摸一张牌或令其摸一张牌。若如此做，其他角色与你的距离-1。</td>
+	<th class='online'>限定</th></tr>
+
+<tr>
+	<td>QUN 052</td>
+	<td class='qun'>群</td>
+	<th>董　白</th>
+	<td>魔姬</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>连诛</strong>—— 出牌阶段限一次，你可以展示并交给一名其他角色一张牌，若该牌为黑色，其选择一项：1.你摸两张牌；2.弃置两张牌。<br />
+		<strong>黠慧</strong>——锁定技，你的黑色牌不占用手牌上限；其他角色获得你的黑色牌时，其不能使用、打出、弃置这些牌直到其体力值减少为止。</td>
+	<th class='zhuo'>桌<sub>80</sub></th></tr>
+
+<tr>
+	<td>QUN 053</td>
+	<td class='qun'>群</td>
+	<th>王　允</th>
+	<td>忠魂不泯</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>连计</strong>——出牌阶段限一次，你可以交给一名其他角色一张【杀】或黑色锦囊牌，并令该角色使用牌堆中的随机一张武器牌（含【七宝刀】：锁定技，你使用【杀】无视目标防具，若目标角色未损失体力，此【杀】伤害+1）。然后该角色选择一项：1.对除你以外的角色使用该牌，并将装备区里的武器牌交给该牌的一个目标角色；2.视为你对其使用此牌，并将装备区内的武器牌交给你。<br />
+		<strong>谋逞</strong>——觉醒技，当其他角色使用因“连计”交给其的牌累计造成伤害达到3点后，你失去技能“连计”，然后获得技能“矜功”。<br />
+		<span class="getskill">矜功</span>——出牌阶段限一次，你可以将一张装备牌或【杀】当一张随机锦囊牌使用（三选一，含专属锦囊——【美人计】：出牌阶段，对一名有手牌的男性角色使用。每名女性角色各获得其一张手牌并将一张手牌交给你，然后比较你与其的手牌数，手牌少的角色对手牌多的角色造成1点伤害。【笑里藏刀】：出牌阶段，对一名其他角色使用。该角色摸X张牌(X为其已损失的体力数)，然后你对其造成1点伤害。），然后本回合的结束阶段，若你于本回合内未造成过伤害，你失去1点体力。</td>
+	<th class='online'>限定</th></tr>
+
+<tr>
+	<td>QUN 054</td>
+	<td class='qun'>群</td>
+	<th>皇甫嵩</th>
+	<td>志定雪霜</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>奋钺</strong>——出牌阶段限X次，你可以与一名角色拼点，若你赢，你选择一项：1.其本回合不能使用或打出手牌；2.视为你对其使用了【杀】（不计入次数限制）。若你没赢，你结束出牌阶段。（X为存活的忠臣数）</td>
+	<th class="zhongdan">忠胆英杰</th>
+
+<tr>
+	<td>QUN 055</td>
+	<td class='qun'>群</td>
+	<th>陶　谦</th>
+	<td>膺秉温仁</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>招祸</strong>——锁定技，当其他角色进入濒死状态时，你的体力上限变为1点，你每以此法减少1点体力上限，你摸一张牌。<br />
+		<strong>义襄</strong>——每名角色的回合限一次，当你成为一名角色使用牌的目标后，若其的体力值大于你的体力值，你可以随机获得牌堆里一张你没有的基本牌。<br />
+		<strong>揖让</strong>——出牌阶段开始时，你可以将所有非基本牌交给一名体力上限大于你的其他角色，然后调整体力上限至与该角色相同，你回复X点体力（X为你以此法交给其的牌的类别数）。</td>
+	<th class='zhuo'>桌<sub>81</sub></th></tr>
+
+<tr>
+	<td>QUN 056</td>
+	<td class='qun'>群</td>
+	<th>麹　义</th>
+	<td>名门的骁将</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>伏骑</strong>——锁定技，与你距离为1的其他角色不能使用或打出牌响应你使用的牌。<br />
+		<strong>骄恣</strong>——锁定技，若你的手牌数是全场唯一最多的，你造成或受到的伤害均+1。</td>
+	<th class='online'>Online</th></tr>
+
+<tr>
+	<td>QUN 057</td>
+	<td class='qun'>群</td>
+	<th>司马徽</th>
+	<td>水镜先生</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>荐杰</strong>——你的第一个准备阶段，你令两名不同的角色分别获得龙印和凤印；出牌阶段限一次（你的第一个回合除外），或当拥有龙印、封印的角色死亡时，你可以转移龙印、凤印。<br />
+		<strong>称好</strong>——当一名角色受到属性伤害后，若其处于连环状态且是此次伤害传导的起点，你可观看牌堆顶的X张牌并分配给任意角色（X为横置的角色数量+1）。<br />
+		<strong>隐士</strong>——锁定技，若你没有龙印、凤印且没装备防具，防止你受到的属性伤害和锦囊牌造成的伤害。<br />
+		<span class="getskill">龙印</span>——获得“火计”，每回合限三次。<br />
+		<span class="getskill">凤印</span>——获得“连环”，每回合限三次。<br />
+		<span class="getskill">龙凤印齐全</span>——获得“业炎”，“业炎”发动后移除龙凤印。</td>
+	<th class='online'>限定</th></tr>
+
+<tr>
+	<td>QUN 058</td>
+	<td class='qun'>群</td>
+	<th>卑弥呼</th>
+	<td>亲魏倭王</td>
+	<td>3</td>
+	<td class='jineng'><strong>纵傀</strong>—— 回合开始时，你可以指定一名没有“傀”标记的其他角色，令其获得一枚“傀”标记。每轮游戏开始时，体力值最少且没有“傀”标记的一名其他角色也获得一个“傀”标记。 <br />
+	<strong>骨疽</strong>——锁定技，拥有“傀”标记的角色受到伤害后，你摸一张牌。<br />
+	<strong>拜假</strong>——觉醒技，准备阶段，若你因“骨疽”获得牌不小于7张，则你增加1点体力上限，回复1点体力，然后令所有未拥有“傀”标记的其他角色获得“傀”标记，最后失去技能“骨疽”，并获得技能“蚕食”。<br />
+	<strong>蚕食</strong>——一名角色使用基本牌或非延时锦囊牌指定你为唯一目标时，若其有“傀”标记，你可以取消之，然后其失去“傀”标记；你使用基本牌或非延时锦囊牌仅指定一名角色为目标时，你可以额外指定任意名带有“傀”标记的角色为目标，然后其失去“傀”标记。</td>
+	<th class='online'>逐鹿天下</th>
+
+<tr>
+	<td>QUN 059</td>
+	<td class='qun'>群</td>
+	<th>许　劭</th>
+	<td></td>
+	<td>3</td>
+	<td class='jineng'></td>
+	<th class='jiang'></th></tr>
+
+<tr>
+	<td>QUN 060</td>
+	<td class='qun'>群</td>
+	<th>祢　衡</th>
+	<td>鸷鹗啄孤凤</td>
+	<td>3</td>
+	<td class='jineng'><strong>狂士</strong>——出牌阶段开始时，你可以令你此阶段内的出牌时间变为5秒，若如此做，你使用牌没有距离和次数限制，且每当你于此阶段内使用牌时, 你摸一张牌且出牌时间-1秒。<br />
+	<strong>舌剑</strong>——弃牌阶段结束时，若你于此阶段弃置的所有牌花色均不相同，你可以弃置一名其他角色的一张牌。</td>
+	<th class='zhuo'>桌<sub>80</sub></th></tr>
+
+<tr>
+	<td>QUN 061</td>
+	<td class='qun'>群</td>
+	<th>庞德公</th>
+	<td>德懿举世</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>评才</strong>——出牌阶段限一次，你可以挑选一个宝物，擦拭掉其上面的灰尘。如果擦拭成功，你可以根据宝物类型执行对应的效果。(【卧龙】：对1名角色造成1点火焰伤害。若场上有存活的卧龙诸葛亮，则改为对至多2名角色各造成1点火焰伤害。
+【凤雏】：让至多3名角色进入铁索连环状态。若场上有存活的庞统，则改为让至多4名角色进入铁索连环状态。
+【水镜】：将1名角色装备区内的防具移动到另1角色对应区域。若场上有存活的司马徽，则改为将1名角色装备区内的1件装备移动到另1角色对应区域。
+【玄剑】：令1名角色摸一张牌并回复1点体力。若场上有存活的徐庶，则改为令1名角色摸一张牌并回复1点体力，然后你摸一张牌。)<br />
+		<strong>隐世</strong>——锁定技，你只有摸牌，出牌和弃牌阶段：你不能被选择为延时锦囊牌的目标。</td>
+	<th class='online'>手机版</th></tr>
+
+<tr>
+	<td>QUN 064</td>
+	<td class='qun'>群</td>
+	<th>曹　节</th>
+	<td>献穆皇后</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>守玺</strong>——当你成为【杀】的目标后，你可声明一种牌名（此牌名不得是本局游戏你以此法声明过的牌名），然后除非使用者弃置一张你声明的牌，并获得你的一张牌；否则此【杀】对你无效。<br />
+		<strong>惠民</strong>——结束阶段，你可以摸X张牌并展示等量手牌（X为手牌数小于其体力值的角色数），然后从你指定的一名角色开始这些角色依次选择并获得其中一张。</td>
+	<th class='xinghuo'>星火燎原-天府</th></tr>
+
+<tr>
+	<td>QUN 065</td>
+	<td class='qun'>群</td>
+	<th>蔡　邕</th>
+	<td>大鸿儒</td>
+	<td>3</td>
+	<td class='jineng'><strong>辟撰</strong>——当你使用黑桃牌后，或你成为其他角色使用黑桃牌的目标后，你可以将牌堆顶的一张牌置于武将牌上，称为“书”；你至多拥有四张“书”，你的手牌上限+X（X为"书"的数量）。<br />
+		<strong>通博</strong>——摸牌阶段摸牌后，你可以用任意张牌替换等量的“书”，然后若你的“书”包含四种花色，你将所有“书”交给任意名其他角色。</td>
+	<th class='xinghuo'>星火燎原-天机</th></tr>
+
+<tr>
+	<td>QUN 066</td>
+	<td class='qun'>群</td>
+	<th>许　攸</th>
+	<td>朝秦暮楚</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>成略</strong>——转换技，出牌阶段限一次，①你可以摸一张牌，然后弃置两张手牌。①你可以摸两张牌，然后弃置一张手牌。若如此做，知道本回合结束，你使用与弃置牌相同花色的牌无距离和次数限制。<br />
+		<strong>恃才</strong>——当你使用一张牌结算结束后，若此牌与你本回合使用的牌类型均不同，你可以将此牌置于牌堆顶，然后摸一张牌。<br />
+		<strong>寸目</strong>——锁定技，当你摸牌时，改为从牌堆底摸牌。</td>
+	<th class='yin'>阴</th></tr>
+
+<tr>
+	<td>QUN 067</td>
+	<td class='qun'>群</td>
+	<th>卢　植</th>
+	<td>国之桢干</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>明任</strong>——游戏开始时，你摸一张牌，然后将你的一张手牌置于你的武将牌上，称为“任”。结束阶段，你可以用手牌替换“任”。<br />
+		<strong>贞良</strong>——转换技，①出牌阶段限一次，你可以选择一名攻击范围内的其他角色，然后弃置X张与“任”颜色相同的牌对其造成1点伤害（X为你与其体力值之差且至少为1）②你的回合外，当你使用或打出的牌进入弃牌堆时，若此牌与“任”类别相同，则你可以令一名角色摸一张牌。</td>
+	<th class='yin'>阴</th></tr>
+
+<tr>
+	<td>QUN 068</td>
+	<td class='qun'>群</td>
+	<th>刘　焉</th>
+	<td>裂土之宗</td>
+	<td>3</td>
+	<td class='jineng'>	
+		<strong>图射</strong>——当你使用非装备牌指定目标后，若你没有基本牌，则你可以摸X张牌（X为此牌指定的目标数）。<br />
+		<strong>立牧</strong>——出牌阶段，你可以将一张方块牌当【乐不思蜀】对自己使用，然后回复一点体力；你的判定区有牌时，你对攻击范围内的其他角色使用牌没有次数和距离限制。</td>
+	<th class='xinghuo'>星火燎原-天梁</th></tr>
+
+<tr>
+	<td>QUN 069</td>
+	<td class='qun'>群</td>
+	<th>刘　繇</th>
+	<td>宗英外镇</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>戡难</strong>——出牌阶段，若你于此阶段内发动过的此技能的次数小于你的体力值，你可与你于此阶段内未以此法拼点过的一名角色拼点。若：你赢，你使用的下一张【杀】造成的伤害+1且你于此阶段内不能发动此技能；其赢，其使用的下一张【杀】造成的伤害+1。</td>
+	<th class='xinghuo'>星火燎原-天相</th></tr>
+
+<tr>
+	<td>QUN 070</td>
+	<td class='qun'>群</td>
+	<th>太史慈</th>
+	<td>北海酬恩</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>击虚</strong>——出牌阶段限一次，你可令体力值相同的至少一名其他角色各猜测你的手牌区是否有【杀】。系统公布这些角色各自的选择和猜测结果。若你的手牌区里：有【杀】，当你于此阶段内使用【杀】选择目标后，你令所有选择“否”的角色也成为此杀的目标；没有【杀】，你弃置所有选择“是”的角色各一张牌。你摸X张牌（X为猜错的角色数）。若没有猜错的角色，你结束此阶段。</td>
+	<th class='xinghuo'>星火燎原-天同</th></tr>
+
+<tr>
+	<td>QUN 071</td>
+	<td class='qun'>群</td>
+	<th>王　粲</th>
+	<td>七子之冠冕</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>散文</strong>——当你获得牌时，若你手中有与这些牌名相同的牌，你可以展示之，并弃置获得的同名牌，然后摸弃牌数两倍数量的牌。每回合限一次。<br />
+		<strong>七哀</strong>——限定技，当你进入濒死状态时，你可令其他每名角色交给你一张牌。<br />
+		<strong>登楼</strong>——限定技，结束阶段开始时，若你没有手牌，你可以观看牌堆顶的四张牌，然后获取其中的非基本牌，并使用其中的基本牌（不能使用则弃置）。</td>
+	<th class='xinghuo'>星火燎原-天机</th></tr>
+
+<tr>
+	<td>QUN 072</td>
+	<td class='qun'>群</td>
+	<th>刘　琦</th>
+	<td>居外而安</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>问计</strong>——出牌阶段开始时，你可以令一名其他角色交给你一张牌。你于本回合内使用与该牌同名的牌不能被其他角色响应。<br />
+		<strong>屯江</strong>——结束阶段，若你未跳过本回合的出牌阶段，且你于本回合出牌阶段内未使用牌指定过其他角色为目标，则你可以摸X张牌（X为全场势力数）。</td>
+	<th class='daiding'>待定</th></tr>
+
+<tr>
+	<td>QUN ???</td>
+	<td class='qun'>群</td>
+	<th>徐　荣</th>
+	<td>玄菟战魔</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>杀绝</strong>——锁定技，其他角色进入濒死状态时，若其需要超过一张【桃】或【酒】救回，则你获得一个“暴戾”标记，并获得使其进入濒死状态的牌。<br />
+		<strong>凶镬</strong>——游戏开始时，你获得3个“暴戾”标记。出牌阶段，你可以交给一名其他角色一个“暴戾”标记，你对有此标记的角色造成的伤害+1，且其出牌阶段开始时，移去“暴戾”并随机执行一项：受到1点火焰伤害且本回合不能对你使用【杀】；流失1点体力且本回合手牌上限-1；你随机获得其一张手牌和一张装备区里的牌。</td>
+	<th class='online'>祈福</th>
+
+<tr>
+	<td>QUN ???</td>
+	<td class='qun'>群</td>
+	<th>李　傕</th>
+	<td>奸谋恶勇</td>
+	<td>4/6</td>
+	<td class='jineng'>
+		<strong>亦算</strong>——出牌阶段限一次，当你使用的锦囊牌进入弃牌堆时，你可以减1点体力上限，从弃牌堆获得之。<br />
+		<strong>狼袭</strong>——准备阶段，你可以对一名体力小于或等于你的其他角色造成0-2点随机伤害。</td>
+	<th class='online'>文和乱武</th></tr>
+
+<tr>
+	<td>QUN ???</td>
+	<td class='qun'>群</td>
+	<th>郭　汜</th>
+	<td>党豺为虐</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>贪狈</strong>——出牌阶段限一次，你可以令一名其他角色选择一项：1. 令你随机获得其区域内的一张牌，此回合不能再对其使用牌；2. 令你此回合对其使用牌没有次数和距离限制。<br />
+		<strong>伺盗</strong>——出牌阶段限一次，当你对一名其他角色连续使用两张牌后，你可将一张手牌当【顺手牵羊】对其使用（目标须合法）。</td>
+	<th class='online'>文和乱武</th></tr>
+
+<tr>
+	<td>QUN ???</td>
+	<td class='qun'>群</td>
+	<th>张　济</th>
+	<td>武威雄豪</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>屯军</strong>——限定技，出牌阶段，你可以选择一名角色，令其随机使用牌堆中的X张不同类型的装备牌（不替换原有装备，X为你发动“掠命”的次数）<br />
+		<strong>掠命</strong>——出牌阶段限一次，你选择一名装备区装备少于你的其他角色，令其选择一个点数，然后你进行判定：若点数相同，你对其造成2点伤害；不同，你随机获得其区域内的一张牌。</td>
+	<th class='online'>文和乱武</th></tr>
+
+<tr>
+	<td>QUN ???</td>
+	<td class='qun'>群</td>
+	<th>樊　稠</th>
+	<td>庸生变难</td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>兴乱</strong>——出牌阶段限一次，当你使用的仅指定一个目标的牌结算完成后，你可以从牌堆里获得一张点数为6的牌。</td>
+	<th class='online'>文和乱武</th></tr>
+
+<tr>
+	<td>QUN ???</td>
+	<td class='qun'>群</td>
+	<th>张琪瑛</th>
+	<td></td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>法箓</strong>——锁定技，当你的牌因弃置而移至弃牌堆后，根据这些牌的花色，你获得对应标记：黑桃牌，你获得1枚“紫微”；梅花牌，你获得1枚“后土”；红桃牌，你获得1枚“玉清”；方块牌，你获得1枚“勾陈”（每种标记限拥有一个）。游戏开始时，你获得以上四种标记。<br />
+		<strong>真仪</strong>——你可以在以下时机弃置相应的标记来发动以下效果：当一张判定牌生效前，你可以弃置“紫微”，然后将判定结果改为黑桃5或红桃5；当你处于濒死状态时，你可以弃置“后土”，然后将你的一张手牌当【桃】使用；当你造成伤害时，你可以弃置“玉清”，然后你进行一次判定。若结果为黑色，此伤害+1；当你受到属性伤害后，你可以弃置“勾陈”，然后你从牌堆中随机获得三种类型的牌各一张。 <br />
+		<strong>点化</strong>——准备阶段或结束阶段，你你可以观看牌堆顶的X张牌（X为你的标记数）。若如此做，你将这些牌以任意顺序放回牌堆顶。 </td>
+	<th class='online'>祈福</th>
+
+<tr>
+	<td>SP 038</td>
+	<td class='qun'>群</td>
+	<th>黄巾雷使</th>
+	<td>雷祭之姝</td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>符箓</strong>——你可以将【杀】当雷【杀】使用。<br />
+		<strong>助祭</strong>——当一名角色造成雷电伤害时，你可以令其进行一次判定，若结果为黑色，此伤害+1；若结果为红色，该角色获得此牌。</td>
+	<th class='zhuo'>桌<sub>46</sub></th>
+</tr>
+
+<tr>
+	<td>QUN ???</td>
+	<td class="qun">群</td>
+	<th>忙牙长</th>
+	<td></td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>截刀</strong>——当你每回合第一次造成伤害时，你可令此伤害至多+X（X为你损失的体力值）。然后若受到此伤害的角色没有死亡，你弃置等同于此伤害加值的牌。 </td>
+	<th class='online'>自走棋</th>
+</tr>
+
+<tr>
+	<td>QUN ???</td>
+	<td class="qun">群</td>
+	<th>审　配</th>
+	<td></td>
+	<td>3</td>
+	<td class='jineng'>
+		<strong>守邺</strong>——每回合限一次，当你成为其他角色使用牌的唯一目标后，你可以与其进行对策；若你对策成功，则此牌对你无效，且此牌进入弃牌堆时改为由你获得。<br/>
+		<strong>烈直</strong>——准备阶段，你可选择至多两名其他角色，依次弃置其区域内的一张牌；若你受到过伤害，则直至你的下个结束阶段时，此技能无效。</td>
+	<th class='daiding'>待定</th>
+</tr>
+
+<tr>
+	<td>LE 001</td>
+	<td class='shen'>神</td>
+	<th>关　羽</th>
+	<td>鬼神再临</td>
+	<td>5</td>
+	<td class="jineng">
+		<strong>武神</strong>——锁定技，你的红桃手牌视为【杀】；锁定技，你使用红桃【杀】无距离限制。<br />
+		<strong>武魂</strong>——锁定技，当你受到1点伤害后，你令来源获得1枚“梦魇”标记；锁定技，当你死亡时，你令“梦魇”标记最多的一名其他角色进行判定，若结果不为【桃】或【桃园结义】，其死亡。</td>
+	<th class="feng">风</th></tr>
+
+<tr>
+	<td>LE 002</td>
+	<td class='shen'>神</td>
+	<th>吕　蒙</th>
+	<td>圣光之国士</td>
+	<td>3</td>
+	<td class="jineng">
+		<strong>涉猎</strong>——摸牌阶段开始时，你可以放弃摸牌，亮出牌堆顶的五张牌，然后获得其中不同花色的牌各一张，将其余的牌置入弃牌堆。<br />
+		<strong>攻心</strong>——出牌阶段限一次，你可以观看一名其他角色的所有手牌并可以展示其中的一张红桃牌，再选择一项：1.弃置此牌；2.将此牌置于牌堆顶。</td>
+	<th class="feng">风</th></tr>
+
+<tr>
+	<td>LE 003</td>
+	<td class='shen'>神</td>
+	<th>周　瑜</th>
+	<td>赤壁的火神</td>
+	<td>4</td>
+	<td class="jineng">
+		<strong>琴音</strong>——弃牌阶段结束时，若你于此阶段内因你的弃置而失去过至少两张手牌，你可以选择一项：1.令所有角色各回复1点体力；2.令所有角色各失去1点体力。<br />
+		<strong>业炎</strong>——限定技，出牌阶段，你可以对一至三名角色造成至多共3点火焰伤害（你选择目标时任意分配每名目标角色受到的伤害点数，若你将对一名角色分配的火焰伤害点数不小于2，你须执行弃置花色各不同的四张手牌并失去3点体力的消耗）。</td>
+	<th class="huo">火</th></tr>
+
+<tr>
+	<td>LE 004</td>
+	<td class='shen'>神</td>
+	<th>诸葛亮</th>
+	<td>赤壁的妖术师</td>
+	<td>3</td>
+	<td class="jineng">
+		<strong>七星</strong>——分发起始手牌前，你将获得起始手牌改为观看牌堆顶的十一张牌并获得其中的四张牌，然后将其余的牌扣置于武将牌旁，称为“星”；摸牌阶段结束时，你可以用至少一张手牌替换等量的“星”。<br />
+		<strong>狂风</strong>——结束阶段开始时，你可以将一张“星”置入弃牌堆并选择一名角色，若如此做，当该角色于你的下回合开始之前受到的火焰伤害结算开始时，此伤害+1。<br />
+		<strong>大雾</strong>——结束阶段开始时，你可以将至少一张“星”置入弃牌堆并选择等量的角色，若如此做，当该角色于你的下回合开始之前受到的非雷电伤害结算开始时，你防止此伤害。</td>
+	<th class="huo">火</th></tr>
+
+<tr>
+	<td>LE 005</td>
+	<td class='shen'>神</td>
+	<th>曹　操</th>
+	<td>超世之英杰</td>
+	<td>3</td>
+	<td class="jineng">
+		<strong>归心</strong>——当你受到1点伤害后，你可以随机获得每名其他角色区域里的一张牌，然后你翻面。<br />
+		<strong>飞影</strong>——锁定技，其他角色与你的距离+1。</td>
+	<th class="xianxia">线下<sub>2017</sub></th></tr>
+
+<tr>
+	<td>LE 006</td>
+	<td class='shen'>神</td>
+	<th>吕　布</th>
+	<td>修罗之道</td>
+	<td>5</td>
+	<td class="jineng">
+		<strong>狂暴</strong>——锁定技，游戏开始时，你获得2枚“暴怒”标记；锁定技，当你造成或受到1点伤害后，你获得1枚“暴怒”标记。<br />
+		<strong>无谋</strong>——锁定技，当你使用普通锦囊牌时，你选择一项：1.弃1枚“暴怒”标记；2.失去1点体力。<br />
+		<strong>神愤</strong>——出牌阶段限一次，你可以弃6枚“暴怒”标记并选择所有其他角色，对这些角色各造成1点伤害，然后这些角色先各弃置装备区里的所有牌再各弃置四张手牌，你将武将牌翻面。<br />
+		<strong>无前</strong>——出牌阶段，你可以弃2枚“暴怒”标记并选择一名角色，本回合你拥有“无双”且该角色的防具技能无效。<br />
+		<span class="getskill">无双</span>——锁定技，你使用的【杀】需两张【闪】才能抵消；与你进行【决斗】的角色每次需打出两张【杀】。</td>
+	<th class="lin">林</th></tr>
+
+<tr>
+	<td>LE 007</td>
+	<td class='shen'>神</td>
+	<th>赵　云</th>
+	<td>神威如龙</td>
+	<td>2</td>
+	<td class="jineng">
+		<strong>绝境</strong>——锁定技，摸牌阶段，若你已受伤，你额外摸X张牌（X为你已损失的体力值）；锁定技，你的手牌上限+2。<br />
+		<strong>龙魂</strong>——你可以将花色相同的X张牌按下列规则使用或打出：红桃当【桃】，方块当火【杀】，梅花当【闪】，黑桃当【无懈可击】（X为你的体力值且至少为1）。</td>
+	<th class="shan">山</th></tr>
+
+<tr>
+	<td>LE 008</td>
+	<td class='shen'>神</td>
+	<th>司马懿</th>
+	<td>晋国之祖</td>
+	<td>4</td>
+	<td class="jineng">
+		<strong>忍戒</strong>——锁定技，当你受到伤害后，你获得等同于你受到的伤害点数的“忍”标记；锁定技，当你于弃牌阶段内因你的弃置而失去手牌后，你获得等同于你失去的手牌数的“忍”标记。<br />
+		<strong>拜印</strong>——觉醒技，准备阶段开始时，若你拥有的“忍”标记的数量不小于4，你减1点体力上限，然后获得“极略”。<br />
+		<span class="getskill">极略</span>——你可以弃置1枚“忍”标记，发动下列一项技能：“鬼才”、“放逐”、“集智”、“制衡”或“完杀”。<br />
+		<span class="getskill">鬼才</span>——当一名角色的判定牌生效前，你可以打出一张牌代替之。<br />
+		<span class="getskill">放逐</span>——当你受到伤害后，你可以令一名其他角色翻面，然后该角色摸X张牌（X为你已损失的体力值）。<br />
+		<span class="getskill">集智</span>——当你使用普通锦囊牌时，你可以摸一张牌。<br />
+		<span class="getskill">制衡</span>——出牌阶段限一次，你可以弃置任意张牌，然后摸等量的牌。<br />
+		<span class="getskill">完杀</span>——锁定技，你的回合内，不处于濒死状态的其他角色不能使用【桃】。<br />
+		<strong>连破</strong>——一名角色的回合结束后，若你于此回合内杀死过角色，你可以获得一个额外的回合。</td>
+	<th class="shan">山</th></tr>
+
+<tr>
+	<td>LE 009</td>
+	<td class='shen'>神</td>
+	<th>刘　备</th>
+	<td>誓守桃园义</td>
+	<td>6</td>
+	<td class="jineng">
+		<strong>龙怒</strong>——转换技，锁定技，出牌阶段开始时，①你失去1点体力并摸一张牌，然后本回合你的红色手牌均视为火【杀】且无距离限制；②你减1点体力上限并摸一张牌，然后本回合你的锦囊牌均视为雷【杀】且无次数限制。<br />
+		<strong>结营</strong>——锁定技，你始终处于横置状态；已横置的角色手牌上限+2；结束阶段，你横置一名其他角色。</td>
+	<th class="yin">阴</th></tr>
+
+<tr>
+	<td>LE 010</td>
+	<td class='shen'>神</td>
+	<th>陆　逊</th>
+	<td>红莲业火</td>
+	<td>4</td>
+	<td class="jineng">
+		<strong>军略</strong>——锁定技，当你造成或受到伤害后，你获得一个“军略”标记。<br />
+		<strong>摧克</strong>——出牌阶段开始时，若“军略”数量为奇数，你可以对一名其他角色造成1点伤害；偶数，你可以横置一名其他角色并弃置其区域里的一张牌。若“军略”的数量超过7个，你可以移去全部“军略”标记并对所有其他角色造成1点伤害。<br />
+		<strong>绽火</strong>——限定技，出牌阶段，你可以移去全部“军略”标记，令至多等量的已横置角色弃置所有装备区里的牌，然后对其中1名角色造成1点火焰伤害。</td>
+	<th class="yin">阴</th></tr>
+
+<tr>
+	<td>LE 011</td>
+	<td class='shen'>神</td>
+	<th>张　辽</th>
+	<td>雁门之刑天</td>
+	<td>4</td>
+	<td class="jineng">
+		<strong>夺锐</strong>——当你于出牌阶段内对一名其他角色造成伤害后，你可以废除你的一个装备栏，然后选择该角色的武将牌上的一个技能（限定技、觉醒技、主公技除外），令其于其下回合结束之前此技能无效，然后你于其下回合结束或其死亡之前拥有此技能且不能发动【夺锐】。<br />
+		<strong>止啼</strong>——锁定技，你攻击范围内已受伤的角色手牌上限-1；当你和这些角色拼点或【决斗】你赢时，你恢复一个装备栏。当你受到伤害后，若来源在你的攻击范围内且已受伤，你恢复一个装备栏。</td>
+	<th class="lei">雷</th></tr>
+
+<tr>
+	<td>LE 012</td>
+	<td class='shen'>神</td>
+	<th>甘　宁</th>
+	<td>江表之力牧</td>
+	<td>3/6</td>
+	<td class="jineng">
+		<strong>魄袭</strong>——出牌阶段限一次，你可以观看一名其他角色的手牌，然后你可以弃置你与其手里共计四张不同花色的牌。若如此做，根据此次弃置你的牌数量执行以下效果：没有，体力上限减1；一张，结束出牌阶段且本回合手牌上限-1；三张，回复1点体力；四张，摸四张牌。 <br />
+		<strong>劫营</strong>——回合开始，若全场没有有“营”的角色，你获得1个“营”标记；结束阶段，你可以将“营”放到1名其他角色武将旁；有“营”的角色摸牌阶段多摸一张牌、出牌阶段可多使用一张【杀】、手牌上限+1。有“营”的其他角色回合结束后，移去“营”，然后你获得其所有手牌。</td>
+	<th class="lei">雷</th></tr>
+
+<tr>
+	<td>EM 001</td>
+	<td class="shu">蜀</td>
+	<th>刘　备</th>
+	<td>龙横蜀汉</td>
+	<td>4</td>
+	<td class="jineng">
+		珠联璧合：蜀势力武将<br />
+		<strong>章武</strong>——锁定技，当【飞龙夺凤】置入弃牌堆或其他角色的装备区后，你获得之；锁定技，当你失去【飞龙夺凤】时，你展示此牌，然后将此牌移动的目标区域改为牌堆底，若如此做，当此牌置于牌堆底后，你摸两张牌。<br />
+		<strong>授钺</strong>——君主技，锁定技，你拥有“五虎将大旗”。<br />
+		<strong>激诏</strong>——限定技，当你处于濒死状态时，你可以将手牌补至X张（X为你的体力上限），然后将体力值回复至2点，失去“授钺”并获得“仁德”。<br />
+		<span class="getskill">仁德</span>—— 出牌阶段，你可以将任意张手牌交给其他角色，然后若你于此阶段内给出第三张“仁德”牌时，你回复1点体力。<br />
+		<span class="getskill">五虎将大旗</span>——存活的蜀势力角色拥有的下列五个技能分别调整为：<br />
+武圣——你可以将一张牌当【杀】使用或打出。<br />
+咆哮——你使用【杀】无次数限制；当你使用【杀】指定一名角色为目标后，你无视该角色的防具。<br />
+龙胆——你可以将一张【杀】当【闪】，或一张【闪】当【杀】使用或打出，当你以此法使用或打出牌时，你摸一张牌。<br />
+烈弓——当你于出牌阶段内使用【杀】指定一名角色为目标后，若该角色的手牌数不小于你的体力值或不大于你的攻击范围，你可以令其不能使用【闪】响应此【杀】；你的攻击范围+1。<br />
+铁骑——当你使用【杀】指定一个目标后，你可以进行判定，然后令其本回合武将牌的所有非锁定技失效，除非该角色弃置与结果花色相同的一张牌，否则不能使用【闪】。</td>
+	<th class="zhen">阵</th></tr>
+
+<tr>
+	<td>EM 002</td>
+	<td class='qun'>群</td>
+	<th>张　角</th>
+	<td>时代的先驱</td>
+	<td>4</td>
+	<td class="jineng">
+		珠联璧合：群势力武将<br />
+		<strong>悟心</strong>——摸牌阶段开始时，你可以观看牌堆顶的X张牌（X为群势力角色的数量），然后你可以改变这些牌的顺序。<br />
+		<strong>弘法</strong>——君主技，当此武将牌明置时，你获得“黄巾天兵符”；君主技，准备阶段开始时，若没有“天兵”，你将牌堆顶的X张牌置于“黄巾天兵符”上，称为“天兵”（X为群势力角色的数量）。<br />
+		<strong>问道</strong>——出牌阶段限一次，你可以弃置一张红色牌，获得弃牌堆里或场上的一张【太平要术】。<br />
+		<span class="getskill">黄巾天兵符</span>——你执行的效果中的“群势力角色的数量”+X（X为不大于“天兵”数量的自然数）；当你失去体力时，你可以防止此失去体力，将一张“天兵”置入弃牌堆；与你势力相同的角色可以将一张“天兵”当【杀】使用或打出。</td>
+	<th class="shi">势</th></tr>
+
+<tr>
+	<td>EM 003</td>
+	<td class='wu'>吴</td>
+	<th>孙　权</th>
+	<td>虎据江东</td>
+	<td>4</td>
+	<td class="jineng">
+		珠联璧合：吴势力武将<br />
+		<strong>嘉禾</strong>——君主技，只要此武将牌处于明置状态，你便拥有“缘江烽火图”。<br />
+		<strong>敛资</strong>——出牌阶段限一次，你可以弃置一张手牌，然后亮出牌堆顶X张牌（X为吴势力角色装备区里的牌和“烽火”的总和），获得其中所有与你弃置牌类别相同的牌，将其余的牌置入弃牌堆。若一次获得的牌超过三张，则你失去技能“敛资”并获得技能“制衡”。<br />
+		<span class="getskill">制衡</span>——出牌阶段，你可以弃置至多X张牌（X为你的体力上限），然后摸等量的牌。每阶段限一次。<br />
+		<strong>聚宝</strong>——锁定技，你装备区里的宝物牌不能被其他角色获得。结束阶段开始时，若场上或弃牌堆有【定澜夜明珠】，则你摸一张牌，然后获得装备区里有【定澜夜明珠】角色的一张牌。<br />
+		<span class="getskill">缘江烽火图</span>——1.每名吴势力角色的出牌阶段限一次，该角色可以将一张装备牌置于“缘江烽火图”上，称之为“烽火”。<br />
+		2.根据“烽火”的数量，所有吴势力角色可于其准备阶段开始时选择并获得其中一个技能直到回合结束：一张以上~英姿;两张以上~好施;三张以上~涉猎;四张以上~度势;五张以上~可额外选择一项。<br />
+		3.锁定技，当你受到【杀】或锦囊牌造成的伤害后，你将一张“烽火”置入弃牌堆。</td>
+	<th class="bian">变</th></tr>
+
+<tr>
+	<td>EM 004</td>
+	<td class='wei'>魏</td>
+	<th>曹　操</th>
+	<td>凤舞九霄</td>
+	<td>4</td>
+	<td class="jineng">
+		珠联璧合：魏势力武将<br />
+		<strong>建安</strong>——君主技，只要此武将牌处于明置状态，你便拥有“五子良将纛”。<br />
+		<strong>挥鞭</strong>——出牌阶段限一次，你可以选择一名魏势力角色和另一名已受伤的魏势力角色，你对前者造成1点伤害并令其摸两张牌，然后令后者回复1点体力。<br />
+		<span class="getskill">制衡</span>——出牌阶段，你可以弃置至多X张牌（X为你的体力上限），然后摸等量的牌。每阶段限一次。<br />
+		<strong>總禦</strong>——当【六龙骖驾】进入其他角色装备区后，你可以用你装备区里所有坐骑牌（至少一张）与【六龙骖驾】交换位置；当你使用一张坐骑牌时，若场上或弃牌堆中有【六龙骖驾】，则将此牌置入你的装备区。<br />
+		<span class="getskill">五子良将纛</span>——魏势力角色的准备阶段开始时，该角色可以弃置一张牌并选择自己暗置的一张武将牌（没有暗置的武将牌则选择一张暗置），然后获得以下技能之一直到你下回合开始：“突袭”、“巧变”、“骁果”、“节钺”，“断粮”。<br />
+	其他角色已有的技能无法选择，并且在此期间该角色不能明置因此选择的武将牌。</td>
+		<span class="getskill"></span></td>
+	<th class="quan">权</th></tr>
+
+<tr>
+	<td>E.SP 001</td>
+	<td style="color: white; background: purple;">西</td>
+	<th>凯　撒</th>
+	<td></td>
+	<td>4</td>
+	<td class='jineng'>
+		<strong>征服</strong>——当你使用【杀】指定一个目标后，你可以选择一种牌的类别，令其选择一项：1、将一张此类别的牌交给你，若如此做，此【杀】对其无效；2、不能使用【闪】响应此【杀】。</td>
+	<th style='background:#08f'>LTK 3V3</th></tr>
+
+</tbody>
+</table>
+</div></section>
+
+<footer><p><img src='../pic/logo.png' /><br />© 2006-2019 | 最后更新 2019/10/22</footer>
+</body></html>
