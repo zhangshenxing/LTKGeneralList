@@ -1,1 +1,1 @@
-[三国杀武将列表网页](https://ruhuasiyu.github.io/LTKGeneralList/)
+[点击此处进入：三国杀武将列表网页](https://ruhuasiyu.github.io/LTKGeneralList/)
